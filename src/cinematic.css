@@ -1,0 +1,454 @@
+.cinematic-intro {
+  height: 300svh;
+  position: relative;
+  background: #061521;
+  color: #fff;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  isolation: isolate;
+}
+.cinema-frame {
+  height: 100svh;
+  min-height: 550px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+.cinema-ocean {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #030a13 0%,
+    #102737 50%,
+    #284452 67%,
+    #092132 100%
+  );
+}
+.cinema-ocean canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cinema-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(2, 12, 23, 0.65), transparent 78%),
+    linear-gradient(
+      180deg,
+      rgba(1, 8, 16, 0.35),
+      transparent 35%,
+      rgba(2, 12, 23, 0.06) 65%,
+      rgba(2, 12, 23, 0.6)
+    );
+}
+.cinema-content {
+  position: absolute;
+  inset: 0;
+}
+.cinema-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 31px 5vw;
+  z-index: 4;
+}
+.cinema-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+.cinema-brand > span {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.55;
+  margin-left: -4px;
+}
+.cinema-nav > button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  border: 1px solid #ffffff38;
+  padding: 10px 15px;
+  border-radius: 24px;
+  background: #ffffff05;
+  color: #e4edf3;
+}
+.cinema-nav > button:hover {
+  background: #ffffff18;
+}
+.opening-copy {
+  position: absolute;
+  left: 8vw;
+  top: 50%;
+  transform: translateY(-49%);
+  z-index: 2;
+}
+.opening-context {
+  font-size: 14px;
+  color: #b1c1ce;
+  letter-spacing: 0.1px;
+  margin-bottom: 24px;
+}
+.opening-copy h1 {
+  font-size: clamp(70px, 8.7vw, 160px);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  margin: 0 0 25px;
+}
+.opening-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+.opening-line > span {
+  display: block;
+  will-change: transform;
+}
+.opening-description {
+  font-size: clamp(14px, 1.15vw, 19px);
+  line-height: 1.7;
+  color: #afc1d0;
+  margin-top: 25px;
+}
+.opening-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  background: #f1f5f8;
+  color: #173448;
+  border: 1px solid #ffffff3b;
+  border-radius: 28px;
+  padding: 15px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 28px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.opening-action:hover {
+  background: #fff;
+  box-shadow: 0 0 24px #d6e9f822;
+}
+.perspective-copy {
+  position: absolute;
+  left: 8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+}
+.perspective-copy > span {
+  font-size: 15px;
+  color: #aec5d6;
+}
+.perspective-copy h2,
+.departure-copy h2 {
+  font-size: clamp(58px, 6.6vw, 115px);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -0.06em;
+  margin-top: 20px;
+}
+.perspective-copy p,
+.departure-copy p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #bdd1df;
+  margin-top: 25px;
+}
+.departure-copy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  max-width: 90%;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+.departure-copy h2 {
+  margin-top: 0;
+}
+.departure-copy .opening-action {
+  margin-top: 28px;
+}
+.departure-copy small {
+  font-size: 10px;
+  color: #9bb2c3;
+  display: block;
+  margin-top: 23px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+.cinema-bottom {
+  position: absolute;
+  bottom: 35px;
+  left: 5vw;
+  right: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: #a4bbcc;
+  font-size: 11px;
+}
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.scroll-line {
+  width: 38px;
+  height: 1px;
+  background: #6f8c9f;
+}
+.cinema-bottom > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #b2c8d7;
+  padding: 7px 0;
+}
+.cinema-bottom > button:hover {
+  color: #fff;
+}
+.journey-progress {
+  position: absolute;
+  right: 2.1vw;
+  top: 38%;
+  height: 120px;
+  width: 1px;
+  background: #b5d3e133;
+}
+.journey-progress > span {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #b8d6e9;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.cinema-veil {
+  position: absolute;
+  inset: 0;
+  background: #f2f5f6;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.cinematic-intro button:focus-visible,
+.cinematic-intro a:focus-visible {
+  outline: 2px solid #d1e5f3;
+  outline-offset: 5px;
+}
+.motion-reduced {
+  height: 100svh;
+}
+.motion-reduced .perspective-copy,
+.motion-reduced .departure-copy,
+.motion-reduced .scroll-cue,
+.motion-reduced .journey-progress {
+  display: none;
+}
+.motion-reduced .opening-line > span {
+  transform: none !important;
+}
+.motion-reduced .cinema-frame {
+  position: relative;
+}
+.ocean-fallback {
+  background:
+    radial-gradient(ellipse at 70% 47%, #52708533, transparent 55%),
+    linear-gradient(#041321 10%, #15364a 58%, #092131 59%, #123b4e);
+}
+.fallback-horizon {
+  position: absolute;
+  inset: 60% 0 0;
+  background: repeating-linear-gradient(
+    174deg,
+    transparent 0 10px,
+    #7199b60a 10px 11px
+  );
+  transform: perspective(400px) rotateX(25deg);
+}
+.ocean-fallback canvas { display: none; }
+.studio-arrival {
+  animation: studio-arrival 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.study-layout {
+  animation: encounter-arrival 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.step-content {
+  animation: observation-arrival 0.4s ease-out both;
+}
+.top-meta .replay-opening {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: #526d7e;
+  font-size: 12px;
+  padding: 8px 10px;
+  border: 1px solid #dbe4e9;
+  border-radius: 5px;
+}
+.top-meta .replay-opening:hover {
+  background: #edf3f7;
+}
+@keyframes studio-arrival {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes encounter-arrival {
+  from {
+    opacity: 0.3;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes observation-arrival {
+  from {
+    opacity: 0.25;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 800px) {
+  .cinema-nav {
+    padding: 24px;
+  }
+  .opening-copy,
+  .perspective-copy {
+    left: 7vw;
+  }
+  .opening-copy h1 {
+    font-size: clamp(65px, 13vw, 105px);
+  }
+  .opening-copy {
+    top: 47%;
+  }
+  .opening-context {
+    font-size: 12px;
+    max-width: 200px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .opening-description {
+    font-size: 14px;
+  }
+  .perspective-copy h2,
+  .departure-copy h2 {
+    font-size: clamp(50px, 10vw, 80px);
+  }
+  .perspective-copy p,
+  .departure-copy p {
+    font-size: 14px;
+  }
+  .cinema-bottom {
+    bottom: 25px;
+    left: 24px;
+    right: 24px;
+  }
+  .scroll-cue {
+    font-size: 10px;
+    gap: 8px;
+  }
+  .scroll-line {
+    width: 20px;
+  }
+  .cinema-bottom > button span {
+    display: none;
+  }
+  .journey-progress {
+    right: 18px;
+  }
+  .departure-copy small {
+    font-size: 9px;
+    max-width: 240px;
+  }
+  .opening-action {
+    font-size: 12px;
+    padding: 14px 20px;
+  }
+  .cinema-brand {
+    font-size: 18px;
+  }
+  .cinema-nav > button {
+    font-size: 11px;
+    padding: 9px 12px;
+  }
+  .cinematic-intro {
+    height: 260svh;
+  }
+  .motion-reduced {
+    height: 100svh;
+  }
+}
+@media (max-height: 650px) {
+  .opening-copy h1 {
+    font-size: clamp(48px, 7vw, 90px);
+  }
+  .opening-copy {
+    top: 48%;
+  }
+  .opening-context {
+    margin-bottom: 15px;
+  }
+  .opening-description {
+    margin-top: 15px;
+    font-size: 13px;
+  }
+  .opening-action {
+    margin-top: 18px;
+    padding: 12px 18px;
+  }
+  .cinema-nav {
+    padding-top: 20px;
+  }
+  .cinema-bottom {
+    bottom: 18px;
+  }
+  .cinema-frame {
+    min-height: 420px;
+  }
+  .perspective-copy h2,
+  .departure-copy h2 {
+    font-size: 60px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-arrival,
+  .study-layout,
+  .step-content {
+    animation: none !important;
+  }
+}

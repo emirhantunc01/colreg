@@ -1,0 +1,18 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.npm-cache/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Source books stay local; commit only authoring instructions here
+content/sources/*
+!content/sources/README.md

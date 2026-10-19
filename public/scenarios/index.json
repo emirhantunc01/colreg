@@ -1,0 +1,16 @@
+[
+  {
+    "id": "steady-tracks",
+    "file": "steady-tracks.json",
+    "title": "Steady tracks",
+    "subtitle": "Relative motion · two vessels",
+    "duration": 90
+  },
+  {
+    "id": "course-change",
+    "file": "course-change.json",
+    "title": "A change of course",
+    "subtitle": "Turning motion · guided replay",
+    "duration": 120
+  }
+]

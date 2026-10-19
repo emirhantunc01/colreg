@@ -1,0 +1,77 @@
+{
+  "status": "technical-demo",
+  "sources": [],
+  "assumptions": [
+    "Synthetic positions, headings and timing for testing the player.",
+    "No COLREG responsibilities or recommended actions are assigned.",
+    "Simplified motion; hydrodynamics and stopping distances are not simulated."
+  ],
+  "id": "steady-tracks",
+  "title": "Steady tracks",
+  "summary": "Follow two vessels on fixed tracks and explore the encounter from different perspectives.",
+  "duration": 90,
+  "vessels": [
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "color": "#50d5c2",
+      "length": 65,
+      "track": [
+        {
+          "time": 0,
+          "east": -120,
+          "north": -210,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": -120,
+          "north": 240,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "color": "#f4b76a",
+      "length": 52,
+      "track": [
+        {
+          "time": 0,
+          "east": 250,
+          "north": 80,
+          "heading": 270
+        },
+        {
+          "time": 90,
+          "east": -250,
+          "north": 80,
+          "heading": 270
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Establish the scene",
+      "body": "Two synthetic vessels follow fixed tracks. Start in the overview, then use the bridge camera to compare perspectives. This is a player demonstration, not a navigational exercise."
+    },
+    {
+      "time": 25,
+      "title": "Observe relative motion",
+      "body": "Watch how the apparent position of the other vessel changes. Toggle the track overlay to connect the 3D view with the route geometry."
+    },
+    {
+      "time": 55,
+      "title": "Change your perspective",
+      "body": "Select either vessel and switch to Bridge. The camera follows its position and heading. Pause at any instant to inspect the scene."
+    },
+    {
+      "time": 80,
+      "title": "Review the encounter",
+      "body": "Scrub back to an earlier moment. The same time always produces the same vessel positions. Rule explanations will be added after the source material is reviewed."
+    }
+  ]
+}

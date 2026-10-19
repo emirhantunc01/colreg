@@ -1,0 +1,95 @@
+{
+  "status": "technical-demo",
+  "sources": [],
+  "assumptions": [
+    "Synthetic positions, headings and timing for testing the player.",
+    "No COLREG responsibilities or recommended actions are assigned.",
+    "Simplified motion; hydrodynamics and stopping distances are not simulated."
+  ],
+  "id": "course-change",
+  "title": "A change of course",
+  "summary": "Inspect an authored turn, compare camera views and replay each phase of the movement.",
+  "duration": 120,
+  "vessels": [
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "color": "#50d5c2",
+      "length": 65,
+      "track": [
+        {
+          "time": 0,
+          "east": -100,
+          "north": -230,
+          "heading": 0
+        },
+        {
+          "time": 35,
+          "east": -100,
+          "north": -55,
+          "heading": 0
+        },
+        {
+          "time": 55,
+          "east": -75,
+          "north": 35,
+          "heading": 35
+        },
+        {
+          "time": 80,
+          "east": 15,
+          "north": 105,
+          "heading": 65
+        },
+        {
+          "time": 120,
+          "east": 205,
+          "north": 195,
+          "heading": 65
+        }
+      ]
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "color": "#f4b76a",
+      "length": 52,
+      "track": [
+        {
+          "time": 0,
+          "east": 260,
+          "north": 210,
+          "heading": 270
+        },
+        {
+          "time": 120,
+          "east": -280,
+          "north": 210,
+          "heading": 270
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Before the turn",
+      "body": "Atlas begins on a straight track. Nord follows a separate fixed track. This scene demonstrates the animation system only; it does not establish COLREG duties."
+    },
+    {
+      "time": 35,
+      "title": "An authored course change",
+      "body": "Atlas starts the scripted turn. Its heading and position are sampled from the same timeline. Use 0.5× speed to examine the transition."
+    },
+    {
+      "time": 65,
+      "title": "Inspect the movement",
+      "body": "Switch between the overhead and bridge views. Heading arrows show orientation; the visible track records movement up to the current time."
+    },
+    {
+      "time": 95,
+      "title": "Replay and compare",
+      "body": "The turn is complete. Jump between the steps or scrub backwards to review. Once the book arrives, reviewed scenario data will replace these synthetic examples."
+    }
+  ]
+}
