@@ -1,3 +1,4 @@
+import BrandMark from "./BrandMark";
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -47,6 +48,24 @@ const format = (t: number) =>
     .padStart(2, "0")}`;
 
 function App() {
+  const [libraryOpen, setLibraryOpen] = useState(false);
+  const [guideOpen, setGuideOpen] = useState(() => matchMedia("(min-width: 721px)").matches);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {if(e.key==='Escape'){setLibraryOpen(false);setSettingsOpen(false);}};
+    document.addEventListener('keydown',close);return()=>document.removeEventListener('keydown',close);
+  },[]);
+  const [autoOrbit, setAutoOrbit] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(
+    () => matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  useEffect(() => {
+    const q = matchMedia("(prefers-reduced-motion: reduce)");
+    const change = () => setReducedMotion(q.matches);
+    q.addEventListener("change", change);
+    return () => q.removeEventListener("change", change);
+  }, []);
+  const [instantMotion, setInstantMotion] = useState(false);
   const [intro, setIntro] = useState(() => window.location.hash !== "#studio");
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -101,9 +120,8 @@ function App() {
     const abort = new AbortController();
     setLoading(true);
     setError("");
-    setScenario(null);
+
     setPlaying(false);
-    setTime(0);
     setSources(false);
     fetch(`${base}scenarios/${entry.file}`, { signal: abort.signal })
       .then((r) => {
@@ -116,6 +134,8 @@ function App() {
           throw Error("Scenario identity does not match its library entry.");
         if (s.duration !== entry.duration)
           throw Error("Scenario duration does not match its library entry.");
+        setAutoOrbit(false);
+        setTime(0);
         setScenario(s);
         setSelected(s.vessels[0].id);
         setView("orbit");
@@ -218,17 +238,29 @@ function App() {
       />
     );
   return (
-    <div className="app-shell studio-arrival">
+    <div
+      className="app-shell studio-arrival"
+      data-playing={playing}
+      data-guide-open={guideOpen}
+      data-instant-motion={instantMotion}
+      onKeyDownCapture={() => setInstantMotion(true)}
+      onPointerDownCapture={() => setInstantMotion(false)}
+    >
       <header className="topbar">
         <a className="brand" href="./" aria-label="COLREG 3D home">
           <span className="brand-symbol">
-            <Navigation size={23} />
+            <BrandMark />
           </span>
           <span>
             COLREG<span className="brand-3d">3D</span>
           </span>
           <span className="brand-caption">Encounter studio</span>
         </a>
+        <nav className="studio-navigation" aria-label="Studio tools">
+          <button aria-expanded={libraryOpen} id="library-tool" aria-controls="encounter-library" onClick={()=>{setLibraryOpen(v=>!v);setSettingsOpen(false);}}><Layers size={17}/>Encounters<ChevronRight size={13}/></button>
+          <button aria-expanded={guideOpen} id="story-tool" aria-controls="encounter-guide" onClick={()=>setGuideOpen(v=>!v)}><BookOpen size={17}/>Story</button>
+          <button aria-expanded={settingsOpen} id="scene-tool" aria-controls="scene-settings" onClick={()=>{setSettingsOpen(v=>!v);setLibraryOpen(false);}}><Eye size={17}/>Scene</button>
+        </nav>
         <div className="top-meta">
           <button
             className="replay-opening"
@@ -248,7 +280,8 @@ function App() {
         </div>
       </header>
       <div className="workspace">
-        <aside className="library">
+        <aside className="library" id="encounter-library" data-open={libraryOpen} inert={!libraryOpen} aria-label="Encounter library">
+          <button className="panel-dismiss" aria-label="Close encounters" onClick={()=>{setLibraryOpen(false);document.getElementById("library-tool")?.focus();}}><X size={18}/></button>
           <div className="library-heading">
             <h2>Encounters</h2>
             <span className="count">
@@ -261,8 +294,10 @@ function App() {
               <button
                 key={entry.id}
                 className={`scenario-card ${selectedId === entry.id ? "active" : ""}`}
-                onClick={() => setSelectedId(entry.id)}
+                onClick={() => {setSelectedId(entry.id);setLibraryOpen(false);}}
+                aria-pressed={selectedId === entry.id}
               >
+                <svg className={`route-preview route-${i}`} viewBox="0 0 180 70" aria-hidden="true"><path className="route-grid" d="M0 20H180M0 45H180M35 0V70M80 0V70M125 0V70"/><path className="route-a" d={i===0 ? "M15 60L150 10" : "M15 60L85 32Q110 20 150 35"}/><path className="route-b" d="M155 65L75 5"/><circle className="route-ship" r="4" cx="0" cy="0"/></svg>
                 <span className="encounter-index">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -286,6 +321,7 @@ function App() {
         <main className="main">
           <div className="page-heading">
             <div>
+              <span className="studio-eyebrow">Encounter study</span>
               <h1 tabIndex={-1}>{scenario?.title ?? "Encounter studies"}</h1>
               <p>{scenario?.summary ?? "Preparing your learning workspace."}</p>
             </div>
@@ -327,7 +363,7 @@ function App() {
               </button>
               <p>Select another encounter from the library to continue.</p>
             </div>
-          ) : loading ? (
+          ) : loading && !scenario ? (
             <div className="loading" role="status">
               <Compass className="spin" />
               Preparing the scene…
@@ -335,7 +371,11 @@ function App() {
           ) : (
             scenario && (
               <>
-                <div className="study-layout" key={scenario.id}>
+                <div
+                  className={`study-layout ${loading ? "is-switching" : ""}`}
+                  key={scenario.id}
+                  aria-busy={loading}
+                >
                   <section
                     className="viewer"
                     ref={stage}
@@ -350,6 +390,9 @@ function App() {
                         labels={labels}
                         arrows={arrows}
                         trails={trails}
+                        instantMotion={instantMotion}
+                        autoOrbit={autoOrbit}
+                        reservePanel={guideOpen}
                       />
                       <div className="scene-top">
                         <span className="scene-pill">
@@ -360,14 +403,29 @@ function App() {
                               ? "Overhead view"
                               : "Free view"}
                         </span>
-                        <button
-                          className="icon-button glass"
-                          onClick={fullscreen}
-                          title="Toggle fullscreen"
-                          aria-label="Toggle fullscreen"
-                        >
-                          <Maximize2 size={16} />
-                        </button>
+                        <div className="scene-tools">
+                          <button
+                            className="auto-orbit glass"
+                            disabled={reducedMotion}
+                            aria-pressed={autoOrbit}
+                            onClick={() => {
+                              setAutoOrbit((v) => !v);
+                              setView("orbit");
+                            }}
+                            title="Slowly orbit the scene"
+                          >
+                            <RotateCcw size={14} />
+                            Auto orbit
+                          </button>
+                          <button
+                            className="icon-button glass"
+                            onClick={fullscreen}
+                            title="Toggle fullscreen"
+                            aria-label="Toggle fullscreen"
+                          >
+                            <Maximize2 size={16} />
+                          </button>
+                        </div>
                       </div>
                       <div
                         className={`compass ${view !== "overhead" ? "hidden" : ""}`}
@@ -390,6 +448,13 @@ function App() {
                         </span>
                       </div>
                       <div className="camera-switch" aria-label="Camera views">
+                        <span
+                          aria-hidden="true"
+                          className="camera-indicator"
+                          style={{
+                            transform: `translateX(${["orbit", "overhead", "bridge"].indexOf(view) * 100}%)`,
+                          }}
+                        />
                         {(
                           [
                             ["orbit", Compass, "Free"],
@@ -400,7 +465,11 @@ function App() {
                           <button
                             key={key}
                             className={view === key ? "selected" : ""}
-                            onClick={() => setView(key)}
+                            aria-pressed={view === key}
+                            onClick={() => {
+                              setAutoOrbit(false);
+                              setView(key);
+                            }}
                           >
                             <Icon size={15} />
                             {label}
@@ -410,7 +479,7 @@ function App() {
                     </div>
                     <div className="transport">
                       <div className="timeline-labels">
-                        <span>Timeline</span>
+                        <span className="timeline-caption"><span className="transport-indicator" />{playing ? "Playing" : "Timeline"}</span>
                         <span>
                           <strong>{format(time)}</strong> /{" "}
                           {format(scenario.duration)}
@@ -474,6 +543,9 @@ function App() {
                             ) : (
                               <Play size={20} fill="currentColor" />
                             )}
+                            <span className="play-label">
+                              {playing ? "Pause" : "Play encounter"}
+                            </span>
                           </button>
                           <button
                             className="icon-button"
@@ -506,7 +578,9 @@ function App() {
                       </div>
                     </div>
                   </section>
-                  <aside className="guide">
+                  <aside className="guide" id="encounter-guide" data-open={guideOpen} inert={!guideOpen}>
+                    <button className="panel-dismiss" aria-label="Hide story" onClick={()=>{setGuideOpen(false);document.getElementById("story-tool")?.focus();}}><X size={18}/></button>
+                    <span className="guide-kicker">Guided observation</span>
                     <div className="guide-heading">
                       <BookOpen size={17} />
                       <span>Observation</span>
@@ -578,7 +652,8 @@ function App() {
                     </div>
                   </aside>
                 </div>
-                <div className="below-viewer">
+                <div className="below-viewer" id="scene-settings" data-open={settingsOpen} inert={!settingsOpen}>
+                  <button className="panel-dismiss" aria-label="Close scene settings" onClick={()=>{setSettingsOpen(false);document.getElementById("scene-tool")?.focus();}}><X size={18}/></button>
                   <section className="vessel-panel">
                     <div className="panel-title">
                       <Navigation size={16} />
@@ -602,7 +677,7 @@ function App() {
                             </span>
                             <span>
                               <strong>{v.name}</strong>
-                              <small>{v.length} m · Demonstration vessel</small>
+                              <small>{v.length} m · {v.kind ?? "Demonstration vessel"}</small>
                             </span>
                             <span className="heading-value">
                               {Math.round(p.heading)
@@ -712,3 +787,4 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </React.StrictMode>,
 );
+import "./studio.css";

@@ -1397,3 +1397,241 @@ button {
     margin-top: 9px;
   }
 }
+/* Studio motion: spatial transitions, feedback and interruptible controls. */
+.camera-switch {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 286px;
+  isolation: isolate;
+}
+.camera-switch button {
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  transition:
+    color 200ms ease,
+    transform 130ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.camera-switch button.selected {
+  background: transparent;
+}
+.camera-indicator {
+  position: absolute;
+  z-index: 0;
+  top: 4px;
+  left: 4px;
+  width: calc((100% - 8px) / 3);
+  height: calc(100% - 8px);
+  background: #e6eef5;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px #0002;
+  transition: transform 260ms cubic-bezier(0.32, 0.72, 0, 1);
+  pointer-events: none;
+}
+.camera-switch button:hover:not(.selected) {
+  background: transparent;
+  color: #f1f8fd;
+}
+.scenario-card,
+.vessel-card,
+.source-button,
+.play-button,
+.icon-button,
+.step-nav button {
+  transition:
+    transform 140ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.scenario-card:active,
+.vessel-card:active,
+.source-button:active,
+.play-button:active,
+.icon-button:active,
+.camera-switch button:active,
+.step-nav button:active {
+  transform: scale(0.97);
+}
+.scenario-card {
+  isolation: isolate;
+}
+.scenario-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  bottom: 17px;
+  width: 3px;
+  border-radius: 3px;
+  background: #4976ad;
+  transform: scaleY(0.25);
+  opacity: 0;
+  transition:
+    opacity 170ms ease,
+    transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.scenario-card.active::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.guide-progress button {
+  transition: background-color 220ms ease;
+}
+.sequence button {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 140ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.sequence button:active {
+  transform: scale(0.98);
+}
+.current-dot {
+  box-shadow: 0 0 0 3px #4a79b014;
+}
+.study-layout {
+  position: relative;
+  transition: opacity 160ms ease;
+}
+.study-layout.is-switching {
+  opacity: 0.65;
+  pointer-events: none;
+}
+.step-content {
+  animation: observation-arrival 220ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.play-button svg {
+  animation: control-feedback 160ms cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.toggle:after {
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.toggle {
+  transition: background-color 180ms ease;
+}
+.notes-modal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 180ms ease,
+    transform 240ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.modal-backdrop {
+  opacity: 1;
+  transition: opacity 160ms ease;
+}
+@starting-style {
+  .modal-backdrop {
+    opacity: 0;
+  }
+  .notes-modal {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+}
+@keyframes control-feedback {
+  from {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .vessel-card:hover {
+    box-shadow: 0 3px 10px #244d7210;
+    border-color: #9db5cd;
+  }
+  .source-button:hover {
+    box-shadow: 0 2px 6px #244d7210;
+  }
+}
+@media (max-width: 720px) {
+  .camera-switch {
+    width: 260px;
+  }
+}
+.app-shell[data-instant-motion="true"] .step-content,
+.app-shell[data-instant-motion="true"] .study-layout,
+.app-shell[data-instant-motion="true"] .play-button svg {
+  animation: none !important;
+}
+.app-shell[data-instant-motion="true"] .camera-indicator,
+.app-shell[data-instant-motion="true"] button,
+.app-shell[data-instant-motion="true"] .toggle,
+.app-shell[data-instant-motion="true"] .toggle:after,
+.app-shell[data-instant-motion="true"] .notes-modal,
+.app-shell[data-instant-motion="true"] .modal-backdrop {
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .camera-indicator,
+  .scenario-card::before,
+  .toggle,
+  .toggle:after,
+  .notes-modal,
+  .modal-backdrop {
+    transition: none !important;
+  }
+  .step-content,
+  .play-button svg {
+    animation: none !important;
+  }
+}
+.scene-tools {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  pointer-events: auto;
+}
+.auto-orbit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #c8dce9;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 130ms ease;
+}
+.auto-orbit[aria-pressed="true"] {
+  background: #dceaf3;
+  color: #193b51;
+}
+.auto-orbit:active {
+  transform: scale(0.97);
+}
+.play-button {
+  display: flex;
+  width: auto;
+  padding: 0 14px;
+  gap: 7px;
+  border-radius: 22px;
+}
+.play-label {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.play-state {
+  display: none;
+}
+@media (max-width: 720px) {
+  .play-label {
+    display: none;
+  }
+  .play-button {
+    width: 39px;
+    padding: 0;
+    justify-content: center;
+  }
+  .auto-orbit {
+    font-size: 10px;
+    padding: 8px;
+  }
+}

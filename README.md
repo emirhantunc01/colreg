@@ -21,7 +21,7 @@ npm run dev
 
 Open the URL printed by Vite, normally `http://127.0.0.1:5173/`. The development server binds to the local computer only. Stop it with Ctrl+C.
 
-- `/` opens the cinematic introduction. Scroll to change the camera perspective.
+- `/` opens the cinematic introduction. Scroll through the photographic opening.
 - `/#studio` opens the encounter player directly.
 - **Replay opening** returns to the introduction.
 
@@ -33,7 +33,7 @@ No API keys, accounts, environment variables, backend or database are required.
 
 - Two file-based demonstration scenarios: steady tracks and an authored course change.
 - Play/pause, restart, five-second jumps, scrubbing and 0.5×/1×/2× playback.
-- Orbit, overhead and selected-vessel bridge cameras.
+- Interruptible transitions between orbit, overhead and selected-vessel bridge cameras, plus optional Auto orbit.
 - Optional vessel names, heading arrows and movement tracks.
 - Timestamped observations and source/assumption notes.
 - Deterministic motion: the same timestamp always produces the same vessel pose.
@@ -54,15 +54,15 @@ GitHub Actions runs a locked dependency installation, TypeScript check, tests an
 
 ## Project structure
 
-| Location | Purpose |
-| --- | --- |
-| `src/engine.ts` | Scenario/library validation, interpolation and coordinate conversion |
-| `src/Scene.tsx` | Encounter rendering, procedural vessels and camera views |
-| `src/Cinematic.tsx` | GSAP opening, ocean shader and illustrative ship |
-| `src/main.tsx` | Library, transport controls, observations and source notes |
-| `public/scenarios/` | Scenario index and JSON definitions |
-| `content/` | Book-processing index and extraction templates |
-| `docs/` | Authoring, design and verification notes |
+| Location            | Purpose                                                              |
+| ------------------- | -------------------------------------------------------------------- |
+| `src/engine.ts`     | Scenario/library validation, interpolation and coordinate conversion |
+| `src/Scene.tsx`     | Encounter rendering, procedural vessels and camera views             |
+| `src/Cinematic.tsx` | GSAP opening with responsive licensed photography                    |
+| `src/main.tsx`      | Library, transport controls, observations and source notes           |
+| `public/scenarios/` | Scenario index and JSON definitions                                  |
+| `content/`          | Book-processing index and extraction templates                       |
+| `docs/`             | Authoring, design and verification notes                             |
 
 ## Adding educational content
 
@@ -72,4 +72,4 @@ Additional notes: [project status](PROJECT_STATUS.md), [cinematic behavior](docs
 
 ## Current limits
 
-This is authored visualization, not a hydrodynamic or live-navigation simulator. It does not adjudicate collisions, generate avoidance decisions or replace official rules and professional instruction. The opening vessel is illustrative. The initial JavaScript bundle includes Three.js and GSAP; the production build currently reports a non-blocking bundle-size warning.
+This is authored visualization, not a hydrodynamic or live-navigation simulator. It does not adjudicate collisions, generate avoidance decisions or replace official rules and professional instruction. The opening uses a real, licensed ship photograph; the interactive studio uses procedural 3D vessels. See [photo credits](docs/ASSETS.md). The initial JavaScript bundle includes Three.js and GSAP; the production build currently reports a non-blocking bundle-size warning.

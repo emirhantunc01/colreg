@@ -289,7 +289,9 @@
   );
   transform: perspective(400px) rotateX(25deg);
 }
-.ocean-fallback canvas { display: none; }
+.ocean-fallback canvas {
+  display: none;
+}
 .studio-arrival {
   animation: studio-arrival 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -452,3 +454,6 @@
     animation: none !important;
   }
 }
+
+.hero-error{position:absolute;right:5vw;bottom:100px;max-width:240px;color:#b7cbd5;font-size:12px;}
+.cinema-brand .brand-mark{filter:brightness(0) invert(1);width:42px;height:36px}

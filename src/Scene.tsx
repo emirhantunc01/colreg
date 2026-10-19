@@ -1,6 +1,8 @@
+import {fitVessel,assetUrl} from "./vesselModel";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { CameraFlight } from "./CameraFlight";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { sampleTrack, toScene, type Scenario } from "./engine";
 
@@ -13,6 +15,9 @@ type Props = {
   labels: boolean;
   arrows: boolean;
   trails: boolean;
+  instantMotion?: boolean;
+  autoOrbit?: boolean;
+  reservePanel?: boolean;
 };
 
 export function createVessel(length: number, color: string) {
@@ -178,28 +183,21 @@ export default function Scene(props: Props) {
       label.textContent = v.name;
       label.style.setProperty("--vessel", v.color);
       container.appendChild(label);
+      const vesselItem = {v,root,arrow,trail,label,modelTop:v.length*.32};
       if (v.model)
         new GLTFLoader().load(
-          v.model,
+          assetUrl(v.model, import.meta.env.BASE_URL),
           (gltf) => {
             if (!alive) {
               disposeTree(gltf.scene);
               return;
             }
-            const size = new THREE.Box3()
-              .setFromObject(gltf.scene)
-              .getSize(new THREE.Vector3());
-            if (size.z <= 0) {
+            try {fitVessel(gltf.scene,v.length);} catch {
               disposeTree(gltf.scene);
-              setModelWarning(
-                "Invalid model dimensions; using the standard vessel.",
-              );
+              setModelWarning("Invalid model dimensions; using the standard vessel.");
               return;
             }
-            gltf.scene.scale.setScalar(v.length / size.z);
-            const box = new THREE.Box3().setFromObject(gltf.scene);
-            const center = box.getCenter(new THREE.Vector3());
-            gltf.scene.position.set(-center.x, -box.min.y, -center.z);
+            vesselItem.modelTop = new THREE.Box3().setFromObject(gltf.scene).max.y + Math.max(2,v.length*.025);
             body.visible = false;
             root.add(gltf.scene);
           },
@@ -211,7 +209,7 @@ export default function Scene(props: Props) {
               );
           },
         );
-      return { v, root, arrow, trail, label };
+      return vesselItem;
     });
     const points = props.scenario.vessels.flatMap((v) =>
       v.track.map((p) => new THREE.Vector3(p.east, 0, -p.north)),
@@ -224,6 +222,7 @@ export default function Scene(props: Props) {
         h = container.clientHeight;
       if (!w || !h) return;
       renderer.setSize(w, h);
+      camera.clearViewOffset();
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
     };
@@ -233,10 +232,18 @@ export default function Scene(props: Props) {
     let previousView = "",
       frame = 0,
       previousSelected = "",
-      previousTime = -1;
+      previousTime = -1,
+      lastFrame = performance.now();
+    const flight = new CameraFlight(),
+      goalCamera = new THREE.PerspectiveCamera();
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const projection = new THREE.Vector3();
     const animate = () => {
       const p = current.current;
+      const offset = p.reservePanel && p.view !== "bridge" && container.clientWidth > 720 ? Math.min(170, container.clientWidth * .16) : 0;
+      const zoom = offset > 0 && p.view !== "bridge" ? .72 : 1;
+      if(camera.zoom !== zoom){camera.zoom=zoom;camera.updateProjectionMatrix();}
+      if ((camera.view?.offsetX ?? 0) !== offset || (offset > 0 && !camera.view?.enabled)) camera.setViewOffset(container.clientWidth,container.clientHeight,offset,0,container.clientWidth,container.clientHeight);
       for (const item of vessels) {
         const pose = toScene(sampleTrack(item.v.track, p.time));
         item.root.position.set(pose.x, 0, pose.z);
@@ -258,24 +265,30 @@ export default function Scene(props: Props) {
           );
         }
       }
+      const now = performance.now();
       const changed =
-        p.view !== previousView || p.selected !== previousSelected;
+        p.view !== previousView ||
+        (p.view === "bridge" && p.selected !== previousSelected);
       if (changed) {
-        controls.enabled = p.view === "orbit";
+        flight.begin(
+          camera,
+          now,
+          previousView === "" || reduced.matches || !!p.instantMotion,
+        );
+        controls.enabled = false;
         if (p.view === "orbit") {
-          camera.up.set(0, 1, 0);
-          camera.position.set(
+          goalCamera.up.set(0, 1, 0);
+          goalCamera.position.set(
             center.x + span * 0.65,
             span * 0.7,
             center.z + span * 0.8,
           );
+          goalCamera.lookAt(center);
           controls.target.copy(center);
-          controls.update();
-        }
-        if (p.view === "overhead") {
-          camera.up.set(0, 0, -1);
-          camera.position.set(center.x, span * 1.2, center.z);
-          camera.lookAt(center);
+        } else if (p.view === "overhead") {
+          goalCamera.up.set(0, 0, -1);
+          goalCamera.position.set(center.x, span * 1.2, center.z);
+          goalCamera.lookAt(center);
         }
         previousView = p.view;
         previousSelected = p.selected;
@@ -283,22 +296,33 @@ export default function Scene(props: Props) {
       if (p.view === "bridge") {
         const item = vessels.find((i) => i.v.id === p.selected) ?? vessels[0];
         const h = (sampleTrack(item.v.track, p.time).heading * Math.PI) / 180;
-        camera.up.set(0, 1, 0);
-        camera.position.set(
+        goalCamera.up.set(0, 1, 0);
+        goalCamera.position.set(
           item.root.position.x,
-          item.v.length * 0.24,
+          item.v.bridgeHeight ?? item.v.length * 0.24,
           item.root.position.z,
         );
-        camera.lookAt(
-          camera.position.x + Math.sin(h) * 500,
-          camera.position.y - 8,
-          camera.position.z - Math.cos(h) * 500,
+        const aft = item.v.bridgeAft ?? 0;
+        goalCamera.position.x -= Math.sin(h)*aft;
+        goalCamera.position.z += Math.cos(h)*aft;
+        goalCamera.lookAt(
+          goalCamera.position.x + Math.sin(h) * 500,
+          goalCamera.position.y - 8,
+          goalCamera.position.z - Math.cos(h) * 500,
         );
-      } else if (p.view === "orbit") controls.update();
+      }
+      if (flight.active || p.view === "bridge")
+        flight.apply(camera, goalCamera, now);
+      controls.enabled = p.view === "orbit" && !flight.active;
+      controls.autoRotate = !!p.autoOrbit && !reduced.matches;
+      controls.autoRotateSpeed = 0.15;
+      if (controls.enabled)
+        controls.update(Math.min((now - lastFrame) / 1000, 0.05));
+      lastFrame = now;
       camera.updateMatrixWorld();
       for (const item of vessels) {
         projection.copy(item.root.position);
-        projection.y += item.v.length * 0.32;
+        projection.y += item.modelTop;
         projection.project(camera);
         const visible =
           p.labels &&
@@ -317,6 +341,7 @@ export default function Scene(props: Props) {
     };
     const lost = (event: Event) => {
       event.preventDefault();
+      cancelAnimationFrame(frame);
       setError(
         "The graphics connection was lost. Reload the page to restore the 3D view.",
       );
@@ -350,3 +375,5 @@ export default function Scene(props: Props) {
     </div>
   );
 }
+
+

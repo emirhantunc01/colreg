@@ -29,6 +29,9 @@ const scenarioSchema = z
           name: z.string().min(1),
           color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
           length: finite.min(5).max(300),
+          kind: z.string().optional(),
+          bridgeHeight: finite.nonnegative().optional(),
+          bridgeAft: finite.optional(),
           model: z
             .string()
             .regex(/^[a-zA-Z0-9_./-]+\.glb$/)
