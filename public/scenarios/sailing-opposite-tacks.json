@@ -1,0 +1,631 @@
+{
+  "id": "sailing-opposite-tacks",
+  "title": "Sailing vessels on opposite tacks",
+  "summary": "With wind on different sides, the vessel with wind on the port side keeps out of the way.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-12"
+  ],
+  "conditions": [
+    "Both vessels are under sail and in sight.",
+    "Wind is shown as an illustrative direction."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "clear",
+    "windFrom": 315
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "Both vessels are under sail and in sight."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "pp. 5–6",
+      "rule": "Rule 12"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "port-tack",
+      "name": "Port-tack yacht",
+      "color": "#50d5c2",
+      "length": 15,
+      "kind": "Sailing vessel — port tack",
+      "model": "models/sailing-yacht.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -180,
+          "north": -210,
+          "heading": 35
+        },
+        {
+          "time": 2,
+          "east": -176.33,
+          "north": -204.76,
+          "heading": 35
+        },
+        {
+          "time": 4,
+          "east": -172.66,
+          "north": -199.52,
+          "heading": 35
+        },
+        {
+          "time": 6,
+          "east": -168.99,
+          "north": -194.28,
+          "heading": 35
+        },
+        {
+          "time": 8,
+          "east": -165.32,
+          "north": -189.04,
+          "heading": 35
+        },
+        {
+          "time": 10,
+          "east": -161.65,
+          "north": -183.8,
+          "heading": 35
+        },
+        {
+          "time": 12,
+          "east": -157.98,
+          "north": -178.56,
+          "heading": 35
+        },
+        {
+          "time": 14,
+          "east": -154.31,
+          "north": -173.32,
+          "heading": 35
+        },
+        {
+          "time": 16,
+          "east": -150.64,
+          "north": -168.08,
+          "heading": 35
+        },
+        {
+          "time": 18,
+          "east": -146.97,
+          "north": -162.84,
+          "heading": 35
+        },
+        {
+          "time": 20,
+          "east": -143.3,
+          "north": -157.6,
+          "heading": 35
+        },
+        {
+          "time": 22,
+          "east": -139.63,
+          "north": -152.36,
+          "heading": 35
+        },
+        {
+          "time": 24,
+          "east": -135.96,
+          "north": -147.12,
+          "heading": 35
+        },
+        {
+          "time": 26,
+          "east": -132.29,
+          "north": -141.88,
+          "heading": 35
+        },
+        {
+          "time": 28,
+          "east": -128.62,
+          "north": -136.64,
+          "heading": 35
+        },
+        {
+          "time": 30,
+          "east": -124.72,
+          "north": -131.56,
+          "heading": 40
+        },
+        {
+          "time": 32,
+          "east": -120.4,
+          "north": -126.84,
+          "heading": 45
+        },
+        {
+          "time": 34,
+          "east": -115.68,
+          "north": -122.52,
+          "heading": 50
+        },
+        {
+          "time": 36,
+          "east": -110.6,
+          "north": -118.62,
+          "heading": 55
+        },
+        {
+          "time": 38,
+          "east": -105.2,
+          "north": -115.18,
+          "heading": 60
+        },
+        {
+          "time": 40,
+          "east": -99.52,
+          "north": -112.22,
+          "heading": 65
+        },
+        {
+          "time": 42,
+          "east": -93.61,
+          "north": -109.77,
+          "heading": 70
+        },
+        {
+          "time": 44,
+          "east": -87.51,
+          "north": -107.85,
+          "heading": 75
+        },
+        {
+          "time": 46,
+          "east": -81.26,
+          "north": -106.46,
+          "heading": 80
+        },
+        {
+          "time": 48,
+          "east": -74.91,
+          "north": -105.62,
+          "heading": 85
+        },
+        {
+          "time": 50,
+          "east": -68.52,
+          "north": -105.34,
+          "heading": 90
+        },
+        {
+          "time": 52,
+          "east": -62.13,
+          "north": -105.62,
+          "heading": 95
+        },
+        {
+          "time": 54,
+          "east": -55.78,
+          "north": -106.46,
+          "heading": 100
+        },
+        {
+          "time": 56,
+          "east": -49.53,
+          "north": -107.85,
+          "heading": 105
+        },
+        {
+          "time": 58,
+          "east": -43.35,
+          "north": -109.51,
+          "heading": 105
+        },
+        {
+          "time": 60,
+          "east": -37.17,
+          "north": -111.17,
+          "heading": 105
+        },
+        {
+          "time": 62,
+          "east": -30.99,
+          "north": -112.83,
+          "heading": 105
+        },
+        {
+          "time": 64,
+          "east": -24.81,
+          "north": -114.49,
+          "heading": 105
+        },
+        {
+          "time": 66,
+          "east": -18.63,
+          "north": -116.15,
+          "heading": 105
+        },
+        {
+          "time": 68,
+          "east": -12.45,
+          "north": -117.81,
+          "heading": 105
+        },
+        {
+          "time": 70,
+          "east": -6.27,
+          "north": -119.47,
+          "heading": 105
+        },
+        {
+          "time": 72,
+          "east": -0.09,
+          "north": -121.13,
+          "heading": 105
+        },
+        {
+          "time": 74,
+          "east": 6.09,
+          "north": -122.79,
+          "heading": 105
+        },
+        {
+          "time": 76,
+          "east": 12.27,
+          "north": -124.45,
+          "heading": 105
+        },
+        {
+          "time": 78,
+          "east": 18.45,
+          "north": -126.11,
+          "heading": 105
+        },
+        {
+          "time": 80,
+          "east": 24.63,
+          "north": -127.77,
+          "heading": 105
+        },
+        {
+          "time": 82,
+          "east": 30.81,
+          "north": -129.43,
+          "heading": 105
+        },
+        {
+          "time": 84,
+          "east": 36.99,
+          "north": -131.09,
+          "heading": 105
+        },
+        {
+          "time": 86,
+          "east": 43.17,
+          "north": -132.75,
+          "heading": 105
+        },
+        {
+          "time": 88,
+          "east": 49.35,
+          "north": -134.41,
+          "heading": 105
+        },
+        {
+          "time": 90,
+          "east": 55.53,
+          "north": -136.07,
+          "heading": 105
+        }
+      ]
+    },
+    {
+      "id": "starboard-tack",
+      "name": "Starboard-tack yacht",
+      "color": "#f4b76a",
+      "length": 15,
+      "kind": "Sailing vessel — starboard tack",
+      "model": "models/sailing-yacht.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 180,
+          "north": 20,
+          "heading": 215
+        },
+        {
+          "time": 2,
+          "east": 176.33,
+          "north": 14.76,
+          "heading": 215
+        },
+        {
+          "time": 4,
+          "east": 172.66,
+          "north": 9.52,
+          "heading": 215
+        },
+        {
+          "time": 6,
+          "east": 168.99,
+          "north": 4.28,
+          "heading": 215
+        },
+        {
+          "time": 8,
+          "east": 165.32,
+          "north": -0.96,
+          "heading": 215
+        },
+        {
+          "time": 10,
+          "east": 161.65,
+          "north": -6.2,
+          "heading": 215
+        },
+        {
+          "time": 12,
+          "east": 157.98,
+          "north": -11.44,
+          "heading": 215
+        },
+        {
+          "time": 14,
+          "east": 154.31,
+          "north": -16.68,
+          "heading": 215
+        },
+        {
+          "time": 16,
+          "east": 150.64,
+          "north": -21.92,
+          "heading": 215
+        },
+        {
+          "time": 18,
+          "east": 146.97,
+          "north": -27.16,
+          "heading": 215
+        },
+        {
+          "time": 20,
+          "east": 143.3,
+          "north": -32.4,
+          "heading": 215
+        },
+        {
+          "time": 22,
+          "east": 139.63,
+          "north": -37.64,
+          "heading": 215
+        },
+        {
+          "time": 24,
+          "east": 135.96,
+          "north": -42.88,
+          "heading": 215
+        },
+        {
+          "time": 26,
+          "east": 132.29,
+          "north": -48.12,
+          "heading": 215
+        },
+        {
+          "time": 28,
+          "east": 128.62,
+          "north": -53.36,
+          "heading": 215
+        },
+        {
+          "time": 30,
+          "east": 124.95,
+          "north": -58.6,
+          "heading": 215
+        },
+        {
+          "time": 32,
+          "east": 121.28,
+          "north": -63.84,
+          "heading": 215
+        },
+        {
+          "time": 34,
+          "east": 117.61,
+          "north": -69.08,
+          "heading": 215
+        },
+        {
+          "time": 36,
+          "east": 113.94,
+          "north": -74.32,
+          "heading": 215
+        },
+        {
+          "time": 38,
+          "east": 110.27,
+          "north": -79.56,
+          "heading": 215
+        },
+        {
+          "time": 40,
+          "east": 106.6,
+          "north": -84.8,
+          "heading": 215
+        },
+        {
+          "time": 42,
+          "east": 102.93,
+          "north": -90.04,
+          "heading": 215
+        },
+        {
+          "time": 44,
+          "east": 99.26,
+          "north": -95.28,
+          "heading": 215
+        },
+        {
+          "time": 46,
+          "east": 95.59,
+          "north": -100.52,
+          "heading": 215
+        },
+        {
+          "time": 48,
+          "east": 91.92,
+          "north": -105.76,
+          "heading": 215
+        },
+        {
+          "time": 50,
+          "east": 88.25,
+          "north": -111,
+          "heading": 215
+        },
+        {
+          "time": 52,
+          "east": 84.58,
+          "north": -116.24,
+          "heading": 215
+        },
+        {
+          "time": 54,
+          "east": 80.91,
+          "north": -121.48,
+          "heading": 215
+        },
+        {
+          "time": 56,
+          "east": 77.24,
+          "north": -126.72,
+          "heading": 215
+        },
+        {
+          "time": 58,
+          "east": 73.57,
+          "north": -131.96,
+          "heading": 215
+        },
+        {
+          "time": 60,
+          "east": 69.9,
+          "north": -137.2,
+          "heading": 215
+        },
+        {
+          "time": 62,
+          "east": 66.23,
+          "north": -142.44,
+          "heading": 215
+        },
+        {
+          "time": 64,
+          "east": 62.56,
+          "north": -147.68,
+          "heading": 215
+        },
+        {
+          "time": 66,
+          "east": 58.89,
+          "north": -152.92,
+          "heading": 215
+        },
+        {
+          "time": 68,
+          "east": 55.22,
+          "north": -158.16,
+          "heading": 215
+        },
+        {
+          "time": 70,
+          "east": 51.55,
+          "north": -163.4,
+          "heading": 215
+        },
+        {
+          "time": 72,
+          "east": 47.88,
+          "north": -168.64,
+          "heading": 215
+        },
+        {
+          "time": 74,
+          "east": 44.21,
+          "north": -173.88,
+          "heading": 215
+        },
+        {
+          "time": 76,
+          "east": 40.54,
+          "north": -179.12,
+          "heading": 215
+        },
+        {
+          "time": 78,
+          "east": 36.87,
+          "north": -184.36,
+          "heading": 215
+        },
+        {
+          "time": 80,
+          "east": 33.2,
+          "north": -189.6,
+          "heading": 215
+        },
+        {
+          "time": 82,
+          "east": 29.53,
+          "north": -194.84,
+          "heading": 215
+        },
+        {
+          "time": 84,
+          "east": 25.86,
+          "north": -200.08,
+          "heading": 215
+        },
+        {
+          "time": 86,
+          "east": 22.19,
+          "north": -205.32,
+          "heading": 215
+        },
+        {
+          "time": 88,
+          "east": 18.52,
+          "north": -210.56,
+          "heading": 215
+        },
+        {
+          "time": 90,
+          "east": 14.85,
+          "north": -215.8,
+          "heading": 215
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "Both vessels are under sail and in sight. Wind is shown as an illustrative direction."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "With wind on different sides, the vessel with wind on the port side keeps out of the way."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

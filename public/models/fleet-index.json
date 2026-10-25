@@ -1,0 +1,29 @@
+[
+  {
+    "id": "product-tanker",
+    "lengthMetres": 180,
+    "beamMetres": 30,
+    "forward": "-Z in glTF",
+    "up": "+Y in glTF",
+    "file": "product-tanker.glb",
+    "source": "product-tanker.blend"
+  },
+  {
+    "id": "fishing-trawler",
+    "lengthMetres": 28,
+    "beamMetres": 8,
+    "forward": "-Z in glTF",
+    "up": "+Y in glTF",
+    "file": "fishing-trawler.glb",
+    "source": "fishing-trawler.blend"
+  },
+  {
+    "id": "sailing-yacht",
+    "lengthMetres": 15,
+    "beamMetres": 4.4,
+    "forward": "-Z in glTF",
+    "up": "+Y in glTF",
+    "file": "sailing-yacht.glb",
+    "source": "sailing-yacht.blend"
+  }
+]

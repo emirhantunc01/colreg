@@ -1,0 +1,102 @@
+{
+  "id": "safe-speed-context",
+  "title": "Safe speed depends on the circumstances",
+  "summary": "Traffic, manoeuvrability, visibility and environmental limits must be weighed together.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-6"
+  ],
+  "conditions": [
+    "Safe speed is contextual rather than a universal number.",
+    "The vessel must retain scope for proper and effective action."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "Safe speed is contextual rather than a universal number."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "pp. 2–3",
+      "rule": "Rule 6"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "own",
+      "name": "Own vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -80,
+          "north": -340,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": -80,
+          "north": -90,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "target",
+      "name": "Target vessel",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 80,
+          "north": 340,
+          "heading": 180
+        },
+        {
+          "time": 90,
+          "east": 80,
+          "north": 90,
+          "heading": 180
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "Safe speed is contextual rather than a universal number. The vessel must retain scope for proper and effective action."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "Traffic, manoeuvrability, visibility and environmental limits must be weighed together."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

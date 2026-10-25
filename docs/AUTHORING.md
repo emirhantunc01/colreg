@@ -35,3 +35,27 @@ Process stages: pending → extracted → source-checked → expert-reviewed →
 ## Acceptance for a new encounter
 
 Validate JSON, inspect beginning/turn/end in all three cameras, seek backwards, verify labels and steps, check source references and assumptions. Use a geometry-consistent route; heading interpolation alone does not make a physically realistic turn.
+
+## Source-linked learning edition (22 October 2026)
+
+- `public/content/rules.json`: complete source record index; load only when Rules is opened.
+- `public/content/colreg-source.pdf`: unchanged source; `content/raw-pages.json` retains extraction per page.
+- `scripts/extract_colreg.py`: rebuild text and initial source coverage; requires pypdf.
+- `scripts/render_source_pages.py`: rebuild 25 lazy WebP page previews; requires pypdfium2 and Pillow.
+- `scripts/generate_encounters.mjs`: reproducibly rebuild the 36 educational encounters, preserving the two technical demos.
+- `python scripts/test_extract_colreg.py`: validate extraction, source reconstruction and copied PDF checksum. The test uses the preserved repository PDF, not a developer-specific Desktop path.
+- `npm test`, `npm run typecheck`, `npm run build`: validate data contracts, cross-links, movement, sector/state/threshold behavior, timing, TypeScript and the production bundle.
+
+Scenario additions: `ruleIds` uses `rule-N` identifiers, also in the library entry; `conditions` lists explicit applicable facts; `environment` contains `kind` (open/channel/bend/tss), `visibility` (clear/restricted), optional `windFrom` degrees true. `events` contains time, duration, type (annotation/sound/light), text, optional vesselId and alternating on/off `pattern` durations beginning with on. All events must finish within the scene. Sound is opt-in and stops on pause, seek, scene switch or hiding the tab.
+
+Existing scenarios default to no rule links/events and clear open water. Do not infer vessel status from a model: identify it in `kind` and the scene conditions. Add sufficiently dense position/heading samples through a turn and validate the whole continuous closest approach, not only isolated frames.
+
+Educational content may be displayed as source-based learning without waiting for expert approval. The `reviewed` status is optional and still requires a real documented review. Never mark every clause source-compared or substantively tested merely because a parser or structure test passes.
+
+GLB exports keep the authored waterline at Y=0; loading preserves Y and centers X/Z. Bridge height and aft offset can be explicitly supplied. These are illustrative camera assumptions unless tied to verified particulars.
+
+## Encounter chart previews
+Run `node scripts/generate_previews.mjs` after editing scenario routes. `npm run dev` and `npm run build` also regenerate these previews. The index stores projected timed tracks, conditions, stages and the matching channel/TSS geography; cards never invent alternate routes or start their own WebGL renderer. Search filters stable scenario IDs without changing their preview data.
+
+## Interface design
+`PRODUCT.md` records product scope and `DESIGN.md` records visual and interaction decisions. Shared typography, surface colours and focus styles live in `src/design-system.css`. Educational colours and rule/timing data remain in the training and scenario data modules.

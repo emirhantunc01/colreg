@@ -1,4 +1,6 @@
 import { z } from "zod";
+import {previewSchema} from './previewSchema';
+import {educationFields} from './educationSchema';
 const finite = z.number().finite();
 const pointSchema = z.object({
   time: finite.nonnegative(),
@@ -8,6 +10,7 @@ const pointSchema = z.object({
 });
 const scenarioSchema = z
   .object({
+    ...educationFields,
     id: z.string().regex(/^[a-z0-9-]+$/),
     title: z.string().min(1),
     summary: z.string().min(1),
@@ -29,6 +32,9 @@ const scenarioSchema = z
           name: z.string().min(1),
           color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
           length: finite.min(5).max(300),
+          kind: z.string().optional(),
+          bridgeHeight: finite.nonnegative().optional(),
+          bridgeAft: finite.optional(),
           model: z
             .string()
             .regex(/^[a-zA-Z0-9_./-]+\.glb$/)
@@ -69,6 +75,11 @@ const scenarioSchema = z
       issue("Steps must start at zero and increase within duration.");
     if (s.status === "reviewed" && s.sources.length === 0)
       issue("Reviewed content needs a source.");
+    for(const event of s.events){
+      if(event.time+event.duration>s.duration)issue('Event must finish within scenario duration.');
+      if(event.vesselId&&!s.vessels.some(v=>v.id===event.vesselId))issue('Event vessel does not exist.');
+      if(event.type==='sound'&&(!event.pattern?.length||event.pattern.reduce((a,b)=>a+b,0)>event.duration))issue('Sound event needs a pattern within its duration.');
+    }
   });
 export type Scenario = z.infer<typeof scenarioSchema>;
 export type TrackPoint = z.infer<typeof pointSchema>;
@@ -111,7 +122,9 @@ const librarySchema = z
       file: z.string().regex(/^[-a-z0-9]+\.json$/),
       title: z.string().trim().min(1),
       subtitle: z.string().trim().min(1),
+      preview: previewSchema.optional(),
       duration: finite.positive(),
+      ruleIds:z.array(z.string().regex(/^rule-\d+$/)).default([]),
     }),
   )
   .min(1)

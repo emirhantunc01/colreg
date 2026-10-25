@@ -1,0 +1,640 @@
+{
+  "id": "restricted-fog-signal",
+  "title": "Restricted visibility: fog signal ahead",
+  "summary": "On hearing an apparently forward fog signal, reduce to the minimum speed at which course can be kept and, if necessary, take all way off while navigating with extreme caution.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-19"
+  ],
+  "conditions": [
+    "The signal is heard apparently forward of the beam.",
+    "No universal distance or response time is implied."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "restricted"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The signal is heard apparently forward of the beam."
+    },
+    {
+      "time": 25,
+      "duration": 5,
+      "type": "sound",
+      "pattern": [
+        5
+      ],
+      "text": "Prolonged fog signal heard forward",
+      "vesselId": "target"
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "p. 7",
+      "rule": "Rule 19"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "own",
+      "name": "Own vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -80,
+          "north": -340,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": -80,
+          "north": -332,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": -80,
+          "north": -324,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": -80,
+          "north": -316,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": -80,
+          "north": -308,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": -80,
+          "north": -300,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": -80,
+          "north": -292,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": -80,
+          "north": -284,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": -80,
+          "north": -276,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": -80,
+          "north": -268,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": -80,
+          "north": -260,
+          "heading": 0
+        },
+        {
+          "time": 22,
+          "east": -80,
+          "north": -252,
+          "heading": 0
+        },
+        {
+          "time": 24,
+          "east": -80,
+          "north": -244,
+          "heading": 0
+        },
+        {
+          "time": 26,
+          "east": -80,
+          "north": -242,
+          "heading": 0
+        },
+        {
+          "time": 28,
+          "east": -80,
+          "north": -240,
+          "heading": 0
+        },
+        {
+          "time": 30,
+          "east": -80,
+          "north": -238,
+          "heading": 0
+        },
+        {
+          "time": 32,
+          "east": -80,
+          "north": -236,
+          "heading": 0
+        },
+        {
+          "time": 34,
+          "east": -80,
+          "north": -234,
+          "heading": 0
+        },
+        {
+          "time": 36,
+          "east": -80,
+          "north": -232,
+          "heading": 0
+        },
+        {
+          "time": 38,
+          "east": -80,
+          "north": -230,
+          "heading": 0
+        },
+        {
+          "time": 40,
+          "east": -80,
+          "north": -228,
+          "heading": 0
+        },
+        {
+          "time": 42,
+          "east": -80,
+          "north": -226,
+          "heading": 0
+        },
+        {
+          "time": 44,
+          "east": -80,
+          "north": -224,
+          "heading": 0
+        },
+        {
+          "time": 46,
+          "east": -80,
+          "north": -222,
+          "heading": 0
+        },
+        {
+          "time": 48,
+          "east": -80,
+          "north": -220,
+          "heading": 0
+        },
+        {
+          "time": 50,
+          "east": -80,
+          "north": -218,
+          "heading": 0
+        },
+        {
+          "time": 52,
+          "east": -80,
+          "north": -216,
+          "heading": 0
+        },
+        {
+          "time": 54,
+          "east": -80,
+          "north": -214,
+          "heading": 0
+        },
+        {
+          "time": 56,
+          "east": -80,
+          "north": -212,
+          "heading": 0
+        },
+        {
+          "time": 58,
+          "east": -80,
+          "north": -210,
+          "heading": 0
+        },
+        {
+          "time": 60,
+          "east": -80,
+          "north": -208,
+          "heading": 0
+        },
+        {
+          "time": 62,
+          "east": -80,
+          "north": -206,
+          "heading": 0
+        },
+        {
+          "time": 64,
+          "east": -80,
+          "north": -204,
+          "heading": 0
+        },
+        {
+          "time": 66,
+          "east": -80,
+          "north": -202,
+          "heading": 0
+        },
+        {
+          "time": 68,
+          "east": -80,
+          "north": -200,
+          "heading": 0
+        },
+        {
+          "time": 70,
+          "east": -80,
+          "north": -198,
+          "heading": 0
+        },
+        {
+          "time": 72,
+          "east": -80,
+          "north": -196,
+          "heading": 0
+        },
+        {
+          "time": 74,
+          "east": -80,
+          "north": -194,
+          "heading": 0
+        },
+        {
+          "time": 76,
+          "east": -80,
+          "north": -192,
+          "heading": 0
+        },
+        {
+          "time": 78,
+          "east": -80,
+          "north": -190,
+          "heading": 0
+        },
+        {
+          "time": 80,
+          "east": -80,
+          "north": -188,
+          "heading": 0
+        },
+        {
+          "time": 82,
+          "east": -80,
+          "north": -186,
+          "heading": 0
+        },
+        {
+          "time": 84,
+          "east": -80,
+          "north": -184,
+          "heading": 0
+        },
+        {
+          "time": 86,
+          "east": -80,
+          "north": -182,
+          "heading": 0
+        },
+        {
+          "time": 88,
+          "east": -80,
+          "north": -180,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": -80,
+          "north": -178,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "target",
+      "name": "Unseen vessel sounding fog signal",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 80,
+          "north": 340,
+          "heading": 180
+        },
+        {
+          "time": 2,
+          "east": 80,
+          "north": 333.4,
+          "heading": 180
+        },
+        {
+          "time": 4,
+          "east": 80,
+          "north": 326.8,
+          "heading": 180
+        },
+        {
+          "time": 6,
+          "east": 80,
+          "north": 320.2,
+          "heading": 180
+        },
+        {
+          "time": 8,
+          "east": 80,
+          "north": 313.6,
+          "heading": 180
+        },
+        {
+          "time": 10,
+          "east": 80,
+          "north": 307,
+          "heading": 180
+        },
+        {
+          "time": 12,
+          "east": 80,
+          "north": 300.4,
+          "heading": 180
+        },
+        {
+          "time": 14,
+          "east": 80,
+          "north": 293.8,
+          "heading": 180
+        },
+        {
+          "time": 16,
+          "east": 80,
+          "north": 287.2,
+          "heading": 180
+        },
+        {
+          "time": 18,
+          "east": 80,
+          "north": 280.6,
+          "heading": 180
+        },
+        {
+          "time": 20,
+          "east": 80,
+          "north": 274,
+          "heading": 180
+        },
+        {
+          "time": 22,
+          "east": 80,
+          "north": 267.4,
+          "heading": 180
+        },
+        {
+          "time": 24,
+          "east": 80,
+          "north": 260.8,
+          "heading": 180
+        },
+        {
+          "time": 26,
+          "east": 80,
+          "north": 254.2,
+          "heading": 180
+        },
+        {
+          "time": 28,
+          "east": 80,
+          "north": 247.6,
+          "heading": 180
+        },
+        {
+          "time": 30,
+          "east": 80,
+          "north": 241,
+          "heading": 180
+        },
+        {
+          "time": 32,
+          "east": 80,
+          "north": 234.4,
+          "heading": 180
+        },
+        {
+          "time": 34,
+          "east": 80,
+          "north": 227.8,
+          "heading": 180
+        },
+        {
+          "time": 36,
+          "east": 80,
+          "north": 221.2,
+          "heading": 180
+        },
+        {
+          "time": 38,
+          "east": 80,
+          "north": 214.6,
+          "heading": 180
+        },
+        {
+          "time": 40,
+          "east": 80,
+          "north": 208,
+          "heading": 180
+        },
+        {
+          "time": 42,
+          "east": 80,
+          "north": 201.4,
+          "heading": 180
+        },
+        {
+          "time": 44,
+          "east": 80,
+          "north": 194.8,
+          "heading": 180
+        },
+        {
+          "time": 46,
+          "east": 80,
+          "north": 188.2,
+          "heading": 180
+        },
+        {
+          "time": 48,
+          "east": 80,
+          "north": 181.6,
+          "heading": 180
+        },
+        {
+          "time": 50,
+          "east": 80,
+          "north": 175,
+          "heading": 180
+        },
+        {
+          "time": 52,
+          "east": 80,
+          "north": 168.4,
+          "heading": 180
+        },
+        {
+          "time": 54,
+          "east": 80,
+          "north": 161.8,
+          "heading": 180
+        },
+        {
+          "time": 56,
+          "east": 80,
+          "north": 155.2,
+          "heading": 180
+        },
+        {
+          "time": 58,
+          "east": 80,
+          "north": 148.6,
+          "heading": 180
+        },
+        {
+          "time": 60,
+          "east": 80,
+          "north": 142,
+          "heading": 180
+        },
+        {
+          "time": 62,
+          "east": 80,
+          "north": 135.4,
+          "heading": 180
+        },
+        {
+          "time": 64,
+          "east": 80,
+          "north": 128.8,
+          "heading": 180
+        },
+        {
+          "time": 66,
+          "east": 80,
+          "north": 122.2,
+          "heading": 180
+        },
+        {
+          "time": 68,
+          "east": 80,
+          "north": 115.6,
+          "heading": 180
+        },
+        {
+          "time": 70,
+          "east": 80,
+          "north": 109,
+          "heading": 180
+        },
+        {
+          "time": 72,
+          "east": 80,
+          "north": 102.4,
+          "heading": 180
+        },
+        {
+          "time": 74,
+          "east": 80,
+          "north": 95.8,
+          "heading": 180
+        },
+        {
+          "time": 76,
+          "east": 80,
+          "north": 89.2,
+          "heading": 180
+        },
+        {
+          "time": 78,
+          "east": 80,
+          "north": 82.6,
+          "heading": 180
+        },
+        {
+          "time": 80,
+          "east": 80,
+          "north": 76,
+          "heading": 180
+        },
+        {
+          "time": 82,
+          "east": 80,
+          "north": 69.4,
+          "heading": 180
+        },
+        {
+          "time": 84,
+          "east": 80,
+          "north": 62.8,
+          "heading": 180
+        },
+        {
+          "time": 86,
+          "east": 80,
+          "north": 56.2,
+          "heading": 180
+        },
+        {
+          "time": 88,
+          "east": 80,
+          "north": 49.6,
+          "heading": 180
+        },
+        {
+          "time": 90,
+          "east": 80,
+          "north": 43,
+          "heading": 180
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The signal is heard apparently forward of the beam. No universal distance or response time is implied."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "On hearing an apparently forward fog signal, reduce to the minimum speed at which course can be kept and, if necessary, take all way off while navigating with extreme caution."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

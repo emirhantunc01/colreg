@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cargo-ship",
+    "title": "Cargo ship",
+    "author": "hungry_drifter",
+    "authorUrl": "https://sketchfab.com/hungry_drifter",
+    "sourceUrl": "https://sketchfab.com/3d-models/cargo-ship-b7c97df584824ca682d26daabf401f87",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "modifications": [
+      "Axis and waterline normalization",
+      "Mesh and texture optimization",
+      "Desktop and mobile derivatives"
+    ]
+  },
+  {
+    "id": "tanker-ship",
+    "title": "Tanker Ship",
+    "author": "KoreanNavy",
+    "authorUrl": "https://sketchfab.com/KoreanNavy",
+    "sourceUrl": "https://sketchfab.com/3d-models/tanker-ship-96ebf61af42b4062ae98a6ad848e1a25",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "modifications": [
+      "Axis and waterline normalization",
+      "Mesh and texture optimization",
+      "Desktop and mobile derivatives"
+    ]
+  }
+]

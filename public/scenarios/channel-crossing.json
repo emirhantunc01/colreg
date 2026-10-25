@@ -1,0 +1,630 @@
+{
+  "id": "channel-crossing",
+  "title": "Crossing a narrow channel",
+  "summary": "A crossing vessel must not impede a vessel that can safely navigate only within the channel.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-9"
+  ],
+  "conditions": [
+    "The through vessel can safely navigate only within the channel.",
+    "Local conditions determine whether crossing can be made without impeding."
+  ],
+  "environment": {
+    "kind": "channel",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The through vessel can safely navigate only within the channel."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "p. 4",
+      "rule": "Rule 9"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "crossing",
+      "name": "Crossing vessel waiting outside",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 2,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 4,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 6,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 8,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 10,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 12,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 14,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 16,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 18,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 20,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 22,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 24,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 26,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 28,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 30,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 32,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 34,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 36,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 38,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 40,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 42,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 44,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 46,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 48,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 50,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 52,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 54,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 56,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 58,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 60,
+          "east": -196,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 62,
+          "east": -172,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 64,
+          "east": -148,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 66,
+          "east": -124,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 68,
+          "east": -100,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 70,
+          "east": -76,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 72,
+          "east": -52,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 74,
+          "east": -28,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 76,
+          "east": -4,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 78,
+          "east": 20,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 80,
+          "east": 44,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 82,
+          "east": 68,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 84,
+          "east": 92,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 86,
+          "east": 116,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 88,
+          "east": 140,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 90,
+          "east": 164,
+          "north": 0,
+          "heading": 90
+        }
+      ]
+    },
+    {
+      "id": "through",
+      "name": "Channel-bound vessel",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 80,
+          "north": -340,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": 80,
+          "north": -328,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": 80,
+          "north": -316,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": 80,
+          "north": -304,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": 80,
+          "north": -292,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": 80,
+          "north": -280,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": 80,
+          "north": -268,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": 80,
+          "north": -256,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": 80,
+          "north": -244,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": 80,
+          "north": -232,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": 80,
+          "north": -220,
+          "heading": 0
+        },
+        {
+          "time": 22,
+          "east": 80,
+          "north": -208,
+          "heading": 0
+        },
+        {
+          "time": 24,
+          "east": 80,
+          "north": -196,
+          "heading": 0
+        },
+        {
+          "time": 26,
+          "east": 80,
+          "north": -184,
+          "heading": 0
+        },
+        {
+          "time": 28,
+          "east": 80,
+          "north": -172,
+          "heading": 0
+        },
+        {
+          "time": 30,
+          "east": 80,
+          "north": -160,
+          "heading": 0
+        },
+        {
+          "time": 32,
+          "east": 80,
+          "north": -148,
+          "heading": 0
+        },
+        {
+          "time": 34,
+          "east": 80,
+          "north": -136,
+          "heading": 0
+        },
+        {
+          "time": 36,
+          "east": 80,
+          "north": -124,
+          "heading": 0
+        },
+        {
+          "time": 38,
+          "east": 80,
+          "north": -112,
+          "heading": 0
+        },
+        {
+          "time": 40,
+          "east": 80,
+          "north": -100,
+          "heading": 0
+        },
+        {
+          "time": 42,
+          "east": 80,
+          "north": -88,
+          "heading": 0
+        },
+        {
+          "time": 44,
+          "east": 80,
+          "north": -76,
+          "heading": 0
+        },
+        {
+          "time": 46,
+          "east": 80,
+          "north": -64,
+          "heading": 0
+        },
+        {
+          "time": 48,
+          "east": 80,
+          "north": -52,
+          "heading": 0
+        },
+        {
+          "time": 50,
+          "east": 80,
+          "north": -40,
+          "heading": 0
+        },
+        {
+          "time": 52,
+          "east": 80,
+          "north": -28,
+          "heading": 0
+        },
+        {
+          "time": 54,
+          "east": 80,
+          "north": -16,
+          "heading": 0
+        },
+        {
+          "time": 56,
+          "east": 80,
+          "north": -4,
+          "heading": 0
+        },
+        {
+          "time": 58,
+          "east": 80,
+          "north": 8,
+          "heading": 0
+        },
+        {
+          "time": 60,
+          "east": 80,
+          "north": 20,
+          "heading": 0
+        },
+        {
+          "time": 62,
+          "east": 80,
+          "north": 32,
+          "heading": 0
+        },
+        {
+          "time": 64,
+          "east": 80,
+          "north": 44,
+          "heading": 0
+        },
+        {
+          "time": 66,
+          "east": 80,
+          "north": 56,
+          "heading": 0
+        },
+        {
+          "time": 68,
+          "east": 80,
+          "north": 68,
+          "heading": 0
+        },
+        {
+          "time": 70,
+          "east": 80,
+          "north": 80,
+          "heading": 0
+        },
+        {
+          "time": 72,
+          "east": 80,
+          "north": 92,
+          "heading": 0
+        },
+        {
+          "time": 74,
+          "east": 80,
+          "north": 104,
+          "heading": 0
+        },
+        {
+          "time": 76,
+          "east": 80,
+          "north": 116,
+          "heading": 0
+        },
+        {
+          "time": 78,
+          "east": 80,
+          "north": 128,
+          "heading": 0
+        },
+        {
+          "time": 80,
+          "east": 80,
+          "north": 140,
+          "heading": 0
+        },
+        {
+          "time": 82,
+          "east": 80,
+          "north": 152,
+          "heading": 0
+        },
+        {
+          "time": 84,
+          "east": 80,
+          "north": 164,
+          "heading": 0
+        },
+        {
+          "time": 86,
+          "east": 80,
+          "north": 176,
+          "heading": 0
+        },
+        {
+          "time": 88,
+          "east": 80,
+          "north": 188,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": 80,
+          "north": 200,
+          "heading": 0
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The through vessel can safely navigate only within the channel. Local conditions determine whether crossing can be made without impeding."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "A crossing vessel must not impede a vessel that can safely navigate only within the channel."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

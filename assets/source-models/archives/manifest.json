@@ -1,0 +1,12 @@
+[
+  {
+    "bytes": 32282403,
+    "sha256": "a0991111b70ae89b0b38ace069a1987ebbc2a5f2b7893865df7d76716211b3ab",
+    "file": "cargo_ship.zip"
+  },
+  {
+    "bytes": 2568183,
+    "sha256": "cbd7518b12896d54541811fa00f358e30a1267fda9fc5cfb1abac882a96cb904",
+    "file": "tanker_ship.zip"
+  }
+]
