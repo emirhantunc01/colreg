@@ -1,0 +1,630 @@
+{
+  "id": "power-vs-nuc",
+  "title": "Vessel not under command",
+  "summary": "Except where Rules 9, 10 and 13 otherwise require, this power-driven vessel underway shall keep out of the way of the vessel not under command.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-18"
+  ],
+  "conditions": [
+    "The NUC vessel cannot manoeuvre as required by the Rules.",
+    "Shapes and lights, not hull type, establish status."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The NUC vessel cannot manoeuvre as required by the Rules."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "pp. 6–7",
+      "rule": "Rule 18"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "power",
+      "name": "Power-driven vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 0,
+          "north": -300,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": 0,
+          "north": -292,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": 0,
+          "north": -284,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": 0,
+          "north": -276,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": 0,
+          "north": -268,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": 0,
+          "north": -260,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": 0,
+          "north": -252,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": 0,
+          "north": -244,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": 0,
+          "north": -236,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": 0,
+          "north": -228,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": 0,
+          "north": -220,
+          "heading": 0
+        },
+        {
+          "time": 22,
+          "east": 0.35,
+          "north": -212.01,
+          "heading": 5
+        },
+        {
+          "time": 24,
+          "east": 1.39,
+          "north": -204.08,
+          "heading": 10
+        },
+        {
+          "time": 26,
+          "east": 3.12,
+          "north": -196.27,
+          "heading": 15
+        },
+        {
+          "time": 28,
+          "east": 5.53,
+          "north": -188.64,
+          "heading": 20
+        },
+        {
+          "time": 30,
+          "east": 8.59,
+          "north": -181.25,
+          "heading": 25
+        },
+        {
+          "time": 32,
+          "east": 12.28,
+          "north": -174.15,
+          "heading": 30
+        },
+        {
+          "time": 34,
+          "east": 16.58,
+          "north": -167.4,
+          "heading": 35
+        },
+        {
+          "time": 36,
+          "east": 21.45,
+          "north": -161.05,
+          "heading": 40
+        },
+        {
+          "time": 38,
+          "east": 26.85,
+          "north": -155.15,
+          "heading": 45
+        },
+        {
+          "time": 40,
+          "east": 32.75,
+          "north": -149.75,
+          "heading": 50
+        },
+        {
+          "time": 42,
+          "east": 39.1,
+          "north": -144.88,
+          "heading": 55
+        },
+        {
+          "time": 44,
+          "east": 45.65,
+          "north": -140.29,
+          "heading": 55
+        },
+        {
+          "time": 46,
+          "east": 52.2,
+          "north": -135.7,
+          "heading": 55
+        },
+        {
+          "time": 48,
+          "east": 58.75,
+          "north": -131.11,
+          "heading": 55
+        },
+        {
+          "time": 50,
+          "east": 65.3,
+          "north": -126.52,
+          "heading": 55
+        },
+        {
+          "time": 52,
+          "east": 71.85,
+          "north": -121.93,
+          "heading": 55
+        },
+        {
+          "time": 54,
+          "east": 78.4,
+          "north": -117.34,
+          "heading": 55
+        },
+        {
+          "time": 56,
+          "east": 84.95,
+          "north": -112.75,
+          "heading": 55
+        },
+        {
+          "time": 58,
+          "east": 91.5,
+          "north": -108.16,
+          "heading": 55
+        },
+        {
+          "time": 60,
+          "east": 98.05,
+          "north": -103.57,
+          "heading": 55
+        },
+        {
+          "time": 62,
+          "east": 104.6,
+          "north": -98.98,
+          "heading": 55
+        },
+        {
+          "time": 64,
+          "east": 111.15,
+          "north": -94.39,
+          "heading": 55
+        },
+        {
+          "time": 66,
+          "east": 117.7,
+          "north": -89.8,
+          "heading": 55
+        },
+        {
+          "time": 68,
+          "east": 124.25,
+          "north": -85.21,
+          "heading": 55
+        },
+        {
+          "time": 70,
+          "east": 130.8,
+          "north": -80.62,
+          "heading": 55
+        },
+        {
+          "time": 72,
+          "east": 137.35,
+          "north": -76.03,
+          "heading": 55
+        },
+        {
+          "time": 74,
+          "east": 143.9,
+          "north": -71.44,
+          "heading": 55
+        },
+        {
+          "time": 76,
+          "east": 150.45,
+          "north": -66.85,
+          "heading": 55
+        },
+        {
+          "time": 78,
+          "east": 157,
+          "north": -62.26,
+          "heading": 55
+        },
+        {
+          "time": 80,
+          "east": 163.55,
+          "north": -57.67,
+          "heading": 55
+        },
+        {
+          "time": 82,
+          "east": 170.1,
+          "north": -53.08,
+          "heading": 55
+        },
+        {
+          "time": 84,
+          "east": 176.65,
+          "north": -48.49,
+          "heading": 55
+        },
+        {
+          "time": 86,
+          "east": 183.2,
+          "north": -43.9,
+          "heading": 55
+        },
+        {
+          "time": 88,
+          "east": 189.75,
+          "north": -39.31,
+          "heading": 55
+        },
+        {
+          "time": 90,
+          "east": 196.3,
+          "north": -34.72,
+          "heading": 55
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "name": "Vessel not under command",
+      "color": "#f4b76a",
+      "length": 90,
+      "kind": "Vessel not under command",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 300,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 2,
+          "east": 292,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 4,
+          "east": 284,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 6,
+          "east": 276,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 8,
+          "east": 268,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 10,
+          "east": 260,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 12,
+          "east": 252,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 14,
+          "east": 244,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 16,
+          "east": 236,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 18,
+          "east": 228,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 20,
+          "east": 220,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 22,
+          "east": 212,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 24,
+          "east": 204,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 26,
+          "east": 196,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 28,
+          "east": 188,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 30,
+          "east": 180,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 32,
+          "east": 172,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 34,
+          "east": 164,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 36,
+          "east": 156,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 38,
+          "east": 148,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 40,
+          "east": 140,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 42,
+          "east": 132,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 44,
+          "east": 124,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 46,
+          "east": 116,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 48,
+          "east": 108,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 50,
+          "east": 100,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 52,
+          "east": 92,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 54,
+          "east": 84,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 56,
+          "east": 76,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 58,
+          "east": 68,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 60,
+          "east": 60,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 62,
+          "east": 52,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 64,
+          "east": 44,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 66,
+          "east": 36,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 68,
+          "east": 28,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 70,
+          "east": 20,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 72,
+          "east": 12,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 74,
+          "east": 4,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 76,
+          "east": -4,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 78,
+          "east": -12,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 80,
+          "east": -20,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 82,
+          "east": -28,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 84,
+          "east": -36,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 86,
+          "east": -44,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 88,
+          "east": -52,
+          "north": 0,
+          "heading": 270
+        },
+        {
+          "time": 90,
+          "east": -60,
+          "north": 0,
+          "heading": 270
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The NUC vessel cannot manoeuvre as required by the Rules. Shapes and lights, not hull type, establish status."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "Except where Rules 9, 10 and 13 otherwise require, this power-driven vessel underway shall keep out of the way of the vessel not under command."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

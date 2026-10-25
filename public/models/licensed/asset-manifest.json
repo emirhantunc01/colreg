@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/optimize_licensed_models.mjs",
+  "runtime": {
+    "three": "0.180.x",
+    "compression": "EXT_meshopt_compression",
+    "textureFormat": "EXT_texture_webp"
+  },
+  "optimization": {
+    "desktop": {
+      "maxTextureDimension": 2048,
+      "webpQuality": 82,
+      "simplifiesGeometry": false
+    },
+    "mobile": {
+      "maxTextureDimension": 1024,
+      "webpQuality": 37,
+      "simplificationRatio": {
+        "cargo": 0.85,
+        "tanker": 0.9
+      },
+      "simplificationError": 0.0015
+    }
+  },
+  "normalization": {
+    "upAxis": "+Y",
+    "bowAxis": "-Z",
+    "lengthMeters": 1,
+    "waterlineY": 0
+  },
+  "modelNotes": {
+    "cargo": {
+      "waterlinePlacement": "6.34 raw source units above the keel; illustrative visual placement, not a certified draught."
+    },
+    "tanker": {
+      "waterlinePlacement": "Source waterline at Z=0; normalized to Three.js Y=0."
+    }
+  },
+  "budgets": {
+    "desktopPairBytes": 5846020,
+    "desktopPairBudgetBytes": 6000000,
+    "mobilePairBytes": 2995752,
+    "mobilePairBudgetBytes": 3000000,
+    "desktopWithinBudget": true,
+    "mobileWithinBudget": true
+  },
+  "models": {
+    "cargo": {
+      "desktop": {
+        "file": "cargo-ship.desktop.glb",
+        "source": "assets/source-models/prepared/cargo.normalized.glb",
+        "sourceBytes": 33797448,
+        "sourceSha256": "83b5c1c6c528b76fad1f3ff6d788a8c170373e775099b8854ea84ddac4e0a815",
+        "bytes": 3727632,
+        "sha256": "b241be2decb33936ac8afc29b6c53ac57809624b322970a148b7fa64c48950fd",
+        "triangles": 73448,
+        "worldBounds": {
+          "min": [
+            -0.07579202707782103,
+            -0.0499054531064042,
+            -0.499999991561558
+          ],
+          "max": [
+            0.07579207657677782,
+            0.2628448176891576,
+            0.49999999134126094
+          ]
+        },
+        "maxWorldBoundsShiftFromNormalizedSource": 0.000024157988297579536,
+        "normalization": {
+          "upAxis": "+Y",
+          "bowAxis": "-Z",
+          "lengthMeters": 1,
+          "waterlineY": 0
+        }
+      },
+      "mobile": {
+        "file": "cargo-ship.mobile.glb",
+        "source": "assets/source-models/prepared/cargo.normalized.glb",
+        "sourceBytes": 33797448,
+        "sourceSha256": "83b5c1c6c528b76fad1f3ff6d788a8c170373e775099b8854ea84ddac4e0a815",
+        "bytes": 951352,
+        "sha256": "3e473eac1cf31ffafbbad8f9c630febf026358623d7b0d4727efacc8c8756598",
+        "triangles": 62426,
+        "worldBounds": {
+          "min": [
+            -0.07579202707777451,
+            -0.04990584335968183,
+            -0.499999991561558
+          ],
+          "max": [
+            0.07579207657682434,
+            0.2628448176891576,
+            0.49999999134126094
+          ]
+        },
+        "maxWorldBoundsShiftFromNormalizedSource": 0.000024157988297579536,
+        "normalization": {
+          "upAxis": "+Y",
+          "bowAxis": "-Z",
+          "lengthMeters": 1,
+          "waterlineY": 0
+        }
+      }
+    },
+    "tanker": {
+      "desktop": {
+        "file": "tanker-ship.desktop.glb",
+        "source": "assets/source-models/prepared/tanker.normalized.glb",
+        "sourceBytes": 9673292,
+        "sourceSha256": "4dcf8fe5c7d23fd2f42220849fcdf0fec773a972be1cf6c349fd78a843859306",
+        "bytes": 2118388,
+        "sha256": "663b22cc8ced375fb400119edd28f58912fb7195272952032d88950ba0e6b322",
+        "triangles": 192789,
+        "worldBounds": {
+          "min": [
+            -0.06209247271336629,
+            -0.031074011528554824,
+            -0.5000098337341884
+          ],
+          "max": [
+            0.062087337700264644,
+            0.13636199752396827,
+            0.500009833302388
+          ]
+        },
+        "maxWorldBoundsShiftFromNormalizedSource": 0.00000983310434554685,
+        "normalization": {
+          "upAxis": "+Y",
+          "bowAxis": "-Z",
+          "lengthMeters": 1,
+          "waterlineY": 0
+        }
+      },
+      "mobile": {
+        "file": "tanker-ship.mobile.glb",
+        "source": "assets/source-models/prepared/tanker.normalized.glb",
+        "sourceBytes": 9673292,
+        "sourceSha256": "4dcf8fe5c7d23fd2f42220849fcdf0fec773a972be1cf6c349fd78a843859306",
+        "bytes": 2044400,
+        "sha256": "c6b32f4da7e8ad49114786b7624f893be95a4f6b06b439fd334ecb0b363be76f",
+        "triangles": 177637,
+        "worldBounds": {
+          "min": [
+            -0.06209247271336629,
+            -0.031074011528554824,
+            -0.5000098337341884
+          ],
+          "max": [
+            0.062087337700264644,
+            0.13636199752396827,
+            0.500009833302388
+          ]
+        },
+        "maxWorldBoundsShiftFromNormalizedSource": 0.00000983310434554685,
+        "normalization": {
+          "upAxis": "+Y",
+          "bowAxis": "-Z",
+          "lengthMeters": 1,
+          "waterlineY": 0
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,9 @@ node_modules/
 dist/
 *.tsbuildinfo
 .npm-cache/
+tmp/
+__pycache__/
+*.pyc
 
 # Local configuration and secrets
 .env
@@ -16,3 +19,9 @@ Thumbs.db
 # Source books stay local; commit only authoring instructions here
 content/sources/*
 !content/sources/README.md
+
+# Original licensed downloads and Blender intermediates stay local.
+assets/source-models/archives/*.zip
+assets/source-models/cargo/
+assets/source-models/tanker/
+assets/source-models/prepared/

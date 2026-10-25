@@ -1,0 +1,630 @@
+{
+  "id": "stand-on-shall-act",
+  "title": "Stand-on stage: shall take best action",
+  "summary": "When collision cannot be avoided by the give-way vessel’s action alone, the stand-on vessel takes the action that will best aid avoidance.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-17"
+  ],
+  "conditions": [
+    "This is the later compulsory stage.",
+    "The scene does not prescribe a universal manoeuvre."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "This is the later compulsory stage."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "p. 6",
+      "rule": "Rule 17"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "own",
+      "name": "Stand-on vessel",
+      "color": "#50d5c2",
+      "length": 60,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 0,
+          "north": -300,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": 0,
+          "north": -292,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": 0,
+          "north": -284,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": 0,
+          "north": -276,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": 0,
+          "north": -268,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": 0,
+          "north": -260,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": 0,
+          "north": -252,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": 0,
+          "north": -244,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": 0,
+          "north": -236,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": 0,
+          "north": -228,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": 0,
+          "north": -220,
+          "heading": 0
+        },
+        {
+          "time": 22,
+          "east": 0,
+          "north": -212,
+          "heading": 0
+        },
+        {
+          "time": 24,
+          "east": 0,
+          "north": -204,
+          "heading": 0
+        },
+        {
+          "time": 26,
+          "east": 0,
+          "north": -196,
+          "heading": 0
+        },
+        {
+          "time": 28,
+          "east": 0,
+          "north": -188,
+          "heading": 0
+        },
+        {
+          "time": 30,
+          "east": 0,
+          "north": -180,
+          "heading": 0
+        },
+        {
+          "time": 32,
+          "east": 0,
+          "north": -172,
+          "heading": 0
+        },
+        {
+          "time": 34,
+          "east": 0,
+          "north": -164,
+          "heading": 0
+        },
+        {
+          "time": 36,
+          "east": 0,
+          "north": -156,
+          "heading": 0
+        },
+        {
+          "time": 38,
+          "east": 0,
+          "north": -148,
+          "heading": 0
+        },
+        {
+          "time": 40,
+          "east": 0,
+          "north": -140,
+          "heading": 0
+        },
+        {
+          "time": 42,
+          "east": 0,
+          "north": -132,
+          "heading": 0
+        },
+        {
+          "time": 44,
+          "east": 0,
+          "north": -124,
+          "heading": 0
+        },
+        {
+          "time": 46,
+          "east": 0,
+          "north": -116,
+          "heading": 0
+        },
+        {
+          "time": 48,
+          "east": 0.44,
+          "north": -108.01,
+          "heading": 6.25
+        },
+        {
+          "time": 50,
+          "east": 1.74,
+          "north": -100.12,
+          "heading": 12.5
+        },
+        {
+          "time": 52,
+          "east": 3.89,
+          "north": -92.42,
+          "heading": 18.75
+        },
+        {
+          "time": 54,
+          "east": 6.87,
+          "north": -85,
+          "heading": 25
+        },
+        {
+          "time": 56,
+          "east": 10.64,
+          "north": -77.94,
+          "heading": 31.25
+        },
+        {
+          "time": 58,
+          "east": 15.16,
+          "north": -71.34,
+          "heading": 37.5
+        },
+        {
+          "time": 60,
+          "east": 20.37,
+          "north": -65.27,
+          "heading": 43.75
+        },
+        {
+          "time": 62,
+          "east": 26.21,
+          "north": -59.8,
+          "heading": 50
+        },
+        {
+          "time": 64,
+          "east": 32.61,
+          "north": -55,
+          "heading": 56.25
+        },
+        {
+          "time": 66,
+          "east": 39.49,
+          "north": -50.92,
+          "heading": 62.5
+        },
+        {
+          "time": 68,
+          "east": 46.78,
+          "north": -47.62,
+          "heading": 68.75
+        },
+        {
+          "time": 70,
+          "east": 54.38,
+          "north": -45.13,
+          "heading": 75
+        },
+        {
+          "time": 72,
+          "east": 62.21,
+          "north": -43.48,
+          "heading": 81.25
+        },
+        {
+          "time": 74,
+          "east": 70.17,
+          "north": -42.7,
+          "heading": 87.5
+        },
+        {
+          "time": 76,
+          "east": 78.17,
+          "north": -42.79,
+          "heading": 93.75
+        },
+        {
+          "time": 78,
+          "east": 86.11,
+          "north": -43.75,
+          "heading": 100
+        },
+        {
+          "time": 80,
+          "east": 93.99,
+          "north": -45.14,
+          "heading": 100
+        },
+        {
+          "time": 82,
+          "east": 101.87,
+          "north": -46.53,
+          "heading": 100
+        },
+        {
+          "time": 84,
+          "east": 109.75,
+          "north": -47.92,
+          "heading": 100
+        },
+        {
+          "time": 86,
+          "east": 117.63,
+          "north": -49.31,
+          "heading": 100
+        },
+        {
+          "time": 88,
+          "east": 125.51,
+          "north": -50.7,
+          "heading": 100
+        },
+        {
+          "time": 90,
+          "east": 133.39,
+          "north": -52.09,
+          "heading": 100
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "Give-way vessel not taking action",
+      "color": "#f4b76a",
+      "length": 70,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -300,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 2,
+          "east": -292,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 4,
+          "east": -284,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 6,
+          "east": -276,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 8,
+          "east": -268,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 10,
+          "east": -260,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 12,
+          "east": -252,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 14,
+          "east": -244,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 16,
+          "east": -236,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 18,
+          "east": -228,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 20,
+          "east": -220,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 22,
+          "east": -212,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 24,
+          "east": -204,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 26,
+          "east": -196,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 28,
+          "east": -188,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 30,
+          "east": -180,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 32,
+          "east": -172,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 34,
+          "east": -164,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 36,
+          "east": -156,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 38,
+          "east": -148,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 40,
+          "east": -140,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 42,
+          "east": -132,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 44,
+          "east": -124,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 46,
+          "east": -116,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 48,
+          "east": -108,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 50,
+          "east": -100,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 52,
+          "east": -92,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 54,
+          "east": -84,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 56,
+          "east": -76,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 58,
+          "east": -68,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 60,
+          "east": -60,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 62,
+          "east": -52,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 64,
+          "east": -44,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 66,
+          "east": -36,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 68,
+          "east": -28,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 70,
+          "east": -20,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 72,
+          "east": -12,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 74,
+          "east": -4,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 76,
+          "east": 4,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 78,
+          "east": 12,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 80,
+          "east": 20,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 82,
+          "east": 28,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 84,
+          "east": 36,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 86,
+          "east": 44,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 88,
+          "east": 52,
+          "north": 0,
+          "heading": 90
+        },
+        {
+          "time": 90,
+          "east": 60,
+          "north": 0,
+          "heading": 90
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "This is the later compulsory stage. The scene does not prescribe a universal manoeuvre."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "When collision cannot be avoided by the give-way vessel’s action alone, the stand-on vessel takes the action that will best aid avoidance."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

@@ -1,0 +1,636 @@
+{
+  "id": "restricted-radar-abeam",
+  "title": "Restricted visibility: contact abeam or abaft",
+  "summary": "For a radar-only contact abeam or abaft the beam, Rule 19 cautions against altering toward the vessel.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-19"
+  ],
+  "conditions": [
+    "The vessels are not in sight of one another.",
+    "Relative position is established by systematic radar observation."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "restricted"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The vessels are not in sight of one another."
+    },
+    {
+      "time": 12,
+      "duration": 6,
+      "type": "annotation",
+      "text": "Radar contact: vessels are not in sight"
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "p. 7",
+      "rule": "Rule 19"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "own",
+      "name": "Own vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 0,
+          "north": -250,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": 0,
+          "north": -242,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": 0,
+          "north": -234,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": 0,
+          "north": -226,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": 0,
+          "north": -218,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": 0,
+          "north": -210,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": 0,
+          "north": -202,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": 0,
+          "north": -194,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": 0,
+          "north": -186,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": 0,
+          "north": -178,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": 0.32,
+          "north": -170.01,
+          "heading": 4.545454545454546
+        },
+        {
+          "time": 22,
+          "east": 1.27,
+          "north": -162.07,
+          "heading": 9.090909090909092
+        },
+        {
+          "time": 24,
+          "east": 2.85,
+          "north": -154.23,
+          "heading": 13.636363636363637
+        },
+        {
+          "time": 26,
+          "east": 5.04,
+          "north": -146.54,
+          "heading": 18.181818181818183
+        },
+        {
+          "time": 28,
+          "east": 7.84,
+          "north": -139.04,
+          "heading": 22.727272727272727
+        },
+        {
+          "time": 30,
+          "east": 11.22,
+          "north": -131.79,
+          "heading": 27.272727272727273
+        },
+        {
+          "time": 32,
+          "east": 15.16,
+          "north": -124.83,
+          "heading": 31.818181818181817
+        },
+        {
+          "time": 34,
+          "east": 19.64,
+          "north": -118.2,
+          "heading": 36.36363636363637
+        },
+        {
+          "time": 36,
+          "east": 24.64,
+          "north": -111.95,
+          "heading": 40.90909090909091
+        },
+        {
+          "time": 38,
+          "east": 30.11,
+          "north": -106.12,
+          "heading": 45.45454545454545
+        },
+        {
+          "time": 40,
+          "east": 36.03,
+          "north": -100.74,
+          "heading": 50
+        },
+        {
+          "time": 42,
+          "east": 42.16,
+          "north": -95.6,
+          "heading": 50
+        },
+        {
+          "time": 44,
+          "east": 48.29,
+          "north": -90.46,
+          "heading": 50
+        },
+        {
+          "time": 46,
+          "east": 54.42,
+          "north": -85.32,
+          "heading": 50
+        },
+        {
+          "time": 48,
+          "east": 60.55,
+          "north": -80.18,
+          "heading": 50
+        },
+        {
+          "time": 50,
+          "east": 66.68,
+          "north": -75.04,
+          "heading": 50
+        },
+        {
+          "time": 52,
+          "east": 72.81,
+          "north": -69.9,
+          "heading": 50
+        },
+        {
+          "time": 54,
+          "east": 78.94,
+          "north": -64.76,
+          "heading": 50
+        },
+        {
+          "time": 56,
+          "east": 85.07,
+          "north": -59.62,
+          "heading": 50
+        },
+        {
+          "time": 58,
+          "east": 91.2,
+          "north": -54.48,
+          "heading": 50
+        },
+        {
+          "time": 60,
+          "east": 97.33,
+          "north": -49.34,
+          "heading": 50
+        },
+        {
+          "time": 62,
+          "east": 103.46,
+          "north": -44.2,
+          "heading": 50
+        },
+        {
+          "time": 64,
+          "east": 109.59,
+          "north": -39.06,
+          "heading": 50
+        },
+        {
+          "time": 66,
+          "east": 115.72,
+          "north": -33.92,
+          "heading": 50
+        },
+        {
+          "time": 68,
+          "east": 121.85,
+          "north": -28.78,
+          "heading": 50
+        },
+        {
+          "time": 70,
+          "east": 127.98,
+          "north": -23.64,
+          "heading": 50
+        },
+        {
+          "time": 72,
+          "east": 134.11,
+          "north": -18.5,
+          "heading": 50
+        },
+        {
+          "time": 74,
+          "east": 140.24,
+          "north": -13.36,
+          "heading": 50
+        },
+        {
+          "time": 76,
+          "east": 146.37,
+          "north": -8.22,
+          "heading": 50
+        },
+        {
+          "time": 78,
+          "east": 152.5,
+          "north": -3.08,
+          "heading": 50
+        },
+        {
+          "time": 80,
+          "east": 158.63,
+          "north": 2.06,
+          "heading": 50
+        },
+        {
+          "time": 82,
+          "east": 164.76,
+          "north": 7.2,
+          "heading": 50
+        },
+        {
+          "time": 84,
+          "east": 170.89,
+          "north": 12.34,
+          "heading": 50
+        },
+        {
+          "time": 86,
+          "east": 177.02,
+          "north": 17.48,
+          "heading": 50
+        },
+        {
+          "time": 88,
+          "east": 183.15,
+          "north": 22.62,
+          "heading": 50
+        },
+        {
+          "time": 90,
+          "east": 189.28,
+          "north": 27.76,
+          "heading": 50
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "name": "Radar contact abeam to port",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -180,
+          "north": -250,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": -180,
+          "north": -244,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": -180,
+          "north": -238,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": -180,
+          "north": -232,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": -180,
+          "north": -226,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": -180,
+          "north": -220,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": -180,
+          "north": -214,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": -180,
+          "north": -208,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": -180,
+          "north": -202,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": -180,
+          "north": -196,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": -180,
+          "north": -190,
+          "heading": 0
+        },
+        {
+          "time": 22,
+          "east": -180,
+          "north": -184,
+          "heading": 0
+        },
+        {
+          "time": 24,
+          "east": -180,
+          "north": -178,
+          "heading": 0
+        },
+        {
+          "time": 26,
+          "east": -180,
+          "north": -172,
+          "heading": 0
+        },
+        {
+          "time": 28,
+          "east": -180,
+          "north": -166,
+          "heading": 0
+        },
+        {
+          "time": 30,
+          "east": -180,
+          "north": -160,
+          "heading": 0
+        },
+        {
+          "time": 32,
+          "east": -180,
+          "north": -154,
+          "heading": 0
+        },
+        {
+          "time": 34,
+          "east": -180,
+          "north": -148,
+          "heading": 0
+        },
+        {
+          "time": 36,
+          "east": -180,
+          "north": -142,
+          "heading": 0
+        },
+        {
+          "time": 38,
+          "east": -180,
+          "north": -136,
+          "heading": 0
+        },
+        {
+          "time": 40,
+          "east": -180,
+          "north": -130,
+          "heading": 0
+        },
+        {
+          "time": 42,
+          "east": -180,
+          "north": -124,
+          "heading": 0
+        },
+        {
+          "time": 44,
+          "east": -180,
+          "north": -118,
+          "heading": 0
+        },
+        {
+          "time": 46,
+          "east": -180,
+          "north": -112,
+          "heading": 0
+        },
+        {
+          "time": 48,
+          "east": -180,
+          "north": -106,
+          "heading": 0
+        },
+        {
+          "time": 50,
+          "east": -180,
+          "north": -100,
+          "heading": 0
+        },
+        {
+          "time": 52,
+          "east": -180,
+          "north": -94,
+          "heading": 0
+        },
+        {
+          "time": 54,
+          "east": -180,
+          "north": -88,
+          "heading": 0
+        },
+        {
+          "time": 56,
+          "east": -180,
+          "north": -82,
+          "heading": 0
+        },
+        {
+          "time": 58,
+          "east": -180,
+          "north": -76,
+          "heading": 0
+        },
+        {
+          "time": 60,
+          "east": -180,
+          "north": -70,
+          "heading": 0
+        },
+        {
+          "time": 62,
+          "east": -180,
+          "north": -64,
+          "heading": 0
+        },
+        {
+          "time": 64,
+          "east": -180,
+          "north": -58,
+          "heading": 0
+        },
+        {
+          "time": 66,
+          "east": -180,
+          "north": -52,
+          "heading": 0
+        },
+        {
+          "time": 68,
+          "east": -180,
+          "north": -46,
+          "heading": 0
+        },
+        {
+          "time": 70,
+          "east": -180,
+          "north": -40,
+          "heading": 0
+        },
+        {
+          "time": 72,
+          "east": -180,
+          "north": -34,
+          "heading": 0
+        },
+        {
+          "time": 74,
+          "east": -180,
+          "north": -28,
+          "heading": 0
+        },
+        {
+          "time": 76,
+          "east": -180,
+          "north": -22,
+          "heading": 0
+        },
+        {
+          "time": 78,
+          "east": -180,
+          "north": -16,
+          "heading": 0
+        },
+        {
+          "time": 80,
+          "east": -180,
+          "north": -10,
+          "heading": 0
+        },
+        {
+          "time": 82,
+          "east": -180,
+          "north": -4,
+          "heading": 0
+        },
+        {
+          "time": 84,
+          "east": -180,
+          "north": 2,
+          "heading": 0
+        },
+        {
+          "time": 86,
+          "east": -180,
+          "north": 8,
+          "heading": 0
+        },
+        {
+          "time": 88,
+          "east": -180,
+          "north": 14,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": -180,
+          "north": 20,
+          "heading": 0
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The vessels are not in sight of one another. Relative position is established by systematic radar observation."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "For a radar-only contact abeam or abaft the beam, Rule 19 cautions against altering toward the vessel."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

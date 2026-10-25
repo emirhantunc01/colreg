@@ -1,0 +1,102 @@
+{
+  "id": "tss-joining",
+  "title": "Joining a traffic lane",
+  "summary": "A vessel joining a lane does so at as small an angle to the general direction of traffic flow as practicable.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-10"
+  ],
+  "conditions": [
+    "The marked route is a traffic separation scheme.",
+    "The joining angle is illustrative, not a numeric rule threshold."
+  ],
+  "environment": {
+    "kind": "tss",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The marked route is a traffic separation scheme."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "pp. 4–5",
+      "rule": "Rule 10"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "traffic",
+      "name": "Lane traffic",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -320,
+          "north": 50,
+          "heading": 90
+        },
+        {
+          "time": 90,
+          "east": 10,
+          "north": 50,
+          "heading": 90
+        }
+      ]
+    },
+    {
+      "id": "joining",
+      "name": "Joining vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -250,
+          "north": -100,
+          "heading": 70
+        },
+        {
+          "time": 90,
+          "east": 163.46,
+          "north": 50.49,
+          "heading": 70
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The marked route is a traffic separation scheme. The joining angle is illustrative, not a numeric rule threshold."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "A vessel joining a lane does so at as small an angle to the general direction of traffic flow as practicable."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

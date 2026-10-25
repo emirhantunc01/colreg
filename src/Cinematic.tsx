@@ -5,16 +5,44 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
 import "./cinematic.css";
 import HeroOcean from "./HeroOcean";
+import { HEAD_ON_SCENARIO_ID } from "./introStory";
+
 gsap.registerPlugin(ScrollTrigger);
-export default function Cinematic({ onEnter }: { onEnter: () => void }) {
-  const progress = useRef(0);
-  const root = useRef<HTMLElement>(null),
-    entering = useRef(false),
-    transition = useRef<gsap.core.Timeline | null>(null);
-  const [paused, setPaused] = useState(
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+
+type Props = { onEnter: (scenarioId?: string, time?: number) => void };
+
+const chapters = [
+  {
+    className: "opening-copy",
+    title: "Read the encounter.",
+    body: "An English-language COLREG learning tool. This Rule 14 example assumes two power-driven vessels in sight on reciprocal courses.",
+    note: "Illustrative tracks and timing · Rule 14 head-on situation",
+  },
+  {
+    className: "perspective-copy",
+    title: "Both turn to starboard.",
+    body: "In this illustrative scene, each vessel alters course to starboard. The geometry and timing are teaching choices, not a trigger distance.",
+    note: "Authored manoeuvre begins at 36 s",
+  },
+  {
+    className: "departure-copy",
+    title: "Study the manoeuvre.",
+    body: "Follow both tracks until the vessels are past and clear, then explore the rule and its assumptions in the studio.",
+    note: "41 rules · 4 annexes · 36 learning scenes + 2 technical demos",
+  },
+];
+
+export default function Cinematic({ onEnter }: Props) {
+  const progress = useRef({ current: 0 });
+  const root = useRef<HTMLElement>(null);
+  const entering = useRef(false);
+  const transition = useRef<gsap.core.Timeline | null>(null);
+  const media = useRef<gsap.MatchMedia | null>(null);
+  const [reduce, setReduce] = useState(() =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
-  const [reduce, setReduce] = useState(paused);
+  const [paused, setPaused] = useState(reduce);
+
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => {
@@ -24,67 +52,34 @@ export default function Cinematic({ onEnter }: { onEnter: () => void }) {
     query.addEventListener("change", update);
     return () => query.removeEventListener("change", update);
   }, []);
+
   useEffect(() => {
+    const section = root.current;
+    if (!section || reduce) return;
+    progress.current.current = 0;
     const mm = gsap.matchMedia();
-    mm.add(
-      "(prefers-reduced-motion: no-preference)",
-      () => {
-        const entrance = gsap.timeline({ defaults: { ease: "power3.out" } });
-        entrance
-          .from(".opening-line span", {
-            yPercent: 110,
-            duration: 1.3,
-            stagger: 0.12,
-            delay: 0.15,
-          })
-          .from(
-            ".opening-description, .opening-action",
-            { autoAlpha: 0, y: 20, duration: 0.9, stagger: 0.12 },
-            "-.65",
-          );
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: root.current,
-              start: "top top",
-              end: "bottom bottom",
-              scrub: 0.65,
-              invalidateOnRefresh: true,
-            },
-          })
-          .to(progress, {current: 1, duration: 1, ease: "none"}, 0)
-          .to(
-            ".opening-copy",
-            { y: -100, autoAlpha: 0, duration: 0.17, ease: "none" },
-            0.02,
-          )
-          .fromTo(
-            ".perspective-copy",
-            { autoAlpha: 0, y: 55 },
-            { autoAlpha: 1, y: 0, duration: 0.15, ease: "none" },
-            0.23,
-          )
-          .to(
-            ".perspective-copy",
-            { autoAlpha: 0, y: -50, duration: 0.13, ease: "none" },
-            0.55,
-          )
-          .fromTo(
-            ".departure-copy",
-            { autoAlpha: 0, y: 50 },
-            { autoAlpha: 1, y: 0, duration: 0.17, ease: "none" },
-            0.73,
-          )
-          .to(".scroll-cue", { autoAlpha: 0, duration: 0.08 }, 0)
-          .to(
-            ".journey-progress span",
-            { scaleY: 1, transformOrigin: "top", ease: "none", duration: 1 },
-            0,
-          );
-      },
-      root,
-    );
-    mm.add("(prefers-reduced-motion: reduce)", () => {}, root);
+    media.current = mm;
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const opening = section.querySelector(".opening-copy");
+      const perspective = section.querySelector(".perspective-copy");
+      const departure = section.querySelector(".departure-copy");
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.45,
+          invalidateOnRefresh: true,
+        },
+      });
+      timeline
+        .to(progress.current, { current: 1, duration: 1, ease: "none" }, 0)
+        .to(opening, { autoAlpha: 0, y: -14, duration: 0.075, ease: "none" }, 0.225)
+        .fromTo(perspective, { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.075, ease: "none" }, 0.315)
+        .to(perspective, { autoAlpha: 0, y: -12, duration: 0.075, ease: "none" }, 0.625)
+        .fromTo(departure, { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.08, ease: "none" }, 0.72)
+        .to(section.querySelector(".scroll-cue"), { autoAlpha: 0, duration: 0.08 }, 0.1);
+    }, section);
     let alive = true;
     document.fonts.ready.then(() => {
       if (alive) ScrollTrigger.refresh();
@@ -92,121 +87,75 @@ export default function Cinematic({ onEnter }: { onEnter: () => void }) {
     return () => {
       alive = false;
       mm.revert();
+      if (media.current === mm) media.current = null;
       transition.current?.kill();
     };
-  }, []);
+  }, [reduce]);
+
   const enter = () => {
     if (entering.current) return;
     entering.current = true;
+    media.current?.revert();
+    media.current = null;
+    const complete = () => onEnter(HEAD_ON_SCENARIO_ID, 0);
     if (reduce) {
-      onEnter();
+      complete();
       return;
     }
-    transition.current = gsap
-      .timeline({ onComplete: onEnter })
-      .to(root.current!.querySelector(".cinema-veil"), {
-        autoAlpha: 1,
-        duration: 0.5,
-        ease: "power2.inOut",
-      })
-      .to(
-        root.current!.querySelector(".cinema-content"),
-        { scale: 0.98, autoAlpha: 0, duration: 0.45, ease: "power2.in" },
-        0,
-      );
+    const frame = root.current?.querySelector(".cinema-content");
+    const veil = root.current?.querySelector(".cinema-veil");
+    if (!frame || !veil) {
+      complete();
+      return;
+    }
+    transition.current = gsap.timeline({ onComplete: complete })
+      .to(veil, { autoAlpha: 1, duration: 0.38, ease: "power2.inOut" })
+      .to(frame, { scale: 0.99, autoAlpha: 0, duration: 0.38, ease: "power2.in" }, 0);
   };
+
   return (
-    <section
-      className={`cinematic-intro ${reduce ? "motion-reduced" : ""}`}
-      ref={root}
-      aria-label="Introduction to COLREG 3D"
-    >
+    <section className={`cinematic-intro${reduce ? " motion-reduced" : ""}`} ref={root} aria-label="Rule 14 head-on encounter">
       <div className="cinema-frame">
-        <HeroOcean paused={paused || reduce} progress={progress} />
+        <HeroOcean paused={paused || reduce} progress={progress.current} />
         <div className="cinema-shade" />
         <div className="cinema-content">
           <nav className="cinema-nav" aria-label="Introduction navigation">
-            <a className="cinema-brand" href="./">
-              <BrandMark />
-              COLREG <span>3D</span>
-            </a>
-            <button onClick={enter}>
-              Open studio <ArrowUpRight size={15} />
-            </button>
+            <a className="cinema-brand" href="./"><BrandMark /> COLREG <span>3D</span></a>
+            <button className="cinema-enter" onClick={enter}>Open studio <ArrowUpRight size={16} /></button>
           </nav>
-          <div className="opening-copy">
-            <p className="opening-context">
-              A new perspective on maritime encounters.
-            </p>
-            <h1>
-              <span className="opening-line">
-                <span>See what</span>
-              </span>
-              <span className="opening-line">
-                <span>comes next.</span>
-              </span>
-            </h1>
-            <p className="opening-description">
-              Step beyond the diagram.
-              <br />
-              Explore every encounter in three dimensions.
-            </p>
-            <button className="opening-action" onClick={enter}>
-              Explore the encounters <ArrowUpRight size={18} />
-            </button>
+
+          <div className="story-overlays" aria-live="polite">
+            {chapters.map((chapter, index) => {
+              const Heading = index === 0 ? "h1" : "h2";
+              return <article className={`chapter-copy ${chapter.className}`} key={chapter.className}>
+                <Heading>{chapter.title}</Heading>
+                <p>{chapter.body}</p>
+                <small>{chapter.note}</small>
+                {index === 2 && <button className="opening-action" onClick={enter}>Open the encounter <ArrowUpRight size={17} /></button>}
+              </article>;
+            })}
           </div>
-          <div className="perspective-copy" aria-hidden="true">
-            <span>One encounter.</span>
-            <h2>
-              A whole new
-              <br />
-              point of view.
-            </h2>
-            <p>
-              Move from the overview to the bridge.
-              <br />
-              See the same moment from both sides.
-            </p>
-          </div>
-          <div className="departure-copy">
-            <h2>
-              Understand
-              <br />
-              the movement.
-            </h2>
-            <p>Pause. Change perspective. Replay.</p>
-            <button className="opening-action" onClick={enter}>
-              Enter the studio <ArrowUpRight size={18} />
-            </button>
-            <small>
-              Technical demonstrations. Source-based lessons coming after
-              review.
-            </small>
-          </div>
+
           <div className="cinema-bottom">
-            <span className="scroll-cue">
-              <span className="scroll-line" />
-              Scroll to explore <ArrowDown size={14} />
-            </span>
-            <button
-              onClick={() => setPaused((p) => !p)}
-              disabled={reduce}
-              aria-label={
-                paused || reduce
-                  ? "Play ambient motion"
-                  : "Pause ambient motion"
-              }
-            >
-              {paused || reduce ? <Play size={13} /> : <Pause size={13} />}
-              <span>{paused || reduce ? "Motion paused" : "Pause motion"}</span>
+            <span className="scroll-cue"><span className="scroll-line" />Scroll to follow the encounter <ArrowDown size={14} /></span>
+            <button className="motion-toggle" onClick={() => setPaused((value) => !value)} disabled={reduce} aria-label={paused ? "Play sea motion" : "Pause sea motion"}>
+              {paused ? <Play size={13} /> : <Pause size={13} />}<span>{paused ? "Motion paused" : "Pause motion"}</span>
             </button>
-          </div>
-          <div className="journey-progress" aria-hidden="true">
-            <span />
           </div>
         </div>
         <div className="cinema-veil" />
       </div>
+      {reduce && <div className="reduced-chapters">
+        {chapters.map((chapter, index) => {
+          const Heading = index === 0 ? "h1" : "h2";
+          return <article key={chapter.className}>
+            <small>{chapter.note}</small>
+            <Heading>{chapter.title}</Heading>
+            <p>{chapter.body}</p>
+            {index === 2 && <button className="opening-action" onClick={enter}>Open the encounter <ArrowUpRight size={17} /></button>}
+          </article>;
+        })}
+      </div>}
     </section>
   );
 }

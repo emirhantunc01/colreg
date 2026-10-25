@@ -1,0 +1,631 @@
+{
+  "id": "sailing-same-tack",
+  "title": "Sailing vessels on the same tack",
+  "summary": "With wind on the same side, the windward vessel keeps out of the way of the leeward vessel.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-12"
+  ],
+  "conditions": [
+    "Both vessels are under sail on the same tack.",
+    "Relative windward and leeward positions are the teaching focus."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "clear",
+    "windFrom": 300
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "Both vessels are under sail on the same tack."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "pp. 5–6",
+      "rule": "Rule 12"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "windward",
+      "name": "Windward yacht",
+      "color": "#50d5c2",
+      "length": 15,
+      "kind": "Sailing vessel — windward, port tack",
+      "model": "models/sailing-yacht.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -120,
+          "north": -108,
+          "heading": 30
+        },
+        {
+          "time": 2,
+          "east": -116.8,
+          "north": -102.46,
+          "heading": 30
+        },
+        {
+          "time": 4,
+          "east": -113.6,
+          "north": -96.92,
+          "heading": 30
+        },
+        {
+          "time": 6,
+          "east": -110.4,
+          "north": -91.38,
+          "heading": 30
+        },
+        {
+          "time": 8,
+          "east": -107.2,
+          "north": -85.84,
+          "heading": 30
+        },
+        {
+          "time": 10,
+          "east": -104,
+          "north": -80.3,
+          "heading": 30
+        },
+        {
+          "time": 12,
+          "east": -100.8,
+          "north": -74.76,
+          "heading": 30
+        },
+        {
+          "time": 14,
+          "east": -97.6,
+          "north": -69.22,
+          "heading": 30
+        },
+        {
+          "time": 16,
+          "east": -94.4,
+          "north": -63.68,
+          "heading": 30
+        },
+        {
+          "time": 18,
+          "east": -91.2,
+          "north": -58.14,
+          "heading": 30
+        },
+        {
+          "time": 20,
+          "east": -88,
+          "north": -52.6,
+          "heading": 30
+        },
+        {
+          "time": 22,
+          "east": -84.8,
+          "north": -47.06,
+          "heading": 30
+        },
+        {
+          "time": 24,
+          "east": -81.6,
+          "north": -41.52,
+          "heading": 30
+        },
+        {
+          "time": 26,
+          "east": -78.4,
+          "north": -35.98,
+          "heading": 30
+        },
+        {
+          "time": 28,
+          "east": -75.2,
+          "north": -30.44,
+          "heading": 30
+        },
+        {
+          "time": 30,
+          "east": -71.76,
+          "north": -25.04,
+          "heading": 35
+        },
+        {
+          "time": 32,
+          "east": -67.86,
+          "north": -19.96,
+          "heading": 40
+        },
+        {
+          "time": 34,
+          "east": -63.54,
+          "north": -15.24,
+          "heading": 45
+        },
+        {
+          "time": 36,
+          "east": -58.82,
+          "north": -10.92,
+          "heading": 50
+        },
+        {
+          "time": 38,
+          "east": -53.74,
+          "north": -7.02,
+          "heading": 55
+        },
+        {
+          "time": 40,
+          "east": -48.34,
+          "north": -3.58,
+          "heading": 60
+        },
+        {
+          "time": 42,
+          "east": -42.66,
+          "north": -0.62,
+          "heading": 65
+        },
+        {
+          "time": 44,
+          "east": -36.75,
+          "north": 1.83,
+          "heading": 70
+        },
+        {
+          "time": 46,
+          "east": -30.65,
+          "north": 3.75,
+          "heading": 75
+        },
+        {
+          "time": 48,
+          "east": -24.4,
+          "north": 5.14,
+          "heading": 80
+        },
+        {
+          "time": 50,
+          "east": -18.05,
+          "north": 5.98,
+          "heading": 85
+        },
+        {
+          "time": 52,
+          "east": -11.66,
+          "north": 6.26,
+          "heading": 90
+        },
+        {
+          "time": 54,
+          "east": -5.27,
+          "north": 5.98,
+          "heading": 95
+        },
+        {
+          "time": 56,
+          "east": 1.08,
+          "north": 5.14,
+          "heading": 100
+        },
+        {
+          "time": 58,
+          "east": 7.38,
+          "north": 4.03,
+          "heading": 100
+        },
+        {
+          "time": 60,
+          "east": 13.68,
+          "north": 2.92,
+          "heading": 100
+        },
+        {
+          "time": 62,
+          "east": 19.98,
+          "north": 1.81,
+          "heading": 100
+        },
+        {
+          "time": 64,
+          "east": 26.28,
+          "north": 0.7,
+          "heading": 100
+        },
+        {
+          "time": 66,
+          "east": 32.58,
+          "north": -0.41,
+          "heading": 100
+        },
+        {
+          "time": 68,
+          "east": 38.88,
+          "north": -1.52,
+          "heading": 100
+        },
+        {
+          "time": 70,
+          "east": 45.18,
+          "north": -2.63,
+          "heading": 100
+        },
+        {
+          "time": 72,
+          "east": 51.48,
+          "north": -3.74,
+          "heading": 100
+        },
+        {
+          "time": 74,
+          "east": 57.78,
+          "north": -4.85,
+          "heading": 100
+        },
+        {
+          "time": 76,
+          "east": 64.08,
+          "north": -5.96,
+          "heading": 100
+        },
+        {
+          "time": 78,
+          "east": 70.38,
+          "north": -7.07,
+          "heading": 100
+        },
+        {
+          "time": 80,
+          "east": 76.68,
+          "north": -8.18,
+          "heading": 100
+        },
+        {
+          "time": 82,
+          "east": 82.98,
+          "north": -9.29,
+          "heading": 100
+        },
+        {
+          "time": 84,
+          "east": 89.28,
+          "north": -10.4,
+          "heading": 100
+        },
+        {
+          "time": 86,
+          "east": 95.58,
+          "north": -11.51,
+          "heading": 100
+        },
+        {
+          "time": 88,
+          "east": 101.88,
+          "north": -12.62,
+          "heading": 100
+        },
+        {
+          "time": 90,
+          "east": 108.18,
+          "north": -13.73,
+          "heading": 100
+        }
+      ]
+    },
+    {
+      "id": "leeward",
+      "name": "Leeward yacht",
+      "color": "#f4b76a",
+      "length": 15,
+      "kind": "Sailing vessel — leeward, port tack",
+      "model": "models/sailing-yacht.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 0,
+          "north": -140,
+          "heading": 0
+        },
+        {
+          "time": 2,
+          "east": 0,
+          "north": -133.6,
+          "heading": 0
+        },
+        {
+          "time": 4,
+          "east": 0,
+          "north": -127.2,
+          "heading": 0
+        },
+        {
+          "time": 6,
+          "east": 0,
+          "north": -120.8,
+          "heading": 0
+        },
+        {
+          "time": 8,
+          "east": 0,
+          "north": -114.4,
+          "heading": 0
+        },
+        {
+          "time": 10,
+          "east": 0,
+          "north": -108,
+          "heading": 0
+        },
+        {
+          "time": 12,
+          "east": 0,
+          "north": -101.6,
+          "heading": 0
+        },
+        {
+          "time": 14,
+          "east": 0,
+          "north": -95.2,
+          "heading": 0
+        },
+        {
+          "time": 16,
+          "east": 0,
+          "north": -88.8,
+          "heading": 0
+        },
+        {
+          "time": 18,
+          "east": 0,
+          "north": -82.4,
+          "heading": 0
+        },
+        {
+          "time": 20,
+          "east": 0,
+          "north": -76,
+          "heading": 0
+        },
+        {
+          "time": 22,
+          "east": 0,
+          "north": -69.6,
+          "heading": 0
+        },
+        {
+          "time": 24,
+          "east": 0,
+          "north": -63.2,
+          "heading": 0
+        },
+        {
+          "time": 26,
+          "east": 0,
+          "north": -56.8,
+          "heading": 0
+        },
+        {
+          "time": 28,
+          "east": 0,
+          "north": -50.4,
+          "heading": 0
+        },
+        {
+          "time": 30,
+          "east": 0,
+          "north": -44,
+          "heading": 0
+        },
+        {
+          "time": 32,
+          "east": 0,
+          "north": -37.6,
+          "heading": 0
+        },
+        {
+          "time": 34,
+          "east": 0,
+          "north": -31.2,
+          "heading": 0
+        },
+        {
+          "time": 36,
+          "east": 0,
+          "north": -24.8,
+          "heading": 0
+        },
+        {
+          "time": 38,
+          "east": 0,
+          "north": -18.4,
+          "heading": 0
+        },
+        {
+          "time": 40,
+          "east": 0,
+          "north": -12,
+          "heading": 0
+        },
+        {
+          "time": 42,
+          "east": 0,
+          "north": -5.6,
+          "heading": 0
+        },
+        {
+          "time": 44,
+          "east": 0,
+          "north": 0.8,
+          "heading": 0
+        },
+        {
+          "time": 46,
+          "east": 0,
+          "north": 7.2,
+          "heading": 0
+        },
+        {
+          "time": 48,
+          "east": 0,
+          "north": 13.6,
+          "heading": 0
+        },
+        {
+          "time": 50,
+          "east": 0,
+          "north": 20,
+          "heading": 0
+        },
+        {
+          "time": 52,
+          "east": 0,
+          "north": 26.4,
+          "heading": 0
+        },
+        {
+          "time": 54,
+          "east": 0,
+          "north": 32.8,
+          "heading": 0
+        },
+        {
+          "time": 56,
+          "east": 0,
+          "north": 39.2,
+          "heading": 0
+        },
+        {
+          "time": 58,
+          "east": 0,
+          "north": 45.6,
+          "heading": 0
+        },
+        {
+          "time": 60,
+          "east": 0,
+          "north": 52,
+          "heading": 0
+        },
+        {
+          "time": 62,
+          "east": 0,
+          "north": 58.4,
+          "heading": 0
+        },
+        {
+          "time": 64,
+          "east": 0,
+          "north": 64.8,
+          "heading": 0
+        },
+        {
+          "time": 66,
+          "east": 0,
+          "north": 71.2,
+          "heading": 0
+        },
+        {
+          "time": 68,
+          "east": 0,
+          "north": 77.6,
+          "heading": 0
+        },
+        {
+          "time": 70,
+          "east": 0,
+          "north": 84,
+          "heading": 0
+        },
+        {
+          "time": 72,
+          "east": 0,
+          "north": 90.4,
+          "heading": 0
+        },
+        {
+          "time": 74,
+          "east": 0,
+          "north": 96.8,
+          "heading": 0
+        },
+        {
+          "time": 76,
+          "east": 0,
+          "north": 103.2,
+          "heading": 0
+        },
+        {
+          "time": 78,
+          "east": 0,
+          "north": 109.6,
+          "heading": 0
+        },
+        {
+          "time": 80,
+          "east": 0,
+          "north": 116,
+          "heading": 0
+        },
+        {
+          "time": 82,
+          "east": 0,
+          "north": 122.4,
+          "heading": 0
+        },
+        {
+          "time": 84,
+          "east": 0,
+          "north": 128.8,
+          "heading": 0
+        },
+        {
+          "time": 86,
+          "east": 0,
+          "north": 135.2,
+          "heading": 0
+        },
+        {
+          "time": 88,
+          "east": 0,
+          "north": 141.6,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": 0,
+          "north": 148,
+          "heading": 0
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "Both vessels are under sail on the same tack. Relative windward and leeward positions are the teaching focus."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "With wind on the same side, the windward vessel keeps out of the way of the leeward vessel."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

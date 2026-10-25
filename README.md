@@ -4,9 +4,9 @@
 
 An English-language web application for guided, three-dimensional maritime encounter studies. A scroll-driven cinematic opening leads into a scenario player with multiple camera views and step-by-step observations.
 
-![Cinematic opening](docs/images/opening.png)
+![Cinematic opening](docs/verification/licensed-intro-desktop.png)
 
-> **Prototype:** the included scenarios are synthetic technical demonstrations, not validated COLREG instruction. Source-based lessons will be added after the reference material and maritime review are available.
+> Source-linked learning edition: all 41 rules and four annexes from the supplied Turkish PDF, 36 authored encounter scenes, and recognition/signal laboratories. English explanations and animated timings, distances and model dimensions are educational reconstructions. Two original technical demos remain available separately.
 
 ## Run locally
 
@@ -21,23 +21,23 @@ npm run dev
 
 Open the URL printed by Vite, normally `http://127.0.0.1:5173/`. The development server binds to the local computer only. Stop it with Ctrl+C.
 
-- `/` opens the cinematic introduction. Scroll through the photographic opening.
+- `/` opens the cinematic introduction. Scroll through the authored 3D encounter.
 - `/#studio` opens the encounter player directly.
-- **Replay opening** returns to the introduction.
+- **The encounter** returns to the introduction.
 
 No API keys, accounts, environment variables, backend or database are required.
 
 ## Encounter player
 
-![Encounter studio](docs/images/studio.png)
+![Encounter studio](docs/verification/licensed-player-desktop.png)
 
-- Two file-based demonstration scenarios: steady tracks and an authored course change.
+- 36 source-linked encounters plus two original technical demos, searchable rules with original page previews, directional lights/day shapes and opt-in signal playback.
 - Play/pause, restart, five-second jumps, scrubbing and 0.5×/1×/2× playback.
 - Interruptible transitions between orbit, overhead and selected-vessel bridge cameras, plus optional Auto orbit.
 - Optional vessel names, heading arrows and movement tracks.
 - Timestamped observations and source/assumption notes.
 - Deterministic motion: the same timestamp always produces the same vessel pose.
-- Procedural vessels with optional Blender GLB replacements.
+- Licensed cargo and tanker GLBs with desktop/mobile derivatives, plus other legacy and procedural vessels.
 
 Desktop and tablet browsers with WebGL are the primary target. Narrow screens stack the panels. The opening respects reduced-motion preferences, supports pausing ambient motion and provides a fallback when 3D graphics are unavailable. Fonts load from Google Fonts with system fallbacks.
 
@@ -58,7 +58,7 @@ GitHub Actions runs a locked dependency installation, TypeScript check, tests an
 | ------------------- | -------------------------------------------------------------------- |
 | `src/engine.ts`     | Scenario/library validation, interpolation and coordinate conversion |
 | `src/Scene.tsx`     | Encounter rendering, procedural vessels and camera views             |
-| `src/Cinematic.tsx` | GSAP opening with responsive licensed photography                    |
+| `src/Cinematic.tsx` | Scroll-led opening using the authored 3D head-on encounter           |
 | `src/main.tsx`      | Library, transport controls, observations and source notes           |
 | `public/scenarios/` | Scenario index and JSON definitions                                  |
 | `content/`          | Book-processing index and extraction templates                       |
@@ -66,10 +66,19 @@ GitHub Actions runs a locked dependency installation, TypeScript check, tests an
 
 ## Adding educational content
 
-Follow [the authoring guide](docs/AUTHORING.md). Keep original PDFs in `content/sources/`, which is ignored by Git except for its README. Record source pages and figures, separate animation assumptions from book facts, compare each extraction with the original and obtain maritime expert review before marking educational content reviewed. The application does not ingest PDFs automatically.
+Follow [the authoring guide](docs/AUTHORING.md) and [source provenance notes](docs/CONTENT_SOURCE.md). The supplied source is preserved at `public/content/colreg-source.pdf` and loads only when opened. Record page references and distinguish authored movement assumptions from source requirements. Source-linked lessons can be displayed without an expert-approval gate; the `reviewed` status is reserved for a documented review. The application does not ingest PDFs through its UI.
 
 Additional notes: [project status](PROJECT_STATUS.md), [cinematic behavior](docs/CINEMATIC.md), [interface direction](docs/INTERFACE.md), [verification](docs/VERIFICATION.md).
 
+## Licensed ship models
+
+The opening and matching encounters use the user-supplied Cargo ship by hungry_drifter
+and Tanker Ship by KoreanNavy, both CC BY 4.0. Credits are visible in the application.
+The optimized pair is 5.85 MB on desktop and 3.00 MB on mobile (decimal units).
+Original ZIPs and Blender sources stay outside the public build. See
+[provenance](docs/ASSET_PROVENANCE.md) and the
+[reproducible Blender/optimization workflow](assets/source-models/README.md).
+
 ## Current limits
 
-This is authored visualization, not a hydrodynamic or live-navigation simulator. It does not adjudicate collisions, generate avoidance decisions or replace official rules and professional instruction. The opening uses a real, licensed ship photograph; the interactive studio uses procedural 3D vessels. See [photo credits](docs/ASSETS.md). The initial JavaScript bundle includes Three.js and GSAP; the production build currently reports a non-blocking bundle-size warning.
+This is authored visualization, not a hydrodynamic or live-navigation simulator. It does not adjudicate collisions, generate avoidance decisions or replace official rules and professional instruction. Model draughts and teaching dimensions are illustrative. Physical-phone FPS remains unverified. The initial JavaScript bundle includes Three.js and GSAP; the production build currently reports a non-blocking bundle-size warning.

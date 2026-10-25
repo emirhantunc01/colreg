@@ -1,0 +1,103 @@
+{
+  "id": "scope-responsibility",
+  "title": "Scope and responsibility",
+  "summary": "The Rules apply to vessels on the high seas and connected navigable waters, while responsibility still includes precautions required by ordinary seamanship and special circumstances.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-1",
+    "rule-2"
+  ],
+  "conditions": [
+    "Rule 1 establishes where the regulations apply.",
+    "Rule 2 preserves responsibility for compliance, ordinary seamanship and special circumstances."
+  ],
+  "environment": {
+    "kind": "open",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "Rule 1 establishes where the regulations apply."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "pp. 1–2",
+      "rule": "Rule 1, Rule 2"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "own",
+      "name": "Own vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -80,
+          "north": -340,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": -80,
+          "north": -90,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "target",
+      "name": "Target vessel",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 80,
+          "north": 340,
+          "heading": 180
+        },
+        {
+          "time": 90,
+          "east": 80,
+          "north": 90,
+          "heading": 180
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "Rule 1 establishes where the regulations apply. Rule 2 preserves responsibility for compliance, ordinary seamanship and special circumstances."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "The Rules apply to vessels on the high seas and connected navigable waters, while responsibility still includes precautions required by ordinary seamanship and special circumstances."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

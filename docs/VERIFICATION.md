@@ -27,3 +27,20 @@ UI/UX Pro Max guidance was read from its official SKILL.md; the published priori
 - Scenario bridgeHeight/bridgeAft describe illustrative camera positions in metres, aft positive along local Z. Optional kind labels identify vessel types. Model label elevation follows actual model height.
 - A simple vessel remains available when a model fails to load. Asset URLs respect Vite BASE_URL. Late GLTF responses are disposed after scene teardown.
 - Automated placement tests cover scaling, waterline, invalid geometry and deployment subdirectories. All 19 tests pass; production build passes.
+
+## Source integration checks — 22 October 2026
+
+- Full Vitest suite: 80 tests across 13 files.
+- TypeScript check and production build pass. Existing Zod annotation and >500 kB primary-bundle warnings remain non-blocking; the two new learning workspaces are separate lazy chunks.
+- Python extraction test passes using the preserved source PDF. All 45 records and 407 segments have unique IDs, page provenance and reconstruction checks. PDF checksum matches the supplied bytes.
+- Every indexed scenario/model/rule resolves. Every educational vessel pair passes continuous-time closest-approach clearance checks over union keyframe intervals.
+- Browser checks: 1280 desktop, 768 tablet and 390 mobile; no horizontal document overflow in the two measured small-screen cases. Rule search, source-rule navigation, rule-to-encounter transition, actual step seeking, overhead camera, day shapes, signal play/pause/mute and keyboard End seeking inspected.
+- Original PDF contact sheets and full technical pages 20, 21, 23 inspected. The original page previews retain typography, formulas and tables independently of text extraction.
+- Screenshots are in docs/verification. Browser checks used http://127.0.0.1:5174/#studio.
+- No live navigation, engineering/acoustic certification, full legal equivalence review or documented expert approval is claimed. This task does not deploy.
+
+## Cinematic redesign — 23 October 2026
+- 91 tests across 15 files pass, including real preview projection/geography and recognition viewpoint/day-shape/default-state checks.
+- Browser checks confirmed bow/starboard/stern/port readouts, camera preservation through day/profile changes, steady versus flashing controls, opt-in signal sound and pause, encounter search/selection and playback/step/restart.
+- Desktop, 768px tablet and 390px mobile were inspected; screenshots use the redesign- prefix. Measurements confirmed no document horizontal overflow in measured tablet/mobile layouts; recognition content overflow was corrected.
+- Original source rules and authored maneuver tracks were not edited for this redesign. No claim of expert COLREG validation is added.

@@ -1,0 +1,123 @@
+{
+  "id": "channel-bend",
+  "title": "Approaching a bend",
+  "summary": "Near a bend where vessels may be obscured, navigate with particular alertness, sound one prolonged blast and answer a heard bend signal with one prolonged blast.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-9",
+    "rule-34"
+  ],
+  "conditions": [
+    "The bend obstructs sight of approaching traffic.",
+    "Rule 34(e) supplies the prolonged bend signal and reply."
+  ],
+  "environment": {
+    "kind": "bend",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The bend obstructs sight of approaching traffic."
+    },
+    {
+      "time": 18,
+      "duration": 5,
+      "type": "sound",
+      "pattern": [
+        5
+      ],
+      "text": "One prolonged blast near the bend",
+      "vesselId": "inbound"
+    },
+    {
+      "time": 26,
+      "duration": 5,
+      "type": "sound",
+      "pattern": [
+        5
+      ],
+      "text": "One prolonged blast in reply from beyond the bend",
+      "vesselId": "outbound"
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "p. 4, p. 14",
+      "rule": "Rule 9, Rule 34"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "inbound",
+      "name": "Inbound vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 80,
+          "north": -340,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": 80,
+          "north": -40,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "outbound",
+      "name": "Outbound vessel",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 340,
+          "north": 80,
+          "heading": 270
+        },
+        {
+          "time": 90,
+          "east": 40,
+          "north": 80,
+          "heading": 270
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The bend obstructs sight of approaching traffic. Rule 34(e) supplies the prolonged bend signal and reply."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "Near a bend where vessels may be obscured, navigate with particular alertness, sound one prolonged blast and answer a heard bend signal with one prolonged blast."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}

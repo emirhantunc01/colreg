@@ -1,0 +1,102 @@
+{
+  "id": "channel-starboard",
+  "title": "Keep near the channel’s starboard limit",
+  "summary": "A vessel proceeding along a narrow channel keeps as near to the outer limit on her starboard side as is safe and practicable.",
+  "status": "draft",
+  "duration": 90,
+  "ruleIds": [
+    "rule-9"
+  ],
+  "conditions": [
+    "The waterway is treated as a narrow channel.",
+    "The illustrated lane offset is not a rule-defined distance."
+  ],
+  "environment": {
+    "kind": "channel",
+    "visibility": "clear"
+  },
+  "events": [
+    {
+      "time": 4,
+      "duration": 8,
+      "type": "annotation",
+      "text": "The waterway is treated as a narrow channel."
+    }
+  ],
+  "assumptions": [
+    "Positions, timings, angles and separation are illustrative teaching choices, not rule-defined thresholds.",
+    "Motion is simplified and does not model hydrodynamics, stopping distance, current or sea state.",
+    "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
+    "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription."
+  ],
+  "sources": [
+    {
+      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
+      "pages": "p. 4",
+      "rule": "Rule 9"
+    }
+  ],
+  "vessels": [
+    {
+      "id": "inbound",
+      "name": "Inbound vessel",
+      "color": "#50d5c2",
+      "length": 90,
+      "kind": "Power-driven vessel",
+      "model": "models/product-tanker.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": 80,
+          "north": -340,
+          "heading": 0
+        },
+        {
+          "time": 90,
+          "east": 80,
+          "north": -40,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "outbound",
+      "name": "Outbound vessel",
+      "color": "#f4b76a",
+      "length": 110,
+      "kind": "Cargo vessel",
+      "model": "models/atlas-container-ship.glb",
+      "track": [
+        {
+          "time": 0,
+          "east": -80,
+          "north": 340,
+          "heading": 180
+        },
+        {
+          "time": 90,
+          "east": -80,
+          "north": 40,
+          "heading": 180
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "time": 0,
+      "title": "Identify the conditions",
+      "body": "The waterway is treated as a narrow channel. The illustrated lane offset is not a rule-defined distance."
+    },
+    {
+      "time": 30,
+      "title": "Apply the rule",
+      "body": "A vessel proceeding along a narrow channel keeps as near to the outer limit on her starboard side as is safe and practicable."
+    },
+    {
+      "time": 65,
+      "title": "Check the outcome",
+      "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+    }
+  ]
+}
