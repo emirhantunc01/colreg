@@ -1,8 +1,8 @@
-import {DISTRESS_SIGNALS} from './trainingData';
+import {DISTRESS_SIGNAL_GROUPS} from './trainingData';
 // Schematic recognition aids. Radio and satellite alerts are represented as diagrams.
-function Diagram({index}:{index:number}){
+function Diagram({index,label}:{index:number;label:string}){
  const radio=[4,11,12,13,14].includes(index);
- return <svg viewBox="0 0 160 88" role="img" aria-label={DISTRESS_SIGNALS[index]}>
+ return <svg viewBox="0 0 160 88" role="img" aria-label={label}>
   <path d="M6 76Q18 70 30 76T54 76T78 76T102 76T126 76T150 76" fill="none" stroke="#699b9d"/>
   {radio?<><path d="M30 66L45 28H69L84 66Z" fill="#386d70"/><path d="M57 30V15M85 19Q115 35 85 53M94 11Q135 35 94 63" fill="none" stroke="#669b86" strokeWidth="3"/><text x="104" y="77" textAnchor="middle" fontSize="11" fill="#28514c">{['','','','','MAYDAY','','','','','','','DSC 70','SATELLITE','EPIRB','SART'][index]}</text></>:
   index===3?<><text x="80" y="40" textAnchor="middle" fontSize="23" fill="#2f6956">SOS</text><text x="80" y="61" textAnchor="middle" fontSize="14" fill="#2f6956">··· — — — ···</text></>:
@@ -17,4 +17,4 @@ function Diagram({index}:{index:number}){
   <><path d="M45 55V31L77 20V66Z" fill="#36585b"/><path d="M90 24Q115 43 90 62M102 16Q140 43 102 70" fill="none" stroke="#669b86" strokeWidth="3"/></>}
  </svg>;
 }
-export default function DistressSigns(){return <div className="distress-signs">{DISTRESS_SIGNALS.map((label,index)=><figure key={label}><Diagram index={index}/><figcaption>{label}</figcaption></figure>)}<p>Recognition diagrams · source Annex IV. These signs indicate distress and need of assistance; use for other purposes is prohibited.</p></div>}
+export default function DistressSigns(){return <div>{DISTRESS_SIGNAL_GROUPS.map(group=><section key={group.title} aria-label={group.title}><h4>{group.title}</h4><div className="distress-signs">{group.signals.map((label,index)=><figure key={label}><Diagram index={group.offset+index} label={label}/><figcaption>{label}</figcaption></figure>)}<p>{group.note}</p></div></section>)}</div>}

@@ -6,7 +6,7 @@ An English-language web application for guided, three-dimensional maritime encou
 
 ![Cinematic opening](docs/verification/licensed-intro-desktop.png)
 
-> Source-linked learning edition: all 41 rules and four annexes from the supplied Turkish PDF, 36 authored encounter scenes, and recognition/signal laboratories. English explanations and animated timings, distances and model dimensions are educational reconstructions. Two original technical demos remain available separately.
+> Source-linked learning edition: all 41 rules and four annexes from the supplied English consolidated 2018 PDF, 36 authored encounter scenes, and recognition/signal laboratories. Source text and project-authored explanations remain separate. Animated timings, distances and model dimensions are educational reconstructions. Two original technical demos remain available separately.
 
 ## Run locally
 

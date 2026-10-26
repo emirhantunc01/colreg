@@ -1,0 +1,720 @@
+{
+  "rule-1": {
+    "summary": "Applies to vessels on the high seas and connected waters navigable by seagoing vessels, while addressing compatible local and special rules.",
+    "conditions": [
+      "The vessel is on the high seas or in waters connected with them and navigable by seagoing vessels."
+    ],
+    "duties": [
+      "Apply the Rules within their stated geographic scope.",
+      "For vessels of special construction or purpose that cannot fully comply with specified light, shape, or sound-appliance requirements, use the closest possible compliance determined by the concerned Government."
+    ],
+    "exceptions": [
+      "Appropriate authorities may make special rules for connected roadsteads, harbours, rivers, lakes, and inland waterways; these must conform as closely as possible to the Rules.",
+      "A State's Government may prescribe additional station or signal lights, shapes, or whistle signals for warships and vessels in convoy, and additional station or signal lights or shapes for fishing vessels fishing as a fleet; these should not be mistaken for authorized signals.",
+      "The Organization may adopt traffic separation schemes for purposes of the Rules."
+    ],
+    "notes": [
+      "This supplied English consolidated edition says in Rule 1(d) that traffic separation schemes may be adopted by the Organization. Do not substitute the legacy Turkish wording or identify a Ministry as the authority here."
+    ]
+  },
+  "rule-2": {
+    "summary": "Preserves responsibility for rule violations and neglected seamanship precautions, while allowing necessary departure to avoid immediate danger in special circumstances.",
+    "duties": [
+      "Do not treat the Rules as exonerating a vessel, owner, master, or crew from consequences of neglect to comply or neglect of precautions required by ordinary seamen's practice or the special circumstances.",
+      "When construing and complying with the Rules, give due regard to all dangers of navigation and collision, special circumstances, and limitations of the vessels involved.",
+      "Depart from a Rule only when special circumstances make departure necessary to avoid immediate danger."
+    ]
+  },
+  "rule-3": {
+    "summary": "Defines vessel categories and states, including fishing, not under command, restricted manoeuvrability, constrained draught, underway, in sight, restricted visibility, and WIG craft.",
+    "duties": [
+      "Apply the definitions in Rule 3 unless the context otherwise requires; distinguish being underway from making way through the water."
+    ]
+  },
+  "rule-5": {
+    "conditions": [
+      "At all times."
+    ],
+    "duties": [
+      "Maintain a proper look-out by sight, hearing, and all means appropriate in the prevailing circumstances and conditions, sufficient for a full appraisal of the situation and risk of collision."
+    ]
+  },
+  "rule-6": {
+    "duties": [
+      "Proceed at a safe speed that permits proper and effective collision-avoidance action and stopping within a distance appropriate to prevailing circumstances and conditions.",
+      "Consider the listed factors for all vessels: visibility, traffic density, manoeuvrability (especially stopping distance and turning ability), background light at night, wind, sea and current, navigational hazards, and draught relative to water depth.",
+      "If operational radar is fitted, also consider its characteristics, efficiency and limitations; range scale; interference and sea/weather effects; possible undetected small vessels, ice and floating objects; detected traffic; and any more exact visibility assessment radar can provide."
+    ]
+  },
+  "rule-7": {
+    "duties": [
+      "Use all means appropriate to prevailing circumstances and conditions to determine whether collision risk exists; treat any doubt as risk.",
+      "Make proper use of fitted, operational radar, including long-range scanning for early warning and plotting or equivalent systematic observation.",
+      "Do not make assumptions from scanty information, especially scanty radar information.",
+      "Treat an approaching vessel's compass bearing that does not appreciably change as indicating risk; remember risk may still exist despite appreciable bearing change, especially with a very large vessel, a tow, or close range."
+    ]
+  },
+  "rule-8": {
+    "duties": [
+      "Take collision-avoidance action in accordance with Part B; if circumstances admit, make it positive, in ample time, and with due regard to good seamanship.",
+      "If circumstances admit, make course or speed alterations large enough to be readily apparent visually or by radar; avoid a succession of small alterations.",
+      "Where sufficient sea room exists, a timely substantial course alteration alone may be effective if it creates no other close-quarters situation.",
+      "Aim to pass at a safe distance and carefully check effectiveness until the other vessel is finally past and clear.",
+      "If necessary to avoid collision or allow more time to assess the situation, slacken speed or take all way off by stopping or reversing propulsion.",
+      "A vessel required not to impede passage or safe passage must, when circumstances require, act early to allow sufficient sea room. That obligation continues when a risk of collision develops; the vessel whose passage is not to be impeded remains bound by Part B when risk develops."
+    ]
+  },
+  "rule-9": {
+    "duties": [
+      "A vessel proceeding along a narrow channel or fairway shall keep as near as safe and practicable to its outer limit on her starboard side.",
+      "A vessel under 20 metres or a sailing vessel shall not impede a vessel that can safely navigate only within the channel or fairway; a vessel engaged in fishing shall not impede any vessel navigating within it.",
+      "A vessel shall not cross the channel or fairway if the crossing would impede a vessel that can safely navigate only within it.",
+      "When overtaking in a narrow channel can occur only if the vessel to be overtaken acts to permit safe passing, signal the intention as Rule 34(c)(i) prescribes; the overtaken vessel signals agreement under Rule 34(c)(ii) and takes steps to permit safe passing if she agrees. Rule 13 still applies to the overtaking vessel.",
+      "Near a bend or obstructed area where other vessels may be hidden, navigate with particular alertness and caution and sound the Rule 34(e) signal.",
+      "Avoid anchoring in a narrow channel when circumstances admit."
+    ],
+    "exceptions": [
+      "The specific no-impeding duties differ: vessels under 20 metres and sailing vessels must not impede vessels that can safely navigate only within the channel; fishing vessels must not impede any vessel navigating within the channel.",
+      "The crossing prohibition applies when the crossing would impede a vessel that can safely navigate only within the channel. The latter vessel may sound the Rule 34(d) signal if in doubt about the crossing vessel's intention.",
+      "An overtaken vessel's agreement to permit safe passing is conditional on agreement; if in doubt, she may sound the Rule 34(d) signals."
+    ]
+  },
+  "rule-10": {
+    "duties": [
+      "This Rule applies to traffic separation schemes adopted by the Organization and does not relieve a vessel of obligations under other Rules.",
+      "Use the appropriate lane in its general traffic-flow direction; so far as practicable keep clear of separation lines and zones.",
+      "Normally join or leave at a lane termination; when joining or leaving from either side, use as small an angle to the general traffic-flow direction as practicable.",
+      "So far as practicable avoid crossing lanes; if obliged to cross, use a heading as nearly as practicable at right angles to the general traffic-flow direction.",
+      "Navigate with particular caution near scheme terminations; avoid anchoring in the scheme or near terminations so far as practicable; vessels not using a scheme should avoid it by as wide a margin as practicable.",
+      "Fishing vessels must not impede vessels following a lane; vessels under 20 metres and sailing vessels must not impede the safe passage of power-driven vessels following a lane."
+    ]
+  },
+  "rule-12": {
+    "duties": [
+      "When sailing vessels approach with collision risk, the vessel with wind on the port side keeps out of the way when the other has wind on a different side; when both have wind on the same side, the windward vessel keeps out of the way.",
+      "A vessel with wind on the port side that sees a vessel to windward and cannot determine with certainty which side has the wind must keep out of the way."
+    ],
+    "exceptions": [
+      "For this Rule, the windward side is opposite the side on which the mainsail is carried, or for a square-rigged vessel opposite the side on which the largest fore-and-aft sail is carried."
+    ],
+    "conditions": [
+      "Two sailing vessels approach with collision risk.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-15": {
+    "duties": [
+      "When two power-driven vessels cross with collision risk, the vessel that has the other on her own starboard side shall keep out of the way and, if circumstances admit, avoid crossing ahead of the other vessel."
+    ],
+    "conditions": [
+      "Two power-driven vessels cross with collision risk.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-17": {
+    "summary": "Sets three stages: the stand-on vessel initially keeps course and speed, may manoeuvre alone when the give-way vessel's failure to act becomes apparent, and must act when the give-way vessel alone cannot avoid collision.",
+    "duties": [
+      "Initially keep course and speed when the other vessel is required to keep out of the way.",
+      "The stand-on vessel may take action by her manoeuvre alone as soon as it becomes apparent that the give-way vessel is not taking appropriate action.",
+      "The stand-on vessel shall take the action that will best aid avoidance when, from any cause, she is so close that the give-way vessel alone cannot avoid collision.",
+      "A power-driven vessel acting under paragraph (a)(ii) in a crossing situation shall, if circumstances admit, not alter course to port for a vessel on her own port side.",
+      "Stand-on action does not relieve the give-way vessel of her obligation to keep out of the way."
+    ],
+    "exceptions": [
+      "The paragraph (a)(ii) power-driven vessel limitation is conditional on circumstances admitting; it concerns altering to port for a vessel on her own port side."
+    ],
+    "conditions": [
+      "One of two vessels must keep out of the way and the other is the stand-on vessel.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-18": {
+    "summary": "States conditional responsibilities by vessel status, subject first to Rules 9, 10 and 13; constrained draught, seaplanes and WIG craft have distinct provisions.",
+    "conditions": [
+      "The vessel-status responsibilities apply subject to the express opening exception for Rules 9, 10 and 13; the clauses specify underway vessels and, for a constrained-draught vessel, Rule 28 signals.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ],
+    "duties": [
+      "Except where Rules 9, 10 and 13 otherwise require, a power-driven vessel underway shall keep out of the way of a vessel not under command, restricted in ability to manoeuvre, engaged in fishing, or under sail.",
+      "A sailing vessel underway shall keep out of the way of vessels not under command, restricted in ability to manoeuvre, or engaged in fishing.",
+      "A vessel engaged in fishing and underway shall, so far as possible, keep out of the way of vessels not under command or restricted in ability to manoeuvre.",
+      "A vessel other than one not under command or restricted in ability to manoeuvre shall, if circumstances admit, avoid impeding the safe passage of a vessel constrained by her draught and exhibiting Rule 28 signals. The constrained vessel shall navigate with particular caution, having full regard to her special condition.",
+      "A seaplane on the water shall in general keep well clear of all vessels and avoid impeding their navigation; when collision risk exists, it shall comply with Part B.",
+      "A WIG craft taking off, landing, or flying near the surface shall keep well clear of all other vessels and avoid impeding their navigation; operating on the water surface, it shall comply with Part B as a power-driven vessel."
+    ],
+    "exceptions": [
+      "Rules 9, 10 and 13 may displace the general responsibilities where they otherwise require.",
+      "The draught-constrained passage duty excludes vessels not under command and vessels restricted in ability to manoeuvre, and applies only if circumstances admit and the constrained vessel exhibits Rule 28 signals.",
+      "The fishing vessel duty to keep clear of vessels not under command or restricted in ability to manoeuvre is qualified by 'so far as possible'."
+    ]
+  },
+  "rule-19": {
+    "duties": [
+      "This Rule applies to vessels not in sight of one another when navigating in or near restricted visibility.",
+      "Proceed at a safe speed adapted to prevailing restricted-visibility circumstances and conditions; a power-driven vessel shall have engines ready for immediate manoeuvre.",
+      "Give due regard to the prevailing restricted-visibility circumstances and conditions when complying with Section I.",
+      "When radar alone detects another vessel, determine whether a close-quarters situation is developing and/or collision risk exists; if so, take avoiding action in ample time.",
+      "When avoiding action is a course alteration, so far as possible avoid altering to port for a vessel forward of the beam (except an overtaken vessel) and avoid altering toward a vessel abeam or abaft the beam.",
+      "Unless it has been determined that collision risk does not exist, reduce speed to the minimum at which course can be kept when hearing apparently forward of the beam another vessel's fog signal or when unable to avoid a close-quarters situation with a vessel forward of the beam. If necessary take all way off, and in any event navigate with extreme caution until collision danger is over."
+    ],
+    "exceptions": [
+      "The reduction to minimum steerage speed, taking all way off if necessary, and extreme-caution requirement in paragraph (e) is conditioned on hearing the specified fog signal or being unable to avoid close quarters, and does not apply where collision risk has been determined not to exist.",
+      "The course-alteration cautions are qualified by 'so far as possible'; the port-alteration caution has an express exception for an overtaken vessel."
+    ]
+  },
+  "rule-13": {
+    "conditions": [
+      "A vessel approaches another from more than 22.5 degrees abaft her beam; doubt means she must assume she is overtaking.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-14": {
+    "conditions": [
+      "Two power-driven vessels meet on reciprocal or nearly reciprocal courses with collision risk; doubt means head-on is assumed.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-16": {
+    "conditions": [
+      "A vessel is required by the Rules to keep out of another vessel's way.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ],
+    "duties": [
+      "Every vessel directed to keep out of the way shall, so far as possible, take early and substantial action to keep well clear."
+    ]
+  },
+  "rule-20": {
+    "summary": "Part C applies in all weathers. Lights are displayed sunset to sunrise, and if carried also in restricted visibility from sunrise to sunset; shapes apply by day. Lights and shapes must meet Annex I.",
+    "conditions": [
+      "A vessel applies Part C, in any weather; the visibility and time of day determine which display is required."
+    ],
+    "duties": [
+      "Comply with Part C in all weathers; show prescribed lights sunset to sunrise and, if carried, during restricted visibility from sunrise to sunset; comply with shape rules by day and Annex I technical requirements."
+    ],
+    "exceptions": [
+      "Other lights may be shown only when they cannot be mistaken for prescribed lights, impair their visibility or distinctive character, or interfere with a proper look-out.",
+      "Prescribed lights may be shown in other circumstances when deemed necessary."
+    ],
+    "keywords": [
+      "lights",
+      "shapes",
+      "sunset",
+      "sunrise",
+      "restricted visibility",
+      "Annex I"
+    ]
+  },
+  "rule-21": {
+    "summary": "Defines light positions, colours and arcs: white masthead 225°, green starboard and red port sidelights 112.5° each, white sternlight 135°, yellow towing light with sternlight characteristics, all-round 360°, and flashing at 120 or more flashes per minute.",
+    "conditions": [
+      "A light term or arc in Rules 20–31 must be interpreted."
+    ],
+    "duties": [
+      "Interpret each prescribed light by its defined position, colour and horizontal arc; a flashing light flashes regularly at 120 or more per minute."
+    ],
+    "exceptions": [
+      "On a vessel under 20 metres, sidelights may be combined in one lantern on the fore-and-aft centreline."
+    ],
+    "keywords": [
+      "masthead",
+      "sidelights",
+      "sternlight",
+      "towing light",
+      "all-round",
+      "flashing",
+      "arc"
+    ]
+  },
+  "rule-22": {
+    "summary": "Sets minimum nominal visibility ranges by length and light type: at 50 m, 6 NM masthead and 3 NM other listed lights; 12–under 50 m, 5 NM masthead (3 NM if under 20 m) and 2 NM others; under 12 m, 2 NM except 1 NM sidelights. Inconspicuous tows need a 3 NM all-round white light.",
+    "conditions": [
+      "A vessel or object selects the minimum range for a prescribed light."
+    ],
+    "duties": [
+      "Provide each prescribed light with the minimum range for the vessel's length and light type."
+    ],
+    "exceptions": [
+      "For vessels 12–under 50 metres, masthead range is 3 NM when the vessel is under 20 metres, otherwise 5 NM.",
+      "Inconspicuous, partly submerged vessels or objects being towed require an all-round white light visible for 3 NM."
+    ],
+    "keywords": [
+      "minimum range",
+      "visibility",
+      "12 metres",
+      "20 metres",
+      "50 metres",
+      "towing"
+    ]
+  },
+  "rule-23": {
+    "summary": "Power-driven vessels underway show the prescribed masthead, sidelights and sternlight; a second masthead is optional below 50 m. Small-vessel alternatives, air-cushion craft and WIG craft have specific provisions.",
+    "conditions": [
+      "A power-driven vessel is underway, or an air-cushion vessel or WIG craft is operating in the specified mode."
+    ],
+    "duties": [
+      "Show the Rule 23(a) lights, subject to the alternatives for vessels under 12 m and under 7 m; add the prescribed flashing yellow light for an air-cushion vessel in non-displacement mode and high-intensity flashing red for a WIG craft only when taking off, landing or flying near the surface."
+    ],
+    "exceptions": [
+      "A second masthead light is not obligatory below 50 metres.",
+      "Under 12 metres, the prescribed lights may be replaced by an all-round white light and sidelights; under 7 metres and not over 7 knots, an all-round white light may be used and sidelights shown if practicable.",
+      "For a vessel under 12 metres where centreline mounting is impracticable, the masthead or all-round white light may be off-centre only with the specified aligned combined or near-aligned sidelights."
+    ],
+    "keywords": [
+      "power-driven",
+      "underway",
+      "masthead",
+      "air-cushion",
+      "WIG",
+      "small vessel"
+    ]
+  },
+  "rule-24": {
+    "summary": "Towing and pushing displays depend on configuration and tow length. Towing astern uses two vertical mastheads, or three when tow length exceeds 200 m, plus sidelights, sternlight and a yellow towing light; other provisions cover pushed, composite, grouped and inconspicuous tows.",
+    "conditions": [
+      "A power-driven vessel tows or pushes, or a vessel/object is being towed."
+    ],
+    "duties": [
+      "Display the lights and shapes for the actual towing/pushing configuration and tow length; a vessel to which 24(a) or 24(c) applies must also comply with Rule 23(a)(ii). Mark inconspicuous tows as prescribed."
+    ],
+    "exceptions": [
+      "A rigidly connected pushing vessel and vessel pushed ahead form a composite unit and show Rule 23 lights.",
+      "A tow exceeding 200 metres triggers a third towing-vessel masthead light and a diamond; applicable towed vessels/objects also display the required diamond.",
+      "Where a sufficient cause makes prescribed tow signals impracticable, take all possible measures to light or indicate the tow.",
+      "A vessel not normally engaged in towing need not show Rule 24(a) or (c) lights when towing a vessel in distress or otherwise needing assistance if impracticable; take all possible measures to indicate the relationship, particularly by illuminating the towline."
+    ],
+    "keywords": [
+      "towing",
+      "pushing",
+      "200 metres",
+      "composite unit",
+      "tow",
+      "diamond",
+      "Rule 23(a)(ii)"
+    ]
+  },
+  "rule-25": {
+    "summary": "A sailing vessel underway shows sidelights and sternlight; smaller sailing vessels may combine or substitute displays under stated conditions. A vessel under oars may use sailing-vessel lights or keep a white light ready; sail with machinery also requires a downward-apex cone by day.",
+    "conditions": [
+      "A sailing vessel or vessel under oars is underway; a vessel may also be proceeding under sail while propelled by machinery."
+    ],
+    "duties": [
+      "Show the prescribed sailing-vessel lights, or use the permitted small-vessel/rowing alternative; show a downward-apex cone forward where best seen when proceeding under sail and machinery."
+    ],
+    "exceptions": [
+      "A sailing vessel under 20 metres may combine sidelights and sternlight in one lantern at or near the masthead.",
+      "A sailing vessel under 7 metres need show the lights if practicable; otherwise it must have a white electric torch or lighted lantern ready for timely use. A vessel under oars has the same ready-light alternative if it does not show sailing-vessel lights.",
+      "Optional red-over-green all-round lights must not be shown with the combined lantern allowed by 25(b)."
+    ],
+    "keywords": [
+      "sailing",
+      "oars",
+      "combined lantern",
+      "red over green",
+      "cone"
+    ]
+  },
+  "rule-26": {
+    "summary": "A vessel engaged in fishing shows only Rule 26 lights and shapes. Trawling uses green over white; other fishing uses red over white. Making-way lights and outlying-gear signals apply as specified.",
+    "conditions": [
+      "A vessel is engaged in fishing, whether underway or at anchor."
+    ],
+    "duties": [
+      "Show the applicable trawling or other-fishing display; add sidelights and sternlight when making way through the water. Apply Annex II signals when fishing in close proximity."
+    ],
+    "exceptions": [
+      "A trawler under 50 metres is not obliged to show the masthead light abaft and higher than the green light.",
+      "For other fishing, gear extending more than 150 metres horizontally requires a white all-round light or upward-apex cone in the gear's direction.",
+      "When not fishing, do not show Rule 26 signals; show only those for a vessel of that length."
+    ],
+    "keywords": [
+      "fishing",
+      "trawling",
+      "green over white",
+      "red over white",
+      "150 metres",
+      "Annex II"
+    ]
+  },
+  "rule-27": {
+    "summary": "Prescribes status displays for not-under-command and restricted-manoeuvrability vessels, with additional signals for towing-related restriction, dredging/diving and mine clearance. Making-way or anchor lights are added as specified.",
+    "conditions": [
+      "A vessel is not under command or restricted in ability to manoeuvre because of its work."
+    ],
+    "duties": [
+      "Show the applicable all-round lights and shapes; add navigation or anchor signals when required. Mark obstructed and safe-passage sides during dredging/underwater work and show the special diving or mine-clearance signals when applicable."
+    ],
+    "exceptions": [
+      "A vessel under 12 metres need not show Rule 27 signals except when engaged in diving operations.",
+      "Diving vessels too small to show the full 27(d) display show red-white-red all-round lights and a rigid International Code flag A at least 1 metre high, visible all round.",
+      "Mine-clearance signals supplement applicable power-driven or anchor signals and indicate danger within 1,000 metres.",
+      "Rule 27 signals are not distress signals; Annex IV contains distress signals."
+    ],
+    "keywords": [
+      "NUC",
+      "RAM",
+      "dredging",
+      "diving",
+      "mine clearance",
+      "1,000 metres"
+    ]
+  },
+  "rule-28": {
+    "title": "Vessels constrained by draught",
+    "summary": "A vessel constrained by her draught may add three all-round red lights in a vertical line or a cylinder to the Rule 23 power-driven lights.",
+    "conditions": [
+      "A power-driven vessel is constrained by her draught."
+    ],
+    "duties": [
+      "Continue to show Rule 23 lights and, if using the optional constrained-by-draught signal, show three all-round red lights vertically or a cylinder where best seen."
+    ],
+    "exceptions": [
+      "The three red lights or cylinder are optional under this Rule; they supplement the power-driven-vessel lights."
+    ],
+    "keywords": [
+      "draught",
+      "constrained",
+      "three red lights",
+      "cylinder"
+    ]
+  },
+  "rule-29": {
+    "summary": "A vessel engaged on pilotage duty shows all-round white over red, plus sidelights and sternlight underway or anchor signals at anchor. Off duty, it shows signals for a similar vessel of its length.",
+    "conditions": [
+      "A vessel is engaged on pilotage duty or is a pilot vessel off duty."
+    ],
+    "duties": [
+      "Show the pilot identity lights while on duty and add the applicable underway or anchor display; when off duty, show signals for a similar vessel of the same length."
+    ],
+    "exceptions": [
+      "White-over-red identity lights apply only while engaged on pilotage duty."
+    ],
+    "keywords": [
+      "pilot",
+      "white over red",
+      "pilotage duty",
+      "anchor"
+    ]
+  },
+  "rule-30": {
+    "summary": "An anchored vessel shows a forward white all-round light or ball and, when required, a lower aft white light; under 50 m, one white all-round light may replace the pair. Aground vessels add two red lights and three balls, subject to the small-vessel exception.",
+    "conditions": [
+      "A vessel is at anchor or aground."
+    ],
+    "duties": [
+      "Show the required anchor light(s) or ball; if aground, add two all-round red lights and three balls unless exempt."
+    ],
+    "exceptions": [
+      "A vessel under 50 metres may show one all-round white light instead of the two lights in 30(a).",
+      "A vessel of 100 metres or more shall also illuminate its decks; other anchored vessels may do so.",
+      "A vessel under 7 metres need not show anchor signals when outside or not near a narrow channel, fairway, anchorage, or area where other vessels normally navigate.",
+      "A vessel under 12 metres aground need not show the additional two red lights or three balls."
+    ],
+    "keywords": [
+      "anchor",
+      "aground",
+      "under 50 metres",
+      "100 metres",
+      "under 7 metres",
+      "under 12 metres"
+    ]
+  },
+  "rule-31": {
+    "summary": "Where a seaplane or WIG craft cannot practicably show the prescribed characteristics or positions, it must show lights and shapes as closely similar as possible.",
+    "conditions": [
+      "A seaplane or WIG craft cannot practicably display Part C lights or shapes in the prescribed characteristics or positions."
+    ],
+    "duties": [
+      "Show lights and shapes as closely similar in characteristics and position as possible."
+    ],
+    "exceptions": [
+      "This is an equivalence provision for impracticable prescribed displays, not a separate standard signal pattern."
+    ],
+    "keywords": [
+      "seaplane",
+      "WIG",
+      "impracticable",
+      "equivalent display"
+    ]
+  },
+  "rule-32": {
+    "summary": "A short blast lasts about 1 second; a prolonged blast lasts 4–6 seconds. A whistle is an appliance able to produce prescribed blasts and comply with Annex III.",
+    "conditions": [
+      "A vessel interprets a whistle or blast term used in Rules 33–37."
+    ],
+    "duties": [
+      "Use the prescribed duration: short about 1 second; prolonged 4 to 6 seconds. Whistles must meet Annex III specifications."
+    ],
+    "keywords": [
+      "whistle",
+      "short blast",
+      "prolonged blast",
+      "one second",
+      "four to six seconds"
+    ]
+  },
+  "rule-33": {
+    "summary": "A vessel ≥12 m carries a whistle; ≥20 m also carries a bell; ≥100 m also carries a distinct-tone gong. Under 12 m, another means of making an efficient sound signal is required if those appliances are not carried.",
+    "conditions": [
+      "A vessel selects sound-signal equipment for its length."
+    ],
+    "duties": [
+      "Carry the whistle, bell and gong required at the applicable length thresholds; equipment must meet Annex III. Manual sounding of required signals must remain possible."
+    ],
+    "exceptions": [
+      "A vessel under 12 metres need not carry the listed appliances if it has another means of making an efficient sound signal.",
+      "Bell and/or gong may be replaced by other equipment with the same respective sound characteristics, provided required signals can always be sounded manually."
+    ],
+    "keywords": [
+      "12 metres",
+      "20 metres",
+      "100 metres",
+      "whistle",
+      "bell",
+      "gong",
+      "Annex III"
+    ]
+  },
+  "rule-34": {
+    "summary": "When vessels are in sight, prescribes whistle and optional light signals for manoeuvres, narrow-channel overtaking and agreement, doubt/danger, and obscured bends. Light flashes last about 1 second, with about 1-second gaps and at least 10 seconds between signals.",
+    "conditions": [
+      "Vessels are in sight for manoeuvring, warning or overtaking signals, or a vessel nears an obscured bend/channel reach."
+    ],
+    "duties": [
+      "Give the prescribed whistle signals; answer an approaching vessel's prolonged bend signal when within hearing. An overtaken vessel gives the specified agreement signal when acting under Rule 9(e)(i)."
+    ],
+    "exceptions": [
+      "Light signals may supplement Rule 34(a) whistle signals and are repeated as appropriate during the manoeuvre; each flash and gap is about 1 second and successive signals are at least 10 seconds apart.",
+      "At least five short rapid blasts (optionally supplemented by five rapid flashes) indicate doubt or danger.",
+      "When whistles are more than 100 metres apart, use only one for manoeuvring and warning signals."
+    ],
+    "keywords": [
+      "one short",
+      "two short",
+      "three short",
+      "overtaking",
+      "doubt",
+      "five rapid",
+      "bend",
+      "light flashes"
+    ]
+  },
+  "rule-35": {
+    "summary": "In or near restricted visibility, status determines the sound signal: power-driven making way, stopped, specified restricted-status vessels, tows, anchored or aground vessels, and pilot vessels each have defined patterns and intervals.",
+    "conditions": [
+      "A vessel is in or near restricted visibility, by day or night."
+    ],
+    "duties": [
+      "Make the signal for the vessel's status at intervals no greater than those specified: generally 2 minutes; anchor bell/gong and aground additions no greater than 1 minute."
+    ],
+    "exceptions": [
+      "A vessel 12–under 20 metres need not give anchor/aground bell signals but must make another efficient sound signal at intervals no greater than 2 minutes; under 12 metres has the same alternative for the listed signals.",
+      "A pilot vessel on duty may add four short blasts to its applicable signal.",
+      "A fishing vessel at anchor or RAM vessel working at anchor uses the Rule 35(c) signal instead of the Rule 35(g) anchor signal.",
+      "A vessel aground gives three distinct bell strokes immediately before and after the rapid ringing; 100 metres or more also sounds the aft gong after the forward bell."
+    ],
+    "keywords": [
+      "restricted visibility",
+      "two minutes",
+      "one minute",
+      "anchor",
+      "aground",
+      "pilot"
+    ]
+  },
+  "rule-36": {
+    "summary": "A vessel may attract attention with non-confusing light or sound signals or direct its searchlight toward danger without embarrassing another vessel; attention lights must not be mistaken for navigation aids.",
+    "conditions": [
+      "A vessel needs to attract another vessel's attention or indicate danger."
+    ],
+    "duties": [
+      "Use signals that cannot be mistaken for authorized signals and direct any searchlight toward danger without embarrassing another vessel."
+    ],
+    "exceptions": [
+      "Avoid high-intensity intermittent or revolving lights, such as strobe lights."
+    ],
+    "keywords": [
+      "attention",
+      "searchlight",
+      "danger",
+      "strobe",
+      "navigation aid"
+    ]
+  },
+  "rule-37": {
+    "summary": "A vessel in distress and requiring assistance uses or exhibits the Annex IV distress signals.",
+    "conditions": [
+      "A vessel is in distress and requires assistance."
+    ],
+    "duties": [
+      "Use or exhibit one or more Annex IV signals to indicate distress and need of assistance."
+    ],
+    "keywords": [
+      "distress",
+      "assistance",
+      "Annex IV"
+    ]
+  },
+  "rule-38": {
+    "summary": "Vessels complying with the 1960 Rules and laid down or at a corresponding construction stage before these Regulations entered into force may receive only the expressly listed transition exemptions for lights, positioning, and sound appliances.",
+    "conditions": [
+      "A vessel/class complied with the 1960 Rules and its keel was laid or it was at an equivalent construction stage before these Regulations entered into force."
+    ],
+    "duties": [
+      "Apply only the equipment-specific exemptions and periods stated in Rule 38; some are permanent and others last four or nine years from entry into force."
+    ],
+    "exceptions": [
+      "The exemptions are limited to the listed Rule 22 ranges, Annex I colour/positioning provisions and Annex III sound appliances; the source specifies which are permanent and which expire after four or nine years."
+    ],
+    "keywords": [
+      "1960 Rules",
+      "exemptions",
+      "four years",
+      "nine years",
+      "permanent"
+    ]
+  },
+  "rule-39": {
+    "summary": "Defines audit, IMO Member State Audit Scheme, IMO Instruments Implementation Code (III Code), and audit standard; the audit standard means the Code for Implementation.",
+    "conditions": [
+      "An audit or compliance provision uses the terms defined in Rule 39."
+    ],
+    "duties": [
+      "Use the defined meanings for audit, Audit Scheme, Code for Implementation and Audit Standard."
+    ],
+    "keywords": [
+      "audit",
+      "IMO Member State Audit Scheme",
+      "III Code",
+      "audit standard"
+    ]
+  },
+  "rule-40": {
+    "summary": "Contracting Parties use the Code for Implementation when executing Convention obligations and responsibilities.",
+    "conditions": [
+      "A Contracting Party executes obligations or responsibilities under the Convention."
+    ],
+    "duties": [
+      "Use the provisions of the Code for Implementation in executing Convention obligations and responsibilities."
+    ],
+    "keywords": [
+      "Contracting Parties",
+      "Code for Implementation",
+      "obligations",
+      "responsibilities"
+    ]
+  },
+  "rule-41": {
+    "summary": "Contracting Parties are subject to periodic Organization audits; the Secretary-General administers the Audit Scheme, and each Party facilitates audits and actions addressing findings.",
+    "conditions": [
+      "Verification of a Contracting Party's compliance with and implementation of the Convention."
+    ],
+    "duties": [
+      "Submit to periodic IMO audits; the Secretary-General administers the Audit Scheme, and each Contracting Party facilitates audits and implements a programme of actions addressing findings. Audits follow an overall schedule and periodic intervals under Organization guidelines."
+    ],
+    "keywords": [
+      "periodic audit",
+      "Contracting Party",
+      "Secretary-General",
+      "Audit Scheme",
+      "findings"
+    ]
+  },
+  "annex-1": {
+    "summary": "Technical specifications cover light and shape height, spacing and horizontal placement; directional lights; fishing/obstruction indicators; screens; shape dimensions; CIE colour boundaries; intensity; horizontal/vertical sectors; manoeuvring lights; high-speed craft; and authority approval.",
+    "conditions": [
+      "A vessel installs, places, screens or seeks approval for lights or shapes required by the Rules."
+    ],
+    "duties": [
+      "Meet Annex I's applicable placement, spacing, dimensions, colour, intensity, sector, construction and approval requirements; use the full Annex for vessel-specific conditions and formulas."
+    ],
+    "exceptions": [
+      "Annex I contains length-dependent requirements and limited alternatives; for example, dimensions/spacing of shapes may be reduced proportionally below 20 metres, and two screened all-round lights may be used where one cannot meet the obscuration rule."
+    ],
+    "keywords": [
+      "placement",
+      "height",
+      "spacing",
+      "CIE",
+      "intensity",
+      "sectors",
+      "shapes",
+      "approval"
+    ]
+  },
+  "annex-2": {
+    "summary": "For vessels fishing in close proximity, Annex II specifies trawler net-handling lights and pair-trawling searchlights, with length-dependent shall/may provisions; purse seiners may show alternating yellow lights only while hampered by gear.",
+    "conditions": [
+      "A vessel is engaged in fishing in close proximity to other fishing vessels; Rule 26(d) refers to the Annex II additional signals."
+    ],
+    "duties": [
+      "Apply the signal provisions that match the fishing method and vessel length. Place additional lights where best seen, at least 0.9 m apart and below the Rule 26(b)(i) or 26(c)(i) fishing lights; ensure all-round visibility for at least 1 NM and a range less than the Rule 26 fishing lights."
+    ],
+    "exceptions": [
+      "For trawlers 20 m or more, 2(a) says to exhibit the specified net-handling lights; vessels under 20 m may exhibit the applicable signals.",
+      "For pair-trawlers 20 m or more, 2(b) says to exhibit the forward-directed searchlight at night and the specified net-handling lights; smaller pair-trawlers may exhibit the applicable signals.",
+      "Purse seiners may exhibit two alternating yellow lights, with equal light and occultation durations, only while hampered by fishing gear."
+    ],
+    "notes": [
+      "Placement wording in the 2018 source is specifically below the Rule 26(b)(i) and 26(c)(i) fishing lights; it does not say below every light in the vessel's ordinary display."
+    ],
+    "keywords": [
+      "close proximity",
+      "trawler",
+      "pair trawling",
+      "purse seine",
+      "0.9 metre",
+      "one mile"
+    ]
+  },
+  "annex-3": {
+    "summary": "Whistle requirements specify fundamental and audible frequency bands, sound-pressure levels and ranges by vessel length, directionality and placement; bells/gongs have intensity and construction requirements.",
+    "conditions": [
+      "A vessel fits or uses whistle, bell, gong or equivalent sound appliances."
+    ],
+    "duties": [
+      "Meet Annex III's applicable frequency, audibility, sound-pressure, directionality, positioning and construction specifications; exact measurements depend on vessel length and applicable frequency band."
+    ],
+    "exceptions": [
+      "For a vessel under 20 metres, the table gives 120 dB at 180–450 Hz, 115 dB at 450–800 Hz, or 111 dB at 800–2,100 Hz, at 1 metre; the audibility range is 0.5 NM.",
+      "A vessel of 20–under 75 metres: 130 dB and 1 NM; 75–under 200 metres: 138 dB and 1.5 NM; 200 metres or more: 143 dB and 2 NM.",
+      "A directional whistle's level may not fall more than 4 dB within ±45° or more than 10 dB elsewhere in the horizontal plane; whistles separated by more than 100 m must not sound simultaneously."
+    ],
+    "notes": [
+      "Annex III §1(c)'s source table assigns the 20 m, 75 m and 200 m boundaries explicitly. In the under-20 m row, the dB value depends on the listed one-third-octave measurement band; it is distinct from the fundamental-frequency limits in §1(b)."
+    ],
+    "keywords": [
+      "whistle",
+      "frequency",
+      "sound pressure",
+      "audibility",
+      "bell",
+      "gong",
+      "one-third-octave"
+    ]
+  },
+  "annex-4": {
+    "summary": "The active Annex IV text on physical PDF pages 52–53 lists distress signals, including DSC on VHF 70 or specified MF/HF frequencies and ship-to-shore alerts via Inmarsat or another mobile satellite service provider, plus EPIRBs and approved radiocommunication signals.",
+    "conditions": [
+      "A vessel indicates distress and need of assistance."
+    ],
+    "duties": [
+      "Use one or more signals listed in the active Annex IV text; do not use them for another purpose or use signals liable to be confused with them."
+    ],
+    "exceptions": [
+      "Orange canvas with a black square and circle (or suitable aerial-identification symbol) and a dye marker are called out in paragraph 3 as additional signals to which attention is drawn, not paragraph 1 signals."
+    ],
+    "notes": [
+      "Use the updated Annex IV on PDF pages 52–53 as the active reference. Pages 50–51 contain an older, superseded duplicate text and must not be merged into the active list."
+    ],
+    "keywords": [
+      "distress",
+      "DSC",
+      "VHF channel 70",
+      "MF/HF",
+      "Inmarsat",
+      "satellite",
+      "EPIRB",
+      "MAYDAY"
+    ]
+  }
+}

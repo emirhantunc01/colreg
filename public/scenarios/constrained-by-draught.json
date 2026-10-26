@@ -8,7 +8,7 @@
     "rule-18"
   ],
   "conditions": [
-    "The constrained vessel is power-driven and severely restricted by available depth and width.",
+    "The constrained vessel is power-driven and severely restricted in her ability to deviate from her course by her draught relative to available depth and width.",
     "This status depends on the particular navigable water."
   ],
   "environment": {
@@ -20,7 +20,7 @@
       "time": 4,
       "duration": 8,
       "type": "annotation",
-      "text": "The constrained vessel is power-driven and severely restricted by available depth and width."
+      "text": "The constrained vessel is power-driven and severely restricted in her ability to deviate from her course by her draught relative to available depth and width."
     }
   ],
   "assumptions": [
@@ -31,8 +31,8 @@
   ],
   "sources": [
     {
-      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
-      "pages": "pp. 6–7",
+      "title": "Convention on the International Regulations for Preventing Collisions at Sea, 1972 — Consolidated edition, 2018",
+      "pages": "PDF p. 15",
       "rule": "Rule 18"
     }
   ],
@@ -614,7 +614,7 @@
     {
       "time": 0,
       "title": "Identify the conditions",
-      "body": "The constrained vessel is power-driven and severely restricted by available depth and width. This status depends on the particular navigable water."
+      "body": "The constrained vessel is power-driven and severely restricted in her ability to deviate from her course by her draught relative to available depth and width. This status depends on the particular navigable water."
     },
     {
       "time": 30,

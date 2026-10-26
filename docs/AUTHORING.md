@@ -36,14 +36,14 @@ Process stages: pending → extracted → source-checked → expert-reviewed →
 
 Validate JSON, inspect beginning/turn/end in all three cameras, seek backwards, verify labels and steps, check source references and assumptions. Use a geometry-consistent route; heading interpolation alone does not make a physically realistic turn.
 
-## Source-linked learning edition (22 October 2026)
+## Active English source (26 October 2026)
 
 - `public/content/rules.json`: complete source record index; load only when Rules is opened.
 - `public/content/colreg-source.pdf`: unchanged source; `content/raw-pages.json` retains extraction per page.
-- `scripts/extract_colreg.py`: rebuild text and initial source coverage; requires pypdf.
-- `scripts/render_source_pages.py`: rebuild 25 lazy WebP page previews; requires pypdfium2 and Pillow.
+- `scripts/extract_colreg_2018.py public/content/colreg-source.pdf --overrides content/reference-overrides-2018.json`: rebuild the active English reference, compact catalog and initial clause coverage; requires pypdf. The older `extract_colreg.py` is archival.
+- `scripts/render_source_pages.py`: rebuild 62 lazy WebP page previews; requires pypdfium2 and Pillow.
 - `scripts/generate_encounters.mjs`: reproducibly rebuild the 36 educational encounters, preserving the two technical demos.
-- `python scripts/test_extract_colreg.py`: validate extraction, source reconstruction and copied PDF checksum. The test uses the preserved repository PDF, not a developer-specific Desktop path.
+- `python -m unittest scripts/test_extract_colreg_2018.py scripts/test_extract_colreg.py`: validate active extraction, source reconstruction and checksum; the old Turkish test runs only when its local archived source is available.
 - `npm test`, `npm run typecheck`, `npm run build`: validate data contracts, cross-links, movement, sector/state/threshold behavior, timing, TypeScript and the production bundle.
 
 Scenario additions: `ruleIds` uses `rule-N` identifiers, also in the library entry; `conditions` lists explicit applicable facts; `environment` contains `kind` (open/channel/bend/tss), `visibility` (clear/restricted), optional `windFrom` degrees true. `events` contains time, duration, type (annotation/sound/light), text, optional vesselId and alternating on/off `pattern` durations beginning with on. All events must finish within the scene. Sound is opt-in and stops on pause, seek, scene switch or hiding the tab.

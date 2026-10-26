@@ -266,7 +266,7 @@
         {
           "time": 65,
           "title": "Check the outcome",
-          "body": "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear."
+          "body": "Use this scene as a reminder to assess the full circumstances and applicable duties."
         }
       ]
     }
@@ -13558,14 +13558,14 @@
         "arrows": []
       },
       "conditions": [
-        "The constrained vessel is power-driven and severely restricted by available depth and width.",
+        "The constrained vessel is power-driven and severely restricted in her ability to deviate from her course by her draught relative to available depth and width.",
         "This status depends on the particular navigable water."
       ],
       "stages": [
         {
           "time": 0,
           "title": "Identify the conditions",
-          "body": "The constrained vessel is power-driven and severely restricted by available depth and width. This status depends on the particular navigable water."
+          "body": "The constrained vessel is power-driven and severely restricted in her ability to deviate from her course by her draught relative to available depth and width. This status depends on the particular navigable water."
         },
         {
           "time": 30,
@@ -14573,13 +14573,13 @@
       },
       "conditions": [
         "The through vessel can safely navigate only within the channel.",
-        "Local conditions determine whether crossing can be made without impeding."
+        "This schematic timing is illustrative and does not demonstrate that the shown crossing is non-impeding."
       ],
       "stages": [
         {
           "time": 0,
           "title": "Identify the conditions",
-          "body": "The through vessel can safely navigate only within the channel. Local conditions determine whether crossing can be made without impeding."
+          "body": "The through vessel can safely navigate only within the channel. This schematic timing is illustrative and does not demonstrate that the shown crossing is non-impeding."
         },
         {
           "time": 30,

@@ -4,7 +4,7 @@ English maritime learning application for watching authored encounters and under
 
 ## Product truth
 - 38 existing encounters: 36 source-linked educational examples and two technical demos.
-- 41 rules, four annexes and original Turkish PDF source preserved separately from English learning explanations.
+- 41 rules, four annexes and the owner-supplied English consolidated 2018 PDF preserved separately from authored learning explanations. The earlier Turkish translation is retired; physical PDF page links derive from the active reference catalog.
 - Two licensed merchant-vessel replacements with desktop/mobile variants; other legacy GLBs and the procedural recognition vessel remain available. Conditional signal data stays independent of decorative model details.
 - Distances, timing, model dimensions and simplified movement remain illustrative, not an operational navigation engine.
 - React, TypeScript, Vite, GSAP and Three.js WebGL. Static hosting; no account, backend, payments or exam.

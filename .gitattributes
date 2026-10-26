@@ -3,3 +3,5 @@
 *.jpg binary
 *.glb binary
 *.pdf binary
+# Preserve whitespace from the supplied PDF text layer in the raw extraction.
+content/raw-pages.txt -whitespace

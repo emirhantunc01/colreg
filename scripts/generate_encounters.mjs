@@ -5,20 +5,21 @@ import path from "node:path";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(root, "public", "scenarios");
 const duration = 90;
+const reference = JSON.parse(await readFile(path.join(root, "public", "content", "rules.json"), "utf8"));
+const sourceRecords = new Map(reference.records.map((record) => [record.id, record]));
 
-const pageForRule = (rule) => {
-  if (rule === 34) return "p. 14";
-  if (rule === 34) return "p. 14";
-  if (rule <= 3) return "pp. 1–2";
-  if (rule <= 6) return "pp. 2–3";
-  if (rule <= 8) return "pp. 3–4";
-  if (rule === 9) return "p. 4";
-  if (rule === 10) return "pp. 4–5";
-  if (rule <= 13) return "pp. 5–6";
-  if (rule <= 17) return "p. 6";
-  if (rule === 18) return "pp. 6–7";
-  return "p. 7";
-};
+function pagesForRules(ruleNumbers) {
+  const pages = [...new Set(ruleNumbers.flatMap((number) => sourceRecords.get(`rule-${number}`)?.pages ?? []))].sort((a, b) => a - b);
+  const ranges = [];
+  for (let index = 0; index < pages.length; ) {
+    const first = pages[index];
+    let last = first;
+    while (pages[index + 1] === last + 1) last = pages[++index];
+    ranges.push(first === last ? `${first}` : `${first}–${last}`);
+    index += 1;
+  }
+  return `PDF ${pages.length === 1 ? "p." : "pp."} ${ranges.join(", ")}`;
+}
 
 const models = {
   power: ["models/product-tanker.glb", 90, "Power-driven vessel"],
@@ -161,9 +162,9 @@ const lessons = [
   ["power-vs-fishing", "Power-driven vessel and fishing vessel", "Except where Rules 9, 10 and 13 otherwise require, a power-driven vessel underway shall keep out of the way of a vessel engaged in fishing.", [18], ["The fishing vessel’s gear restricts manoeuvrability.", "A vessel merely carrying fishing gear is not automatically engaged in fishing."], "mixedFishing"],
   ["power-vs-nuc", "Vessel not under command", "Except where Rules 9, 10 and 13 otherwise require, this power-driven vessel underway shall keep out of the way of the vessel not under command.", [18], ["The NUC vessel cannot manoeuvre as required by the Rules.", "Shapes and lights, not hull type, establish status."], "mixedNuc"],
   ["power-vs-ram", "Vessel restricted in ability to manoeuvre", "Other vessels keep out of the way of a RAM vessel so far as possible, with the hierarchy and exceptions considered together.", [18], ["The restriction arises from the nature of the vessel’s work.", "The depicted work area and spacing are illustrative."], "mixedRam"],
-  ["constrained-by-draught", "Vessel constrained by her draught", "A vessel other than one not under command or restricted in ability to manoeuvre shall, if circumstances admit, avoid impeding the safe passage of a vessel constrained by her draught and exhibiting the Rule 28 signals.", [18], ["The constrained vessel is power-driven and severely restricted by available depth and width.", "This status depends on the particular navigable water."], "mixedCargo"],
+  ["constrained-by-draught", "Vessel constrained by her draught", "A vessel other than one not under command or restricted in ability to manoeuvre shall, if circumstances admit, avoid impeding the safe passage of a vessel constrained by her draught and exhibiting the Rule 28 signals.", [18], ["The constrained vessel is power-driven and severely restricted in her ability to deviate from her course by her draught relative to available depth and width.", "This status depends on the particular navigable water."], "mixedCargo"],
   ["channel-starboard", "Keep near the channel’s starboard limit", "A vessel proceeding along a narrow channel keeps as near to the outer limit on her starboard side as is safe and practicable.", [9], ["The waterway is treated as a narrow channel.", "The illustrated lane offset is not a rule-defined distance."], "channel", null, null, "channel"],
-  ["channel-crossing", "Crossing a narrow channel", "A crossing vessel must not impede a vessel that can safely navigate only within the channel.", [9], ["The through vessel can safely navigate only within the channel.", "Local conditions determine whether crossing can be made without impeding."], "crossStarboard", null, null, "channel"],
+  ["channel-crossing", "Crossing a narrow channel", "A crossing vessel must not impede a vessel that can safely navigate only within the channel.", [9], ["The through vessel can safely navigate only within the channel.", "This schematic timing is illustrative and does not demonstrate that the shown crossing is non-impeding."], "crossStarboard", null, null, "channel"],
   ["channel-overtaking", "Overtaking in a narrow channel", "When overtaking can occur only if the vessel being overtaken cooperates, the prescribed sound-signal exchange communicates intention and agreement.", [9], ["The channel limits free manoeuvre.", "Agreement does not relieve the overtaking vessel of her Rule 13 duty."], "overtakePort", "channelSound", null, "channel"],
   ["channel-bend", "Approaching a bend", "Near a bend where vessels may be obscured, navigate with particular alertness, sound one prolonged blast and answer a heard bend signal with one prolonged blast.", [9, 34], ["The bend obstructs sight of approaching traffic.", "Rule 34(e) supplies the prolonged bend signal and reply."], "channel", "bendSound", null, "bend"],
   ["tss-joining", "Joining a traffic lane", "A vessel joining a lane does so at as small an angle to the general direction of traffic flow as practicable.", [10], ["The marked route is a traffic separation scheme.", "The joining angle is illustrative, not a numeric rule threshold."], "tssJoin", null, null, "tss"],
@@ -231,7 +232,10 @@ function makeScenario(definition) {
   if (eventKind === "channelSound") events.push({ time: 20, duration: 15, type: "sound", pattern: [5, 1, 5, 1, 1, 1, 1], text: "Overtaking signal for passing on the other vessel’s port side: two prolonged followed by two short blasts", vesselId: "overtaking" });
   if (eventKind === "fogSignal") events.push({ time: 25, duration: 5, type: "sound", pattern: [5], text: "Prolonged fog signal heard forward", vesselId: "target" });
   if (eventKind === "fog") events.push({ time: 12, duration: 6, type: "annotation", text: "Radar contact: vessels are not in sight" });
-  const pages = [...new Set(rules.map(pageForRule))].join(", ");
+  const pages = pagesForRules(rules);
+  const outcomeBody = id === "scope-responsibility"
+    ? "Use this scene as a reminder to assess the full circumstances and applicable duties."
+    : "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear.";
   return {
     id,
     title,
@@ -248,12 +252,12 @@ function makeScenario(definition) {
       "Vessel models and displayed lengths are scaled for legibility while preserving clearance between hulls.",
       "Apply the COLREGs to the full circumstances; this scene is not an unconditional manoeuvring prescription.",
     ],
-    sources: [{ title: "International Regulations for Preventing Collisions at Sea — supplied course PDF", pages, rule: rules.map((rule) => `Rule ${rule}`).join(", ") }],
+    sources: [{ title: reference.source.title, pages, rule: rules.map((rule) => `Rule ${rule}`).join(", ") }],
     vessels,
     steps: [
       { time: 0, title: "Identify the conditions", body: `${conditions[0]} ${conditions[1] ?? "Assess the developing encounter."}` },
       { time: 30, title: "Apply the rule", body: summary },
-      { time: 65, title: "Check the outcome", body: "Continue to assess the other vessel and the effect of any action until the vessels are finally past and clear." },
+      { time: 65, title: "Check the outcome", body: outcomeBody },
     ],
   };
 }
@@ -277,7 +281,7 @@ await writeFile(path.join(out, "index.json"), `${JSON.stringify([...demos, ...ed
 
 console.log(`Generated ${scenarios.length} educational encounters; preserved ${demos.length} technical demos.`);
 const csvCell=(value)=>`"${String(value).replaceAll('"','""')}"`;
-const sourceRows=scenarios.map(s=>[s.id,'public/content/colreg-source.pdf','',s.sources[0].pages,'','source-linked',s.ruleIds.join(' ')].map(csvCell).join(','));
+const sourceRows=scenarios.map(s=>[s.id,reference.source.file,'',s.sources[0].pages,'','source-linked',s.ruleIds.join(' ')].map(csvCell).join(','));
 await writeFile(path.join(root,'content','index.csv'),[
  'scenario_id,source_file,printed_pages,pdf_pages,figure,status,notes',
  ...demos.map(d=>`${d.id},,,,,technical-demo,Synthetic player demonstration`),

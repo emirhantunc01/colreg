@@ -1,3 +1,5 @@
+import {sourceReference} from "./sourceCatalog";
+
 export type LightColor = "white" | "red" | "green" | "yellow";
 export type LightSector = {start: number; end: number};
 export type LightMark = {
@@ -98,15 +100,35 @@ export const SIGNALS: Signal[] = [
 ];
 
 export const DISTRESS_SIGNALS = [
-  "Gun or other explosive signal at intervals of about one minute","Continuous sounding with any fog-signalling apparatus","Rockets or shells throwing red stars one at a time at short intervals","SOS by any signalling method","Spoken MAYDAY by radiotelephony","International Code signal N.C.","Square flag with a ball or ball-like object above or below","Flames on the vessel, such as a burning tar or oil barrel","Red hand flare or red parachute flare","Orange smoke signal","Slow, repeated raising and lowering of outstretched arms","DSC distress alert on VHF channel 70 or listed MF/HF distress frequencies","Ship-to-shore distress alert via Inmarsat or another mobile satellite provider","EPIRB signal","Approved radio signals, including survival-craft radar transponders","Orange canvas with a black square and circle or suitable symbol for aerial identification","Dye marker",
+  "Gun or other explosive signal at intervals of about one minute","Continuous sounding with any fog-signalling apparatus","Rockets or shells throwing red stars one at a time at short intervals","SOS by any signalling method","Spoken MAYDAY by radiotelephony","International Code signal N.C.","Square flag with a ball or ball-like object above or below","Flames on the vessel, such as a burning tar or oil barrel","Red hand flare or red parachute flare","Orange smoke signal","Slow, repeated raising and lowering of outstretched arms","DSC distress alert on VHF channel 70 or listed MF/HF distress frequencies","Ship-to-shore distress alert via Inmarsat or another mobile satellite service provider","Signals transmitted by emergency position-indicating radio beacons (EPIRBs)","Approved radiocommunication signals, including survival-craft radar transponders",
 ] as const;
 
+export const DISTRESS_ATTENTION_SIGNALS = [
+  "Orange-coloured canvas with a black square and circle or other suitable symbol for identification from the air",
+  "Dye marker",
+] as const;
+
+export const DISTRESS_SIGNAL_GROUPS = [
+  {title:"Annex IV §1 · Distress signals", signals:DISTRESS_SIGNALS, offset:0, note:"Annex IV §2 prohibits using §1 signals except to indicate distress and need of assistance, and prohibits other signals that may be confused with them."},
+  {title:"Annex IV §3 · Additional signals", signals:DISTRESS_ATTENTION_SIGNALS, offset:DISTRESS_SIGNALS.length, note:"Annex IV §3 draws attention to these additional identification signals."},
+] as const;
+
+export const SOUND_AUDIBILITY_RANGES = [
+  {length:"≥200 m", fundamental:"70–200 Hz", decibels:"143", range:"2 NM"},
+  {length:"≥75–<200 m", fundamental:"130–350 Hz", decibels:"138", range:"1.5 NM"},
+  {length:"≥20–<75 m", fundamental:"250–700 Hz", decibels:"130", range:"1 NM"},
+  {length:"<20 m", fundamental:"250–700 Hz", decibels:"120 / 115 / 111*", range:"0.5 NM"},
+] as const;
+
+const idsInRange=(from:number,to:number)=>Array.from({length:to-from+1},(_,index)=>`rule-${from+index}`);
 export const REFERENCES = {
-  rules:"Source PDF · Rules 20–31 · pp. 7–13",
-  annex1:"Annex I · placement and technical detail · pp. 17–21",
-  annex2:"Annex II · fishing signals · p. 22",
-  annex3:"Annex III · sound appliances · pp. 22–24",
-  annex4:"Annex IV · distress signals · pp. 24–25",
+  rules:sourceReference("Rules 20–31",idsInRange(20,31)),
+  soundRules:sourceReference("Rules 32–37",idsInRange(32,37)),
+  manoeuvringRules:sourceReference("Rules 34–35",idsInRange(34,35)),
+  annex1:sourceReference("Annex I · placement and technical detail",["annex-1"]),
+  annex2:sourceReference("Annex II · fishing signals",["annex-2"]),
+  annex3:sourceReference("Annex III · sound appliances",["annex-3"]),
+  annex4:sourceReference("Annex IV · distress signals",["annex-4"]),
 } as const;
 
 const norm=(value:number)=>((value%360)+360)%360;

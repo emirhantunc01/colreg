@@ -9,7 +9,7 @@
   ],
   "conditions": [
     "The through vessel can safely navigate only within the channel.",
-    "Local conditions determine whether crossing can be made without impeding."
+    "This schematic timing is illustrative and does not demonstrate that the shown crossing is non-impeding."
   ],
   "environment": {
     "kind": "channel",
@@ -31,8 +31,8 @@
   ],
   "sources": [
     {
-      "title": "International Regulations for Preventing Collisions at Sea — supplied course PDF",
-      "pages": "p. 4",
+      "title": "Convention on the International Regulations for Preventing Collisions at Sea, 1972 — Consolidated edition, 2018",
+      "pages": "PDF pp. 10–11",
       "rule": "Rule 9"
     }
   ],
@@ -614,7 +614,7 @@
     {
       "time": 0,
       "title": "Identify the conditions",
-      "body": "The through vessel can safely navigate only within the channel. Local conditions determine whether crossing can be made without impeding."
+      "body": "The through vessel can safely navigate only within the channel. This schematic timing is illustrative and does not demonstrate that the shown crossing is non-impeding."
     },
     {
       "time": 30,

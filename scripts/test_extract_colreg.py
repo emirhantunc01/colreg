@@ -23,7 +23,11 @@ def load_module():
 class ExtractColregTests(unittest.TestCase):
     def test_generated_dataset_is_complete_and_reconstructable(self):
         module = load_module()
-        source = SCRIPT.parent.parent / "public/content/colreg-source.pdf"
+        # This is an archival regression test for the former 25-page Turkish
+        # source. Never point it at the active 2018 PDF.
+        source = SCRIPT.parent.parent / "content/sources/legacy-turkish-2026-10-26/colreg-source.pdf"
+        if not source.is_file():
+            self.skipTest("Archived legacy Turkish PDF is not available")
         with tempfile.TemporaryDirectory(dir=SCRIPT.parent) as directory:
             output = Path(directory)
             module.build(source, output)

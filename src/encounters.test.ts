@@ -35,8 +35,10 @@ describe("educational scenario metadata", () => {
 });
 
 describe("authored encounter library", () => {
-  it('cites Rule 34 bend signals on PDF page 14',()=>{
-    expect(authored['../public/scenarios/channel-bend.json'].sources[0].pages).toMatch(/14/);
+  it('cites Rule 34 bend signals on the 2018 PDF pages 28–30',()=>{
+    const pages=authored['../public/scenarios/channel-bend.json'].sources[0].pages;
+    expect(pages).toMatch(/\b28\b/);
+    expect(pages).toMatch(/\b30\b/);
   });
   const educationalEntries = index.filter((entry) => !demos.has(entry.id));
 

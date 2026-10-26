@@ -1,5 +1,8 @@
 import {describe, expect, it} from "vitest";
-import {lightVisible, profileDisplay, signalActive, type LightSector} from "./trainingData";
+import {renderToStaticMarkup} from "react-dom/server";
+import {createElement} from "react";
+import {lightVisible, profileDisplay, signalActive, SOUND_AUDIBILITY_RANGES, REFERENCES, type LightSector} from "./trainingData";
+import TechnicalReference from "./TechnicalReference";
 
 describe("light sector visibility", () => {
   const starboard: LightSector = {start: 0, end: 112.5};
@@ -107,5 +110,28 @@ describe("conditional vessel displays",()=>{
   });
   it("adds both required mastheads to making-way RAM and dredging vessels at 50 m",()=>{
     for(const id of ["ram","dredging"]){expect(profileDisplay(id,50,{makingWay:true}).lights.filter(l=>l.label.toLowerCase().includes("masthead"))).toHaveLength(2)}
+  });
+});
+
+describe("Annex III technical ranges and source citations",()=>{
+  it("assigns the source table boundary vessels to the lower row",()=>{
+    expect(SOUND_AUDIBILITY_RANGES.map(row=>row.length)).toEqual([
+      "≥200 m", "≥75–<200 m", "≥20–<75 m", "<20 m",
+    ]);
+    expect(SOUND_AUDIBILITY_RANGES.slice(1,3).map(({decibels,range})=>[decibels,range])).toEqual([
+      ["138","1.5 NM"], ["130","1 NM"],
+    ]);
+    const markup=renderToStaticMarkup(createElement(TechnicalReference,{kind:"sound"}));
+    expect(markup).toContain("≥75–&lt;200 m");
+    expect(markup).toContain("≥20–&lt;75 m");
+    expect(markup).not.toContain("boundaries unstated");
+  });
+
+  it("uses page labels from the active 2018 source catalog",()=>{
+    expect(REFERENCES.rules).toContain("PDF pp. 17–27");
+    expect(REFERENCES.annex1).toContain("PDF pp. 37–45");
+    expect(REFERENCES.annex2).toContain("PDF p. 46");
+    expect(REFERENCES.annex3).toContain("PDF pp. 47–49");
+    expect(REFERENCES.annex4).toContain("PDF pp. 52–53");
   });
 });

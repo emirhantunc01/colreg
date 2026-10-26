@@ -1,0 +1,186 @@
+{
+  "rule-1": {
+    "summary": "Applies to vessels on the high seas and connected waters navigable by seagoing vessels, while addressing compatible local and special rules.",
+    "conditions": [
+      "The vessel is on the high seas or in waters connected with them and navigable by seagoing vessels."
+    ],
+    "duties": [
+      "Apply the Rules within their stated geographic scope.",
+      "For vessels of special construction or purpose that cannot fully comply with specified light, shape, or sound-appliance requirements, use the closest possible compliance determined by the concerned Government."
+    ],
+    "exceptions": [
+      "Appropriate authorities may make special rules for connected roadsteads, harbours, rivers, lakes, and inland waterways; these must conform as closely as possible to the Rules.",
+      "A State's Government may prescribe additional station or signal lights, shapes, or whistle signals for warships and vessels in convoy, and additional station or signal lights or shapes for fishing vessels fishing as a fleet; these should not be mistaken for authorized signals.",
+      "The Organization may adopt traffic separation schemes for purposes of the Rules."
+    ],
+    "notes": [
+      "This supplied English consolidated edition says in Rule 1(d) that traffic separation schemes may be adopted by the Organization. Do not substitute the legacy Turkish wording or identify a Ministry as the authority here."
+    ]
+  },
+  "rule-2": {
+    "summary": "Preserves responsibility for rule violations and neglected seamanship precautions, while allowing necessary departure to avoid immediate danger in special circumstances.",
+    "duties": [
+      "Do not treat the Rules as exonerating a vessel, owner, master, or crew from consequences of neglect to comply or neglect of precautions required by ordinary seamen's practice or the special circumstances.",
+      "When construing and complying with the Rules, give due regard to all dangers of navigation and collision, special circumstances, and limitations of the vessels involved.",
+      "Depart from a Rule only when special circumstances make departure necessary to avoid immediate danger."
+    ]
+  },
+  "rule-3": {
+    "summary": "Defines vessel categories and states, including fishing, not under command, restricted manoeuvrability, constrained draught, underway, in sight, restricted visibility, and WIG craft.",
+    "duties": [
+      "Apply the definitions in Rule 3 unless the context otherwise requires; distinguish being underway from making way through the water."
+    ]
+  },
+  "rule-5": {
+    "conditions": [
+      "At all times."
+    ],
+    "duties": [
+      "Maintain a proper look-out by sight, hearing, and all means appropriate in the prevailing circumstances and conditions, sufficient for a full appraisal of the situation and risk of collision."
+    ]
+  },
+  "rule-6": {
+    "duties": [
+      "Proceed at a safe speed that permits proper and effective collision-avoidance action and stopping within a distance appropriate to prevailing circumstances and conditions.",
+      "Consider the listed factors for all vessels: visibility, traffic density, manoeuvrability (especially stopping distance and turning ability), background light at night, wind, sea and current, navigational hazards, and draught relative to water depth.",
+      "If operational radar is fitted, also consider its characteristics, efficiency and limitations; range scale; interference and sea/weather effects; possible undetected small vessels, ice and floating objects; detected traffic; and any more exact visibility assessment radar can provide."
+    ]
+  },
+  "rule-7": {
+    "duties": [
+      "Use all means appropriate to prevailing circumstances and conditions to determine whether collision risk exists; treat any doubt as risk.",
+      "Make proper use of fitted, operational radar, including long-range scanning for early warning and plotting or equivalent systematic observation.",
+      "Do not make assumptions from scanty information, especially scanty radar information.",
+      "Treat an approaching vessel's compass bearing that does not appreciably change as indicating risk; remember risk may still exist despite appreciable bearing change, especially with a very large vessel, a tow, or close range."
+    ]
+  },
+  "rule-8": {
+    "duties": [
+      "Take collision-avoidance action in accordance with Part B; if circumstances admit, make it positive, in ample time, and with due regard to good seamanship.",
+      "If circumstances admit, make course or speed alterations large enough to be readily apparent visually or by radar; avoid a succession of small alterations.",
+      "Where sufficient sea room exists, a timely substantial course alteration alone may be effective if it creates no other close-quarters situation.",
+      "Aim to pass at a safe distance and carefully check effectiveness until the other vessel is finally past and clear.",
+      "If necessary to avoid collision or allow more time to assess the situation, slacken speed or take all way off by stopping or reversing propulsion.",
+      "A vessel required not to impede passage or safe passage must, when circumstances require, act early to allow sufficient sea room. That obligation continues when a risk of collision develops; the vessel whose passage is not to be impeded remains bound by Part B when risk develops."
+    ]
+  },
+  "rule-9": {
+    "duties": [
+      "A vessel proceeding along a narrow channel or fairway shall keep as near as safe and practicable to its outer limit on her starboard side.",
+      "A vessel under 20 metres or a sailing vessel shall not impede a vessel that can safely navigate only within the channel or fairway; a vessel engaged in fishing shall not impede any vessel navigating within it.",
+      "A vessel shall not cross the channel or fairway if the crossing would impede a vessel that can safely navigate only within it.",
+      "When overtaking in a narrow channel can occur only if the vessel to be overtaken acts to permit safe passing, signal the intention as Rule 34(c)(i) prescribes; the overtaken vessel signals agreement under Rule 34(c)(ii) and takes steps to permit safe passing if she agrees. Rule 13 still applies to the overtaking vessel.",
+      "Near a bend or obstructed area where other vessels may be hidden, navigate with particular alertness and caution and sound the Rule 34(e) signal.",
+      "Avoid anchoring in a narrow channel when circumstances admit."
+    ],
+    "exceptions": [
+      "The specific no-impeding duties differ: vessels under 20 metres and sailing vessels must not impede vessels that can safely navigate only within the channel; fishing vessels must not impede any vessel navigating within the channel.",
+      "The crossing prohibition applies when the crossing would impede a vessel that can safely navigate only within the channel. The latter vessel may sound the Rule 34(d) signal if in doubt about the crossing vessel's intention.",
+      "An overtaken vessel's agreement to permit safe passing is conditional on agreement; if in doubt, she may sound the Rule 34(d) signals."
+    ]
+  },
+  "rule-10": {
+    "duties": [
+      "This Rule applies to traffic separation schemes adopted by the Organization and does not relieve a vessel of obligations under other Rules.",
+      "Use the appropriate lane in its general traffic-flow direction; so far as practicable keep clear of separation lines and zones.",
+      "Normally join or leave at a lane termination; when joining or leaving from either side, use as small an angle to the general traffic-flow direction as practicable.",
+      "So far as practicable avoid crossing lanes; if obliged to cross, use a heading as nearly as practicable at right angles to the general traffic-flow direction.",
+      "Navigate with particular caution near scheme terminations; avoid anchoring in the scheme or near terminations so far as practicable; vessels not using a scheme should avoid it by as wide a margin as practicable.",
+      "Fishing vessels must not impede vessels following a lane; vessels under 20 metres and sailing vessels must not impede the safe passage of power-driven vessels following a lane."
+    ]
+  },
+  "rule-12": {
+    "duties": [
+      "When sailing vessels approach with collision risk, the vessel with wind on the port side keeps out of the way when the other has wind on a different side; when both have wind on the same side, the windward vessel keeps out of the way.",
+      "A vessel with wind on the port side that sees a vessel to windward and cannot determine with certainty which side has the wind must keep out of the way."
+    ],
+    "exceptions": [
+      "For this Rule, the windward side is opposite the side on which the mainsail is carried, or for a square-rigged vessel opposite the side on which the largest fore-and-aft sail is carried."
+    ],
+    "conditions": [
+      "Two sailing vessels approach with collision risk.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-15": {
+    "duties": [
+      "When two power-driven vessels cross with collision risk, the vessel that has the other on her own starboard side shall keep out of the way and, if circumstances admit, avoid crossing ahead of the other vessel."
+    ],
+    "conditions": [
+      "Two power-driven vessels cross with collision risk.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-17": {
+    "summary": "Sets three stages: the stand-on vessel initially keeps course and speed, may manoeuvre alone when the give-way vessel's failure to act becomes apparent, and must act when the give-way vessel alone cannot avoid collision.",
+    "duties": [
+      "Initially keep course and speed when the other vessel is required to keep out of the way.",
+      "The stand-on vessel may take action by her manoeuvre alone as soon as it becomes apparent that the give-way vessel is not taking appropriate action.",
+      "The stand-on vessel shall take the action that will best aid avoidance when, from any cause, she is so close that the give-way vessel alone cannot avoid collision.",
+      "A power-driven vessel acting under paragraph (a)(ii) in a crossing situation shall, if circumstances admit, not alter course to port for a vessel on her own port side.",
+      "Stand-on action does not relieve the give-way vessel of her obligation to keep out of the way."
+    ],
+    "exceptions": [
+      "The paragraph (a)(ii) power-driven vessel limitation is conditional on circumstances admitting; it concerns altering to port for a vessel on her own port side."
+    ],
+    "conditions": [
+      "One of two vessels must keep out of the way and the other is the stand-on vessel.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-18": {
+    "summary": "States conditional responsibilities by vessel status, subject first to Rules 9, 10 and 13; constrained draught, seaplanes and WIG craft have distinct provisions.",
+    "conditions": [
+      "The vessel-status responsibilities apply subject to the express opening exception for Rules 9, 10 and 13; the clauses specify underway vessels and, for a constrained-draught vessel, Rule 28 signals.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ],
+    "duties": [
+      "Except where Rules 9, 10 and 13 otherwise require, a power-driven vessel underway shall keep out of the way of a vessel not under command, restricted in ability to manoeuvre, engaged in fishing, or under sail.",
+      "A sailing vessel underway shall keep out of the way of vessels not under command, restricted in ability to manoeuvre, or engaged in fishing.",
+      "A vessel engaged in fishing and underway shall, so far as possible, keep out of the way of vessels not under command or restricted in ability to manoeuvre.",
+      "A vessel other than one not under command or restricted in ability to manoeuvre shall, if circumstances admit, avoid impeding the safe passage of a vessel constrained by her draught and exhibiting Rule 28 signals. The constrained vessel shall navigate with particular caution, having full regard to her special condition.",
+      "A seaplane on the water shall in general keep well clear of all vessels and avoid impeding their navigation; when collision risk exists, it shall comply with Part B.",
+      "A WIG craft taking off, landing, or flying near the surface shall keep well clear of all other vessels and avoid impeding their navigation; operating on the water surface, it shall comply with Part B as a power-driven vessel."
+    ],
+    "exceptions": [
+      "Rules 9, 10 and 13 may displace the general responsibilities where they otherwise require.",
+      "The draught-constrained passage duty excludes vessels not under command and vessels restricted in ability to manoeuvre, and applies only if circumstances admit and the constrained vessel exhibits Rule 28 signals.",
+      "The fishing vessel duty to keep clear of vessels not under command or restricted in ability to manoeuvre is qualified by 'so far as possible'."
+    ]
+  },
+  "rule-19": {
+    "duties": [
+      "This Rule applies to vessels not in sight of one another when navigating in or near restricted visibility.",
+      "Proceed at a safe speed adapted to prevailing restricted-visibility circumstances and conditions; a power-driven vessel shall have engines ready for immediate manoeuvre.",
+      "Give due regard to the prevailing restricted-visibility circumstances and conditions when complying with Section I.",
+      "When radar alone detects another vessel, determine whether a close-quarters situation is developing and/or collision risk exists; if so, take avoiding action in ample time.",
+      "When avoiding action is a course alteration, so far as possible avoid altering to port for a vessel forward of the beam (except an overtaken vessel) and avoid altering toward a vessel abeam or abaft the beam.",
+      "Unless it has been determined that collision risk does not exist, reduce speed to the minimum at which course can be kept when hearing apparently forward of the beam another vessel's fog signal or when unable to avoid a close-quarters situation with a vessel forward of the beam. If necessary take all way off, and in any event navigate with extreme caution until collision danger is over."
+    ],
+    "exceptions": [
+      "The reduction to minimum steerage speed, taking all way off if necessary, and extreme-caution requirement in paragraph (e) is conditioned on hearing the specified fog signal or being unable to avoid close quarters, and does not apply where collision risk has been determined not to exist.",
+      "The course-alteration cautions are qualified by 'so far as possible'; the port-alteration caution has an express exception for an overtaken vessel."
+    ]
+  },
+  "rule-13": {
+    "conditions": [
+      "A vessel approaches another from more than 22.5 degrees abaft her beam; doubt means she must assume she is overtaking.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-14": {
+    "conditions": [
+      "Two power-driven vessels meet on reciprocal or nearly reciprocal courses with collision risk; doubt means head-on is assumed.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ]
+  },
+  "rule-16": {
+    "conditions": [
+      "A vessel is required by the Rules to keep out of another vessel's way.",
+      "These Section II responsibilities apply when the vessels are in sight of one another (Rule 11)."
+    ],
+    "duties": [
+      "Every vessel directed to keep out of the way shall, so far as possible, take early and substantial action to keep well clear."
+    ]
+  }
+}

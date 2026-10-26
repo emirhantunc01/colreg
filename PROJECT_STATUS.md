@@ -1,14 +1,14 @@
-# Project status — 24 October 2026
+# Project status — 26 October 2026
 
 ## Product decisions
 - English static React/TypeScript/Three.js application, authored playback rather than user-controlled vessel navigation.
-- The supplied 25-page Turkish COLREG PDF is preserved byte-for-byte. All 41 rules and four annexes are indexed as 407 source segments.
+- Active reference: the owner's English `COLREG-Consolidated-2018.pdf`, 62 physical PDF pages, preserved byte-for-byte. It replaces the retired 25-page Turkish translation. All 41 rules and four annexes are extracted; exact page metadata is regenerated from this source.
 - English explanations are project-authored learning aids. Source clauses and original page layouts remain accessible; animation distances, speeds, headings and times are illustrative.
 - Content is available without an expert-approval gate. `reviewed` remains reserved for a documented review and is not assigned automatically.
-- No deployment or audience change in this task. Current changes are local on feat/colreg-content.
+- Current source migration is local on `feat/colreg-studio-update`. No deployment, push or audience change is included.
 
 ## Implemented
-- Searchable Rules library, section filters, related rules, source page links, Turkish clauses and lazy page previews.
+- Searchable Rules library, section filters, related rules, source page links, English document text with separately labelled commentary and lazy page previews.
 - 36 source-linked educational encounters and two preserved technical demos. Default opening encounter: head-on.
 - Actual give-way alterations, head-on starboard turns, crossing astern, overtaking, sailing encounters, Rule 17 stages and Rule 18 status distinctions.
 - Channel, obscured L-shaped bend, traffic lanes, wind and restricted-visibility geography; relative-position diagram and timeline annotations/signals.
@@ -19,14 +19,14 @@
 
 ## Verification scope
 - Automated checks cover source completeness/reconstruction and PDF checksum; scene/model/rule links; deterministic motion and events; continuous closest approach; actual maneuver behaviors; directional sectors; threshold/status combinations and signal timing.
-- PDF contact sheets and technical pages 20, 21 and 23 inspected. Literal table layout and formula exponents are preserved in original page previews.
+- New reference technical pages 45, 47 and 52 inspected during migration; faithful previews preserve table layout, formula exponents and diagrams. Earlier PDF contact-sheet checks apply to the retired source only.
 - Desktop, 768-pixel tablet and 390-pixel mobile browser inspections; play/pause, seeking, cameras, rule-to-encounter transition, light profiles and source navigation checked.
 - Clause review flags distinguish automatic structure checks from substantive expert/source comparison. They do not certify every authored interpretation or operational maneuver.
 
 ## Limits and next work
 - Simplified authored tracks; no hydrodynamics, environmental force model, live navigation or collision-risk decision engine.
 - Whistle, bell and gong audio is synthesized for recognition and timing; no certified appliance acoustics or audible ranges are simulated. Models and light overlays are recognition aids rather than certified installation drawings.
-- Known Ministry/IMO wording differences on Rules 1 and 10 are recorded publicly. Annex III's exact length-boundary wording is explained alongside the table.
+- Historical Ministry/IMO differences belong to the retired Turkish source. Active learning text follows the new English reference; its version, duplicate Annex IV texts and text-layer limitations are recorded publicly.
 - Deploy this reviewed local build only as a separate requested step; preserve the existing hosting audience.
 
 ## Cinematic redesign — 23 October 2026
@@ -59,3 +59,12 @@
 - Encounters show each vessel's remaining authored route as a colored dashed line, enabled by default. Scene settings exposes Planned routes independently of historical Movement tracks.
 - Seeking reconstructs the line from the current position through the exact future track points; stationary duplicates are omitted and lines disappear at arrival. Fixed GPU buffers are reused during playback.
 - 119 tests in 24 files, TypeScript and production build pass. Browser checks cover visible routes, toggle off/on, end-of-track removal and rewind restoration.
+
+## English reference migration — 26 October 2026
+- Owner selected `COLREG-Consolidated-2018.pdf` as the primary reference. The 62-page PDF is preserved with SHA-256 `c3d85b3b833ac39100d8bd7a767a77058e12f3e738e5b83ec89aa8d465fa6a5f`; the Turkish PDF/data are archived locally and recoverable in Git history.
+- Independent extraction, conduct and technical agents processed the source. Results are durable in `docs/SOURCE_MIGRATION_2018.md`, the conduct/technical audit reports and `content/review/`. Main context need not retain the book.
+- 45 records / 447 document segments, including three labelled circular interpretation notes; all 62 raw pages and page previews retained. Active Annex IV uses pages 52–53; earlier pages 50–51, Convention Articles I–IX and watchkeeping recommendations are separately indexed.
+- Integrated learning-copy corrections for 43 records; Rules 4 and 11 retained after comparison. All 36 educational encounter citations and lab references follow the new physical page map. Scenario routes, lengths, durations and event timing/patterns remain unchanged; three explanatory-text corrections are recorded in the migration report.
+- Corrected Annex III 20/75 m table boundaries and separated Annex IV §1 distress signals from §3 additional signals. Source-language, edition, supplementary-page and commentary labels now reflect the English document.
+- Verification: 130 Vitest tests in 27 files, five Python tests, TypeScript and production build passed. Browser checks cover English source, new page images/links, lab references, signal groups and mobile overflow; evidence uses `source-2018-*` filenames. Clause-level substantive review flags are not automatically promoted.
+- Local implementation on `feat/colreg-studio-update`; no deployment, push or access change in this task.

@@ -1,48 +1,61 @@
 # COLREG content source and provenance
 
-## Source artifact
+## Active reference — 26 October 2026
 
-- Supplied file: `COLREG 72 SÖZLEŞMESİ GÜNCEL METNİ.pdf`
-- Preserved public copy: `public/content/colreg-source.pdf`
-- SHA-256: `227637e5e7c47b9f3b676c2b1a52da2b8f3390b3f6c5d3ba573a2e2562052386`
-- PDF pages: 25
-- Stated Turkish title: *Denizde Çatışmanın Önlenmesine İlişkin Uluslararası Kurallar Hakkında Sözleşme (COLREG-72)*
-- Coverage: Rules 1–41 and Annexes I–IV
+The owner selected **COLREG-Consolidated-2018.pdf** to replace the previously supplied Turkish translation.
 
-The hash is calculated from the supplied bytes and the public copy has the same hash. The repository does not claim that this PDF is an official publication, a certified translation, or the currently controlling legal text.
+- Preserved public copy: `public/content/colreg-source.pdf` (unchanged supplied bytes).
+- Document title: *Convention on the International Regulations for Preventing Collisions at Sea, 1972 — Consolidated edition, 2018*.
+- Language: English. Edition stated in the document: 2018.
+- 62 physical PDF pages; 849,076 bytes.
+- SHA-256: `c3d85b3b833ac39100d8bd7a767a77058e12f3e738e5b83ec89aa8d465fa6a5f`.
+- Rules 1–41: PDF pages 5–36; Annexes I–III: 37–49; active Annex IV: 52–53.
 
-## Extraction method
+The supplied file is the project's reference, not a claim of verified official publication or currency beyond its stated edition. The document's amendment notes and editorial diagrams are retained as document content; they are not additional Rules. English learning explanations, animation geometry/timing and synthesized audio remain separately authored teaching material.
 
-`scripts/extract_colreg.py` uses `pypdf` text extraction. It writes the extracted text of every PDF page, without translation or OCR correction, to:
+## Multiple texts in this PDF
 
-- `content/raw-pages.json`, with an explicit PDF page number for each page;
-- `content/raw-pages.txt`, with visible PDF-page separators;
-- `public/content/rules.json`, segmented into the 41 rules and four annexes; and
-- `content/clause-coverage.csv`, one row per extracted clause.
+The document contains two Annex IV versions. Pages 50–51 retain older radiotelegraph/radiotelephone alarm entries. **The active record uses only pages 52–53**, containing DSC, satellite alerts and the updated search-and-rescue reference. The older text is available through a clearly labelled supplementary source link and is not mixed into the active distress list.
 
-Rule and annex headings define record boundaries. Parenthesized paragraph/subparagraph markers and numbered annex sections define stable sequential clause boundaries. A clause keeps every extracted line assigned to it and records every PDF page on which those lines occur. `sourceText` is reconstructed exactly as the clause texts joined by a blank line. Section headings (`BÖLÜM` and `KISIM`) and rule/annex headings are structural labels and are not included in clause text; they remain available in the raw page files.
+Convention Articles I–IX on PDF pages 1–4 and supplementary watchkeeping recommendations on pages 54–62 are indexed separately under edition/source notes. They are preserved in the original PDF and raw extraction, outside the 45 Rule/Annex records.
 
-The English titles, summaries, conditions, duties, exceptions, related-rule links, and keywords are educational finding aids written for this project. They are concise paraphrases, not official translations and not a substitute for the preserved Turkish clauses.
+## Reproducible extraction
 
-## Known source and extraction issues
+`scripts/extract_colreg_2018.py` checks the supplied file's exact checksum/size/page count, extracts its text layer using `pypdf`, and writes:
 
-The PDF text layer includes visible spacing and typographical artifacts such as split words (`etmey ecektir`, `olmadı ğı`, and similar examples). They are retained rather than silently corrected. Tables and formulas are preserved as text in extraction order. Text extraction cannot reproduce the PDF's visual table geometry, typography, drawings, or exact column alignment; consult the preserved PDF for those features.
+- `content/raw-pages.json` and `.txt`: all 62 pages with physical, 1-based PDF page numbers;
+- `public/content/rules.json`: 41 Rules and four Annexes, source clauses and separate learning fields;
+- `content/reference-catalog.json`: compact edition/checksum/record-page metadata for initial UI source labels;
+- `content/clause-coverage.csv`: one row per extracted segment.
 
-The supplied Turkish PDF materially differs from the IMO English wording in two closely related places:
+Strict Rule/Annex headings define record boundaries. Inline diagram captions such as `Rule 27(b)(i)` cannot start another record. Part/Section structural headings and wrapped continuations are excluded from the preceding record; they remain in raw pages. Three MSC circular interpretation blocks are separately tagged `document-note`, displayed as commentary rather than Rule text. There are 447 document segments in total. Sequential segment IDs are identifiers within this source edition, not a claim of correspondence to segment IDs from the retired translation. Each record's `sourceText` equals all its clause text joined by blank lines, including the labelled document notes.
 
-- Rule 1(d), PDF page 1, says that traffic separation schemes may be established by the **Bakanlık** (Ministry).
-- Rule 10(a), PDF page 4, says the rule applies to traffic separation schemes adopted by the **Bakanlık**.
-
-The corresponding IMO English COLREG wording refers to traffic separation schemes adopted by the **Organization** (the International Maritime Organization). The dataset preserves the PDF wording unchanged. Product copy or operational guidance must not present the PDF's “Bakanlık” wording as a verbatim rendering of the IMO English text without qualification.
-
-Other national adaptation, amendment, translation, or typographical differences may exist. No line-by-line legal comparison against an authoritative IMO edition has been completed.
-
-## Coverage status
-
-Every clause in `content/clause-coverage.csv` is marked `extracted=true`. The `compared`, `visualized`, and `tested` columns remain `false`: the text has not received a clause-by-clause human comparison against the rendered PDF, visual placement review, or substantive maritime/legal validation. The automated test checks dataset structure, record count, page count, stable unique clause identifiers, source-text reconstruction, and raw-page presence; it does not change those review statuses.
-
-To rebuild from the owner-supplied source:
+`content/reference-overrides-2018.json` contains integrated learning-copy corrections from `content/review/conduct-2018.json` and `content/review/technical-2018.json`. These update authored explanations; they cannot rewrite preserved clauses or page references. Audit scope and findings are in `SOURCE_CONDUCT_2018_REVIEW.md` and `SOURCE_TECHNICAL_2018_REVIEW.md`.
 
 ```powershell
-& 'C:\Users\tunce\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' scripts\extract_colreg.py 'C:\Users\tunce\Desktop\COLREG 72 SÖZLEŞMESİ GÜNCEL METNİ.pdf'
+python scripts/extract_colreg_2018.py public/content/colreg-source.pdf --overrides content/reference-overrides-2018.json
+python scripts/render_source_pages.py
+node scripts/generate_encounters.mjs
+node scripts/generate_previews.mjs
+python -m unittest scripts/test_extract_colreg_2018.py scripts/test_extract_colreg.py
+npm test
+npm run typecheck
+npm run build
 ```
+
+The PDF and its page images load on demand. `scripts/render_source_pages.py` produces faithful page previews for tables, formulas and drawings. Text extraction alone cannot preserve those layouts, and some formulas are embedded images with no text-layer equivalent. Spacing, typographical and character-encoding defects in the text layer are not silently corrected in source clauses. Consult the page/PDF when a formula, symbol or table is unclear.
+
+## Citation and comparison policy
+
+Scenario citations and laboratory page labels derive from the active record map. A source migration must not leave a page number referring to the retired PDF. Encounter data retains authored routes, lengths and timing; any explanatory changes are documented in `SOURCE_MIGRATION_2018.md`.
+
+Every extracted segment has `extracted=true`. The clause-level `compared`, `visualized` and `tested` flags are not automatically certified by a parser test or a top-level learning-copy review. They remain false until the corresponding substantive clause-level check is documented. Content is available without an expert-approval gate; the scenario `reviewed` status still requires a real documented review.
+
+## Retired Turkish reference
+
+- Former supplied file: `COLREG 72 SÖZLEŞMESİ GÜNCEL METNİ.pdf`, 25 pages.
+- SHA-256: `227637e5e7c47b9f3b676c2b1a52da2b8f3390b3f6c5d3ba573a2e2562052386`.
+- Original local PDF/data snapshots: ignored `content/sources/legacy-turkish-2026-10-26/`.
+- Prior tracked versions remain recoverable in Git history. The old extractor/test are archival; they are not the active content pipeline.
+
+Prior Ministry/Organization wording differences belong to that retired translation. Active records now cite the English supplied PDF and no longer present the Turkish text as their reference.

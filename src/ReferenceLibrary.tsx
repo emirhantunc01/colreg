@@ -9,6 +9,7 @@ type Props = {
  onEncounter: (id:string)=>void;
  encounters: {id:string; title:string; ruleIds?:string[]}[];
 };
+const recordLabel=(record:{id:string;number:string|number})=>record.id.startsWith('annex-')?`Annex ${['I','II','III','IV'][Number(record.number)-1]}`:`Rule ${record.number}`;
 
 export default function ReferenceLibrary({selectedId='rule-1',onSelect,onEncounter,encounters}:Props) {
  const [data,setData]=useState<Reference|null>(null);
@@ -35,6 +36,7 @@ export default function ReferenceLibrary({selectedId='rule-1',onSelect,onEncount
  },[]);
  const records=data?searchRules(data.records,query).filter(record=>part==='All'||(part==='Annexes'?record.id.startsWith('annex'):record.part===part)):[];
  const active=data?.records.find(record=>record.id===selectedId);
+ const sourceLanguage=data?.source.language==='tr'?'Turkish':data?.source.language==='en'?'English':'original';
  const relatedEncounters=encounters.filter(encounter=>encounter.ruleIds?.includes(selectedId));
  const select=(id:string)=>{
   onSelect(id);
@@ -49,26 +51,27 @@ export default function ReferenceLibrary({selectedId='rule-1',onSelect,onEncount
     <label className="reference-filter">Browse <select value={part} onChange={event=>{setPart(event.target.value);setIndexOpen(true)}}><option>All</option>{['A','B','C','D','E','F'].map(value=><option key={value} value={value}>Part {value}</option>)}<option>Annexes</option></select></label>
     <details className="rule-index-records" open={indexOpen} onToggle={event=>setIndexOpen(event.currentTarget.open)}>
      <summary>{records.length} reference entries</summary>
-     <nav aria-label="Rules and annexes">{records.map(record=><button key={record.id} aria-current={selectedId===record.id?'page':undefined} onClick={()=>select(record.id)}><span>{record.id.startsWith('annex')?'Annex':'Rule'} {record.number}</span><strong>{record.title}</strong><ChevronRight size={14}/></button>)}</nav>
+     <nav aria-label="Rules and annexes">{records.map(record=><button key={record.id} aria-current={selectedId===record.id?'page':undefined} onClick={()=>select(record.id)}><span>{recordLabel(record)}</span><strong>{record.title}</strong><ChevronRight size={14}/></button>)}</nav>
      {!records.length&&data&&<p className="reference-empty">No matches. Try another rule number or term.</p>}
     </details>
    </aside>
    <article className="reference-article" ref={article} aria-live="polite">
     {error?<div className="reference-error" role="alert"><h2>Reference unavailable</h2><p>{error}</p><button onClick={()=>setRetry(value=>value+1)}>Try again</button></div>:!data?<p role="status">Loading source material…</p>:!active?<div className="reference-error"><h2>Reference not found</h2><p>This address does not match a rule or annex in the source index.</p><button onClick={()=>select('rule-1')}>Open Rule 1</button></div>:<>
-     <header className="reference-article-heading"><h2><span>{active.id.startsWith('annex')?'Annex':'Rule'} {active.number}</span>{active.title}</h2><p>{active.id.startsWith('annex')?'Technical reference':`Part ${active.part}`} · English learning explanation</p></header>
+     <header className="reference-article-heading"><h2><span>{recordLabel(active)}</span>{active.title}</h2><p>{active.id.startsWith('annex')?'Technical reference':`Part ${active.part}`} · English learning explanation</p></header>
      <p className="reference-lede">{active.summary}</p>
      {[['When it applies',active.conditions],['What the rule requires',active.duties],['Conditions & exceptions',active.exceptions]].map(([title,items])=>(items as string[]).length>0&&<section key={title as string}><h3>{title as string}</h3><ul>{(items as string[]).map((text,index)=><li key={index}>{text}</li>)}</ul></section>)}
-     <section className="reference-source"><h3>Original source</h3><p>{data.source.title} · PDF pages {active.pages.join(', ')}</p><p className="source-explanation">The Turkish text is preserved below. The explanation above is authored for this learning tool.</p>{active.notes.map(note=><p className="reference-discrepancy" key={note}>{note}</p>)}
+     <section className="reference-source"><h3>Reference text</h3><p>{data.source.title} · PDF pages {active.pages.join(', ')}</p><p className="source-explanation">The {sourceLanguage} document text is extracted below. Document commentary is labelled separately. The learning explanation above and all animation assumptions are authored separately.</p>{active.notes.map(note=><p className="reference-discrepancy" key={note}>{note}</p>)}
       <div className="reference-page-links">{active.pages.map(page=><a key={page} href={sourceHref(import.meta.env.BASE_URL,data.source.file,page)} target="_blank" rel="noreferrer">PDF page {page}<ArrowUpRight size={15}/></a>)}</div>
-      <details><summary>Read Turkish source · {active.clauses.length} segments</summary><div lang="tr">{active.clauses.map(clause=><section key={clause.id}><small>{clause.id} · p. {clause.pages.join(', ')}</small><p>{clause.text}</p></section>)}</div></details>
-      <details><summary>Original page layout, tables & figures</summary>{active.pages.map(page=><figure key={page}><a href={sourceHref(import.meta.env.BASE_URL,data.source.file,page)} target="_blank" rel="noreferrer"><img loading="lazy" src={`${import.meta.env.BASE_URL}content/pages/page-${page}.webp`} alt={`Original Turkish source, PDF page ${page}`}/></a><figcaption>PDF page {page} · open PDF for full resolution</figcaption></figure>)}</details>
+      <details><summary>Read {sourceLanguage} source · {active.clauses.length} segments</summary><div lang={data.source.language}>{active.clauses.map(clause=><section key={clause.id}><small>{clause.id} · p. {clause.pages.join(', ')}</small>{clause.kind==='document-note'&&<p><strong>Document commentary / interpretation — separate from Rule text</strong></p>}<p>{clause.text}</p></section>)}</div></details>
+      <details><summary>Original page layout, tables & figures</summary>{active.pages.map(page=><figure key={page}><a href={sourceHref(import.meta.env.BASE_URL,data.source.file,page)} target="_blank" rel="noreferrer"><img loading="lazy" src={`${import.meta.env.BASE_URL}${data.source.pageImageDirectory}/page-${page}.webp?v=${data.source.sha256.slice(0,12)}`} alt={`${sourceLanguage} reference, PDF page ${page}`}/></a><figcaption>PDF page {page} · open PDF for full resolution</figcaption></figure>)}</details>
+      <details><summary>Edition & source notes</summary><p>Supplied document: {data.source.originalFilename??data.source.title}.</p>{data.source.notes.map(note=><p key={note}>{note}</p>)}<p>SHA-256: <code style={{overflowWrap:'anywhere'}}>{data.source.sha256}</code></p>{data.source.supplemental.map(item=><section key={item.id}><h4>{item.title}</h4><p>{item.note}</p><div className="reference-page-links">{item.pages.map(page=><a key={page} href={sourceHref(import.meta.env.BASE_URL,data.source.file,page)} target="_blank" rel="noreferrer">PDF page {page}<ArrowUpRight size={15}/></a>)}</div></section>)}</details>
      </section>
     </>}
    </article>
    {active&&<aside className="reference-connections" aria-label="Related scenes and source">
     {relatedEncounters.length>0&&<section><h3>Explore in motion</h3><div className="reference-encounters">{relatedEncounters.map(encounter=><button key={encounter.id} onClick={()=>onEncounter(encounter.id)}>{encounter.title}<ArrowUpRight size={17}/></button>)}</div></section>}
     {active.related.length>0&&<section><h3>Read together</h3><div className="reference-related">{active.related.map(id=><button key={id} onClick={()=>{select(id);setPart('All');setQuery('')}}>{data?.records.find(record=>record.id===id)?.title??id}<ChevronRight size={15}/></button>)}</div></section>}
-    <section><h3>Source pages</h3><div className="reference-page-links">{active.pages.map(page=><a key={page} href={sourceHref(import.meta.env.BASE_URL,data!.source.file,page)} target="_blank" rel="noreferrer">PDF page {page}<ArrowUpRight size={15}/></a>)}</div><p>Original Turkish source. English explanations and animation assumptions are separate.</p></section>
+    <section><h3>Source pages</h3><div className="reference-page-links">{active.pages.map(page=><a key={page} href={sourceHref(import.meta.env.BASE_URL,data!.source.file,page)} target="_blank" rel="noreferrer">PDF page {page}<ArrowUpRight size={15}/></a>)}</div><p>{data?.source.edition?`${data.source.edition} edition. `:''}Learning explanations and animation assumptions are separate from the {sourceLanguage} source.</p></section>
    </aside>}
   </div>
  </main>;

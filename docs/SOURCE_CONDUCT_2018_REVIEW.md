@@ -1,0 +1,42 @@
+# Rules 1–19 conduct audit — 2018 English reference
+
+Reference inspected: owner-supplied `COLREG-Consolidated-2018.pdf`, physical PDF pages 5–16. The supplied consolidated edition is treated as the requested primary text; this review does not verify official provenance, current legal status, or operational adequacy. Learning text is concise paraphrase, not a replacement for the Rules.
+
+## Rule-by-rule check
+
+| Rule | Physical page(s) | Fields checked | Finding |
+|---|---:|---|---|
+| 1 | 5 | title, summary, conditions, duties, exceptions, notes, keywords | Reworked application scope and special-rule clauses. English Rule 1(d) says schemes may be adopted by the Organization; Rule 1(e) assigns closest possible compliance to the concerned Government's determination, not a Ministry. |
+| 2 | 5 | title, summary, conditions, duties, exceptions, notes, keywords | Clarified that due regard applies to dangers and vessel limitations; departure is necessary to avoid immediate danger in special circumstances. |
+| 3 | 6–7 | title, summary, conditions, duties, exceptions, notes, keywords | Summary had omitted several named definitions; made the description more representative and preserved underway/making-way distinction. |
+| 4 | 8 | title, summary, conditions, duties, exceptions, notes, keywords | Baseline accurately states that Rules in Section I apply in any visibility condition. |
+| 5 | 8 | title, summary, conditions, duties, exceptions, notes, keywords | Replaced an overly narrow condition (“while navigating or otherwise exposed…”) with the Rule's “at all times”; retained look-out purpose. |
+| 6 | 8–9 | title, summary, conditions, duties, exceptions, notes, keywords | Expanded duties to include the rule's stopping-distance outcome and separate all-vessel/radar factor lists. |
+| 7 | 9 | title, summary, conditions, duties, exceptions, notes, keywords | Expanded duties to cover all appropriate means, operational radar use, no scanty-information assumptions, and both bearing-change cases. |
+| 8 | 9–10 | title, summary, conditions, duties, exceptions, notes, keywords | Expanded duties to capture safe-distance outcome, conditional maneuver qualities, speed reduction, and Rule 8(f) no-impeding duties. |
+| 9 | 10–11 | title, summary, conditions, duties, exceptions, notes, keywords | Replaced compressed blanket no-impeding wording with separate under-20m/sailing, fishing, crossing, overtaking, bend and anchoring clauses. |
+| 10 | 11–12 | title, summary, conditions, duties, exceptions, notes, keywords | Expanded lane joining/leaving, scheme scope, caution near terminations, avoidance and lane-specific no-impeding duties. Existing exceptions preserve the emergency, inshore-zone and work-related limits. |
+| 11 | 12 | title, summary, conditions, duties, exceptions, notes, keywords | Baseline accurately states Section II applies when vessels are in sight of one another. |
+| 12 | 12–13 | title, summary, conditions, duties, exceptions, notes, keywords | Corrected generic early-action duty to the precise tack/windward cases, explicitly limited Section II responsibility to vessels in sight under Rule 11, and added Rule 12(b)'s windward-side definition. |
+| 13 | 13 | title, summary, conditions, duties, exceptions, notes, keywords | Existing summary/duty correctly preserve overtaking duty through finally past and clear; conditions now state Rule 11's in-sight applicability. |
+| 14 | 13 | title, summary, conditions, duties, exceptions, notes, keywords | Existing summary/duty correctly state the starboard alteration and port-side passing outcome; conditions now state Rule 11's in-sight applicability. |
+| 15 | 14 | title, summary, conditions, duties, exceptions, notes, keywords | Added the principal keep-out-of-way duty, which the baseline duty field omitted, and stated Rule 11's in-sight applicability. |
+| 16 | 14 | title, summary, conditions, duties, exceptions, notes, keywords | Stated Rule 11's in-sight applicability and retained Rule 16's “so far as possible” qualification on early and substantial action. |
+| 17 | 14 | title, summary, conditions, duties, exceptions, notes, keywords | Recast as three distinct stages, stated Rule 11's in-sight applicability, and preserved “may” at (a)(ii), “shall” at (b), the conditional port alteration clause, and give-way vessel's continuing duty. |
+| 18 | 15 | title, summary, conditions, duties, exceptions, notes, keywords | Replaced “general hierarchy” shortcut with distinct conditional clauses; stated Rule 11's in-sight applicability and preserved opening Rules 9/10/13 qualification, draught signals/circumstances, and the qualified fishing-vessel duty. |
+| 19 | 16 | title, summary, conditions, duties, exceptions, notes, keywords | Expanded all operative conditions and corrected the baseline's unqualified “avoid altering” wording to the source's “so far as possible”; retained the overtaking exception and paragraph (e) trigger. |
+
+## Scenario review findings (no scenario edits)
+
+- `public/scenarios/channel-crossing.json`, summary and track/timing: summary says the crossing vessel must not impede a through vessel that can safely navigate only within the channel, matching Rule 9(d) in substance. The animation starts the crossing vessel moving while the through-vessel is approaching and does not represent an explicit wait for sufficient sea room; revise the route/steps to show crossing only when it will not impede, or label the motion schematic and avoid implying that the shown timing demonstrates compliance. Source rule: physical p. 10.
+- `public/scenarios/scope-responsibility.json`, `steps[2].body`: “Continue to assess … until … finally past and clear” is Rule 8(d) collision-avoidance language, not a Rule 1/2 result. Remove this unrelated generic outcome or make it explicitly a general teaching reminder. Rule 1/2: p. 5.
+- `public/scenarios/constrained-by-draught.json`, `conditions[0]`: “severely restricted by available depth and width” is a loose paraphrase of Rule 3(h), which says severely restricted in ability to deviate from the course being followed. Prefer that formulation. Its summary correctly conditions the avoiding-impediment duty on circumstances and Rule 28 signals. Rules 3(h), 18(d): pp. 6, 15.
+- Rule 18 encounter explanations (`power-vs-fishing.json`, `power-vs-nuc.json`, `power-vs-ram.json`, `power-vs-sailing.json`): their summaries largely retain the Rule 18 opening qualification and applicable category, but ensure route/case descriptions do not generalize “so far as possible” from fishing vessel clause 18(c) to the other categories or imply an unconditional hierarchy. Rule 18: p. 15.
+- Source references in the inspected scenarios remain legacy references and should be remapped by integration to physical 2018 PDF pages: `scope-responsibility.json` says pp. 1–2 (now p. 5); `channel-starboard.json`, `channel-crossing.json`, `channel-overtaking.json` say p. 4 (Rule 9 now pp. 10–11); `channel-bend.json` says p. 4 for Rule 9 (now pp. 10–11; its Rule 34 citation also needs its own new page); `stand-on-hold.json`, `stand-on-may-act.json`, `stand-on-shall-act.json`, and `crossing-mirror.json` say p. 6 (Rule 17 now p. 14; Rule 15 now p. 14); `constrained-by-draught.json` and three Rule 18 encounters cite pp. 6–7 (Rule 18 now p. 15); Rule 19 encounters cite p. 7 (now p. 16); TSS encounters cite pp. 4–5 (Rule 10 now pp. 11–12). This is a source-map migration issue, not a substantive Rule paraphrase finding.
+
+## Source/editorial observations and limits
+
+- The English source contains visible extraction/typographic defects, including “A amended paragraph” on p. 6, broken word spacing/hyphenation, and inconsistent capitalization. The rule meaning in the reviewed clauses was readable; no repair to raw source text is proposed here.
+- Pages 6 and 15 contain amendment-effectivity annotations for Rules 3(a)/3(m) and 18(f), respectively. Preserve them as source annotations; this review does not independently resolve amendment history.
+- Rule 1(d) wording should be retained as supplied (“Organization”). The archived legacy Turkish wording uses “Bakanlık” and a Ministry gloss; the conflict is visible and should be recorded, not silently harmonized. Rule 10(a) also says “Organization” in this supplied English edition.
+- Checked text layer only; no separate visual interpretation was needed for Rules 1–19. No legal certification or expert approval is asserted.
